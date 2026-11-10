@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme static {
+  --font-sans: 'Proxima Nova', sans-serif;
+
+  --color-primary: #141025;
+  --color-accent: #ed0a32;
+  --color-white: #ffffff;
+  --color-gray: #cfd0d9;
+  --color-secondary: #1a0335;
+  --color-black: #000000;
+
+}
+
+@layer base {
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
