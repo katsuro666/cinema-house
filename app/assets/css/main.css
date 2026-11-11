@@ -7,10 +7,10 @@
   --color-primary: #141025;
   --color-accent: #ed0a32;
   --color-white: #ffffff;
+  --color-white-50: #ffffff80;
   --color-gray: #cfd0d9;
   --color-secondary: #1a0335;
   --color-black: #000000;
-
 }
 
 @layer base {
@@ -18,4 +18,8 @@
     background-color: var(--color-primary);
     color: var(--color-white);
   }
+}
+
+:root {
+  --ui-container: 1600px;
 }

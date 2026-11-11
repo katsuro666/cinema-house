@@ -7,6 +7,16 @@ export default defineAppConfig({
       white: 'white',
       gray: 'gray',
       black: 'black'
+    },
+    button: {
+      slots: {
+        base: 'cursor-pointer'
+      },
+      variants: {
+        color: {
+          'white-50': 'hover:!text-white'
+        }
+      }
     }
   }
 })

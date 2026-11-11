@@ -10,6 +10,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  ui: {
+    theme: {
+      colors: ['accent', 'white', 'white-50']
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
