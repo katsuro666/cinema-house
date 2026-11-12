@@ -89,7 +89,7 @@ const socialMediaLinks = [
     :ui="{
       root: 'bg-transparent',
       container:
-        '!px-25 max-lg:!px-10 max-md:!px-2.5 !pt-13 !pb-9 border-t border-white/15 items-stretch',
+        '!px-25 max-lg:!px-10 max-md:!px-2.5 !pt-13 !pb-9 border-t border-white/15 !items-start',
       left: 'self-stretch flex-col items-start !justify-between'
     }"
   >
