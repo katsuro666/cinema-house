@@ -49,7 +49,7 @@ watch(isSearchOpened, (isOpened) => {
         <NuxtLink
           to="/"
           aria-label="Главная"
-          class="text-[32px] uppercase font-extrabold text-white"
+          class="text-[32px] uppercase font-extrabold"
         >
           <span>Кино</span>
           <span class="text-accent">Дом</span>

@@ -36,5 +36,15 @@ export default defineNuxtConfig({
     local: {
       dirs: ['public/fonts']
     }
+  },
+
+  icon: {
+    customCollections: [
+      {
+        prefix: 'local',
+        dir: './app/assets/icons',
+        recursive: true
+      }
+    ]
   }
 })
