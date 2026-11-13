@@ -1,8 +1,6 @@
-<script setup lang="ts"></script>
-
 <template>
   <section class="banner flex py-15 pb-23">
-    <div class="flex flex-col gap-5 max-w-[425px]">
+    <div class="flex max-w-[425px] flex-col gap-5">
       <h1 class="text-5xl leading-[125%] font-extrabold">
         Самые сочные премьеры кино — у вас дома
       </h1>
@@ -17,20 +15,28 @@
         label="Смотреть бесплатно"
         color="accent"
         size="xl"
-        class="w-fit h-[55px]"
-        :ui="{
-          base: 'font-extrabold'
-        }"
+        class="h-[55px] w-fit"
+        :ui="{ base: 'font-extrabold' }"
       />
     </div>
 
-    carousel
+    <PageHomeMovieCarousel />
   </section>
 </template>
 
 <style scoped lang="scss">
 .banner {
+  gap: 112px;
+  min-height: 570px;
   background-image: url('/images/banner-bg.png');
   background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 32px;
+  }
 }
 </style>
