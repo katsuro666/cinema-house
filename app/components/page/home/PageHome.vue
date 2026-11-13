@@ -1,3 +1,4 @@
 <template>
   <PageHomeMainBanner />
+  <PageHomeAdvantages />
 </template>

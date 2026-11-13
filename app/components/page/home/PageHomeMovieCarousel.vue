@@ -50,11 +50,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    v-if="isReady"
-    class="movie-carousel"
-  >
+  <div class="movie-carousel">
     <Swiper
+      v-if="isReady"
       :modules="swiperModules"
       :slides-per-view="'auto'"
       :space-between="-40"
@@ -94,21 +92,23 @@ onMounted(() => {
       </SwiperSlide>
     </Swiper>
 
-    <UButton
-      icon="i-lucide-arrow-left"
-      class="carousel-arrow left-0"
-      aria-label="Предыдущий фильм"
-      variant="link"
-      @click="swiper?.slidePrev()"
-    />
+    <template v-if="isReady">
+      <UButton
+        icon="i-lucide-arrow-left"
+        class="carousel-arrow left-0"
+        aria-label="Предыдущий фильм"
+        variant="link"
+        @click="swiper?.slidePrev()"
+      />
 
-    <UButton
-      icon="i-lucide-arrow-right"
-      class="carousel-arrow right-0"
-      aria-label="Следующий фильм"
-      variant="link"
-      @click="swiper?.slideNext()"
-    />
+      <UButton
+        icon="i-lucide-arrow-right"
+        class="carousel-arrow right-0"
+        aria-label="Следующий фильм"
+        variant="link"
+        @click="swiper?.slideNext()"
+      />
+    </template>
   </div>
 </template>
 
@@ -116,7 +116,7 @@ onMounted(() => {
 .movie-carousel {
   position: relative;
   min-width: 0;
-  min-height: 500px;
+  min-height: 550px;
   flex: 1;
   overflow: hidden;
   padding: 0 36px;
