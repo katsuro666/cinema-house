@@ -7,13 +7,17 @@ import 'swiper/css/effect-creative'
 import { GENRES_MOCK } from '~/mocks/movies'
 
 const props = defineProps<{
-  movies: {
+  slides: {
     title: string
-    vote_average: number
-    genre_ids: number[]
+    vote_average?: number
+    genre_ids?: number[]
+    poster_path: string
   }[]
   slidesPerView?: number
-  isLooped?: boolean
+  looped?: boolean
+  titleInside?: boolean
+  tintedImage?: boolean
+  square?: boolean
 }>()
 
 const swiper = ref<SwiperInstance | null>(null)
@@ -39,6 +43,10 @@ const getMovieGenres = (genres: number[]) => {
     .join(', ')
 }
 
+const imageSizeClasses = computed(() => {
+  return props.square ? 'w-[335px] h-[335px]' : 'w-[335px] h-[225px]'
+})
+
 onMounted(() => {
   isReady.value = true
 })
@@ -51,7 +59,7 @@ onMounted(() => {
       :modules="swiperModules"
       :slides-per-view="props.slidesPerView || 4"
       :space-between="20"
-      :loop="isLooped"
+      :loop="looped"
       :speed="700"
       :grab-cursor="true"
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
@@ -61,27 +69,34 @@ onMounted(() => {
       @slides-length-change="updateNavState"
     >
       <SwiperSlide
-        v-for="movie in movies"
-        :key="movie.title"
+        v-for="slide in slides"
+        :key="slide.title"
         class="movie-slide"
       >
         <div class="flex flex-col gap-2.5">
           <img
-            class="rounded-xl object-cover w-[335px] h-[225px]"
-            :src="`/images/mocks/movie-${Math.floor(Math.random() * 3) + 1}.png`"
-            :alt="movie.title"
+            class="rounded-xl object-cover relative"
+            :src="slide.poster_path"
+            :alt="slide.title"
+            :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
           >
 
           <ul>
             <li class="text-accent">
-              {{ movie.vote_average }}
+              {{ slide.vote_average }}
             </li>
+
             <li class="text-white-50">
-              {{ getMovieGenres(movie.genre_ids) }}
+              {{ slide.genre_ids ? getMovieGenres(slide.genre_ids) : '' }}
             </li>
           </ul>
 
-          <span class="text-xl font-semibold">{{ movie.title }}</span>
+          <span
+            class="text-xl font-semibold"
+            :class="{ 'absolute bottom-[25px] left-[25px] max-w-[50%]': titleInside }"
+          >
+            {{ slide.title }}
+          </span>
         </div>
       </SwiperSlide>
     </Swiper>

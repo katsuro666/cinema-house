@@ -2,4 +2,5 @@
   <PageHomeMainBanner />
   <PageHomeAdvantages />
   <PageHomeCatalog />
+  <PageHomeCollections />
 </template>

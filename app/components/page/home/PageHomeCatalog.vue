@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import MoviesSlider from '~/components/ui/MoviesSlider.vue'
 import { GENRES_MOCK, MOVIES_MOCK } from '~/mocks/movies'
 
@@ -28,7 +28,7 @@ const moviesByGenre = computed(() => {
           {{ movie.genre }}
         </h3>
 
-        <MoviesSlider :movies="movie.movies" />
+        <MoviesSlider :slides="movie.movies" />
       </div>
     </div>
 
