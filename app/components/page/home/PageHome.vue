@@ -3,4 +3,5 @@
   <PageHomeAdvantages />
   <PageHomeCatalog />
   <PageHomeCollections />
+  <PageHomeTariffs />
 </template>

@@ -81,7 +81,7 @@ onMounted(() => {
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
           >
 
-          <ul>
+          <ul class="flex gap-1">
             <li class="text-accent">
               {{ slide.vote_average }}
             </li>
@@ -100,6 +100,24 @@ onMounted(() => {
         </div>
       </SwiperSlide>
     </Swiper>
+
+    <div
+      v-else
+      class="flex justify-between"
+    >
+      <div
+        v-for="(item, idx) in 4"
+        :key="idx"
+        class="flex flex-col gap-2.5"
+      >
+        <USkeleton :class="imageSizeClasses" />
+
+        <template v-if="!titleInside">
+          <USkeleton class="h-4 w-[30%]" />
+          <USkeleton class="h-4 w-[60%]" />
+        </template>
+      </div>
+    </div>
 
     <template v-if="isReady">
       <UButton
