@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const adbantages = [
+const advantages = [
   {
     icon: '/images/icon-avatar.png',
     title: 'Большой выбор',
@@ -33,7 +33,7 @@ const adbantages = [
 
     <div class="flex justify-between gap-5">
       <div
-        v-for="advantage in adbantages"
+        v-for="advantage in advantages"
         :key="advantage.title"
         class="flex flex-col gap-4"
       >

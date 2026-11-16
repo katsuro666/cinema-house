@@ -4,4 +4,5 @@
   <PageHomeCatalog />
   <PageHomeCollections />
   <PageHomeTariffs />
+  <PageHomeDiscounts />
 </template>

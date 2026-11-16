@@ -74,7 +74,7 @@ const getAccessClass = (idx: number, openedSections: number, isIcon?: boolean) =
           <UButton
             color="accent"
             size="xl"
-            class="cursor-pointer px-6 py-3 font-medium"
+            class="cursor-pointer px-6 py-4.5 font-medium"
           >
             Оформить подписку
           </UButton>
