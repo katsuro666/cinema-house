@@ -7,8 +7,11 @@
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "typecheck": "nuxt typecheck",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.147",
@@ -16,17 +19,19 @@
     "@nuxt/fonts": "1.2.0",
     "@nuxt/ui": "^4.12.0",
     "@pinia/nuxt": "1.0.3",
+    "@vueuse/core": "^15.0.0",
     "nuxt": "^4.6.3",
     "pinia": "^4.1.0",
+    "swiper": "^14.4.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.17.0",
-    "eslint": "^10.13.0",
-    "eslint-plugin-better-tailwindcss": "^4.10.0",
-    "prettier": "3.9.10",
+    "lefthook": "^2.2.2",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "sass": "^1.108.2",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.13"
   },
-  "packageManager": "pnpm@12.18.0"
+  "packageManager": "pnpm@12.21.0"
 }

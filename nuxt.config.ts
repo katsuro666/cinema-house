@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@pinia/nuxt', '@nuxt/fonts'],
+  modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxt/fonts'],
 
   pages: true,
 
@@ -10,25 +10,32 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  ui: {
+    theme: {
+      colors: ['accent', 'white', 'white-50']
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
 
   compatibilityDate: '2026-06-30',
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
-
   fonts: {
     families: [{ name: 'Proxima Nova', provider: 'local' }],
     local: {
       dirs: ['public/fonts']
     }
+  },
+
+  icon: {
+    customCollections: [
+      {
+        prefix: 'local',
+        dir: './app/assets/icons',
+        recursive: true
+      }
+    ]
   }
 })

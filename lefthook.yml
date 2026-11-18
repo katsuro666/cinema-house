@@ -1,0 +1,11 @@
+pre-commit:
+  piped: true
+  commands:
+    lint:
+      priority: 1
+      run: pnpm lint:fix {staged_files}
+      stage_fixed: true
+    format:
+      priority: 2
+      run: pnpm fmt {staged_files}
+      stage_fixed: true
