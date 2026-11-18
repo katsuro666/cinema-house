@@ -5,15 +5,8 @@ import { COLLECTIONS_MOCK } from '~/mocks/movies'
 
 <template>
   <section class="mt-30 flex flex-col gap-15">
-    <h2 class="text-[32px] font-bold">
-      Тематические подборки
-    </h2>
+    <h2 class="text-[32px] font-bold">Тематические подборки</h2>
 
-    <MoviesSlider
-      :slides="COLLECTIONS_MOCK"
-      title-inside
-      tinted-image
-      square
-    />
+    <MoviesSlider :slides="COLLECTIONS_MOCK" title-inside tinted-image square />
   </section>
 </template>

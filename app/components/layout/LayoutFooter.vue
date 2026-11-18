@@ -94,7 +94,7 @@ const socialMediaLinks = [
     }"
   >
     <template #left>
-      <span class="text-[32px] uppercase font-extrabold">
+      <span class="text-[32px] font-extrabold uppercase">
         Кино<span class="text-accent">Дом</span>
       </span>
 
@@ -107,25 +107,15 @@ const socialMediaLinks = [
         :key="`${column.groups[idx]?.title}-${idx}`"
         class="flex flex-col gap-9"
       >
-        <div
-          v-for="group in column.groups"
-          :key="group.title"
-          class="flex flex-col gap-4"
-        >
+        <div v-for="group in column.groups" :key="group.title" class="flex flex-col gap-4">
           <h4 class="font-semibold">
             {{ group.title }}
           </h4>
 
           <nav v-if="group.links?.length">
             <ul class="flex flex-col gap-2.5">
-              <li
-                v-for="item in group.links"
-                :key="item.link + item.title"
-              >
-                <NuxtLink
-                  class="cursor-pointer text-white/35"
-                  :to="item.link"
-                >
+              <li v-for="item in group.links" :key="item.link + item.title">
+                <NuxtLink class="cursor-pointer text-white/35" :to="item.link">
                   <ULink class="cursor-pointer text-white/35">
                     {{ item.title }}
                   </ULink>
@@ -148,10 +138,7 @@ const socialMediaLinks = [
               :key="item.text"
               class="flex items-center gap-2.5"
             >
-              <UIcon
-                :name="item.icon"
-                class="size-5"
-              />
+              <UIcon :name="item.icon" class="size-5" />
               {{ item.text }}
             </div>
           </div>
@@ -161,15 +148,8 @@ const socialMediaLinks = [
           <span class="font-semibold">Подписывайтесь на нас</span>
 
           <div class="flex items-center gap-4">
-            <NuxtLink
-              v-for="item in socialMediaLinks"
-              :key="item.link"
-              :to="item.link"
-            >
-              <UIcon
-                :name="item.icon"
-                class="size-6 text-white/20"
-              />
+            <NuxtLink v-for="item in socialMediaLinks" :key="item.link" :to="item.link">
+              <UIcon :name="item.icon" class="size-6 text-white/20" />
             </NuxtLink>
           </div>
         </div>

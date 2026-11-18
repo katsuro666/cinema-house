@@ -31,38 +31,28 @@ const discounts = [
 
 <template>
   <section class="mt-30 flex flex-col gap-9">
-    <h2 class="font-bold text-[32px]">
-      Скидки на кино
-    </h2>
+    <h2 class="text-[32px] font-bold">Скидки на кино</h2>
 
     <div class="flex justify-between gap-5">
       <div
         v-for="discount in discounts"
         :key="discount.title"
-        class="flex flex-col gap-4 max-w-[421px]"
+        class="flex max-w-[421px] flex-col gap-4"
       >
         <div class="flex flex-col">
-          <div class="rounded-full p-6 w-fit gradient">
-            <div class="rounded-full bg-primary w-fit p-4">
-              <img
-                :src="discount.icon"
-                :alt="discount.title"
-                class="size-10"
-              >
+          <div class="gradient w-fit rounded-full p-6">
+            <div class="bg-primary w-fit rounded-full p-4">
+              <img :src="discount.icon" :alt="discount.title" class="size-10" />
             </div>
           </div>
 
-          <h3 class="font-semibold text-2xl">
+          <h3 class="text-2xl font-semibold">
             {{ discount.title }}
           </h3>
         </div>
 
         <div class="flex flex-col gap-4">
-          <p
-            v-for="(desc, idx) in discount.description"
-            :key="idx"
-            class="text-white-50"
-          >
+          <p v-for="(desc, idx) in discount.description" :key="idx" class="text-white-50">
             {{ desc }}
           </p>
         </div>
@@ -72,7 +62,7 @@ const discounts = [
           :color="discount.btn.color"
           :variant="discount.btn.variant"
           size="xl"
-          class="w-fit py-4.5 px-6 mt-4"
+          class="mt-4 w-fit px-6 py-4.5"
         />
       </div>
     </div>

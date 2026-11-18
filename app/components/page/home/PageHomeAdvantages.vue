@@ -27,27 +27,17 @@ const advantages = [
 
 <template>
   <section class="mt-7 flex flex-col gap-8">
-    <h2 class="font-bold text-[32px]">
-      Преимущества КиноДома
-    </h2>
+    <h2 class="text-[32px] font-bold">Преимущества КиноДома</h2>
 
     <div class="flex justify-between gap-5">
-      <div
-        v-for="advantage in advantages"
-        :key="advantage.title"
-        class="flex flex-col gap-4"
-      >
+      <div v-for="advantage in advantages" :key="advantage.title" class="flex flex-col gap-4">
         <div class="flex flex-col">
-          <div class="rounded-full p-6 w-fit gradient">
-            <div class="rounded-full bg-primary w-fit p-4">
-              <img
-                :src="advantage.icon"
-                :alt="advantage.title"
-                class="size-10"
-              >
+          <div class="gradient w-fit rounded-full p-6">
+            <div class="bg-primary w-fit rounded-full p-4">
+              <img :src="advantage.icon" :alt="advantage.title" class="size-10" />
             </div>
           </div>
-          <h3 class="font-semibold text-2xl">
+          <h3 class="text-2xl font-semibold">
             {{ advantage.title }}
           </h3>
         </div>

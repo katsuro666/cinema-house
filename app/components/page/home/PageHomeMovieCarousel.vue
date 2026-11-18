@@ -39,7 +39,7 @@ const movies = [
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = [Autoplay, EffectCreative]
 
-const setSwiper = (instance: SwiperInstance) => swiper.value = instance
+const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
 </script>
 
 <template>
@@ -65,15 +65,15 @@ const setSwiper = (instance: SwiperInstance) => swiper.value = instance
       <SwiperSlide v-for="movie in movies" :key="movie.title" class="movie-slide">
         <div>
           <img
-            class="rounded-xl object-cover w-[380px] h-[490px]"
+            class="h-[490px] w-[380px] rounded-xl object-cover"
             :src="movie.image"
             :alt="movie.title"
           />
 
           <div class="mt-2.5 flex flex-col gap-1.5">
             <span>{{ movie.title }}</span>
-            <div class="flex items-center gap-5 text-xs text-accent">
-              <span class="border border-accent px-2 rounded-md">{{ movie.badge }}</span>
+            <div class="text-accent flex items-center gap-5 text-xs">
+              <span class="border-accent rounded-md border px-2">{{ movie.badge }}</span>
               <span>{{ movie.date }}</span>
             </div>
           </div>
@@ -83,12 +83,12 @@ const setSwiper = (instance: SwiperInstance) => swiper.value = instance
 
     <div v-if="!swiper?.mounted" class="absolute top-0 flex">
       <div class="flex flex-col gap-2">
-        <USkeleton class="rounded-xl w-[380px] h-[490px]" />
-        <USkeleton class="w-1/2 h-5" />
-        <USkeleton class="w-1/3 h-5" />
+        <USkeleton class="h-[490px] w-[380px] rounded-xl" />
+        <USkeleton class="h-5 w-1/2" />
+        <USkeleton class="h-5 w-1/3" />
       </div>
-      <USkeleton class="rounded-xl w-[220px] h-[340px] translate-y-20 -ml-5" />
-      <USkeleton class="rounded-xl w-[150px] h-[200px] translate-y-40 -ml-2" />
+      <USkeleton class="-ml-5 h-[340px] w-[220px] translate-y-20 rounded-xl" />
+      <USkeleton class="-ml-2 h-[200px] w-[150px] translate-y-40 rounded-xl" />
     </div>
 
     <template v-if="swiper?.mounted">

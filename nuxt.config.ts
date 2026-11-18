@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@pinia/nuxt', '@nuxt/fonts'],
+  modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxt/fonts'],
 
   pages: true,
 
@@ -21,15 +21,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2026-06-30',
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
 
   fonts: {
     families: [{ name: 'Proxima Nova', provider: 'local' }],

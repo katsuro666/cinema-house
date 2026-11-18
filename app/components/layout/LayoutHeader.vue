@@ -46,25 +46,14 @@ watch(isSearchOpened, (isOpened) => {
   >
     <template #left>
       <div class="flex items-center gap-15">
-        <NuxtLink
-          to="/"
-          aria-label="Главная"
-          class="text-[32px] uppercase font-extrabold"
-        >
+        <NuxtLink to="/" aria-label="Главная" class="text-[32px] font-extrabold uppercase">
           <span>Кино</span>
           <span class="text-accent">Дом</span>
         </NuxtLink>
 
-        <div
-          v-if="!isSearchOpened"
-          class="flex gap-7.5"
-        >
-          <NuxtLink
-            v-for="link in links"
-            :key="`${link.to}-${link.label}`"
-            :to="link.to"
-          >
-            <ULink class="cursor-pointer text-white/50 font-semibold">
+        <div v-if="!isSearchOpened" class="flex gap-7.5">
+          <NuxtLink v-for="link in links" :key="`${link.to}-${link.label}`" :to="link.to">
+            <ULink class="cursor-pointer font-semibold text-white/50">
               {{ link.label }}
             </ULink>
           </NuxtLink>
@@ -98,13 +87,7 @@ watch(isSearchOpened, (isOpened) => {
       }"
     >
       <template #trailing>
-        <UButton
-          color="white-50"
-          variant="link"
-          size="xs"
-          icon="i-lucide-x"
-          @click="clearSearch"
-        />
+        <UButton color="white-50" variant="link" size="xs" icon="i-lucide-x" @click="clearSearch" />
       </template>
     </UInput>
 
@@ -125,46 +108,34 @@ watch(isSearchOpened, (isOpened) => {
     class="fixed inset-x-0 top-0 z-[9999] overflow-hidden bg-black transition-[max-height] duration-300 ease-in-out"
     :class="isSearchOpened ? 'pointer-events-auto max-h-[100vh]' : 'pointer-events-none max-h-0'"
   >
-    <div class="max-h-[100vh] overflow-y-auto px-25 pb-8 pt-34 max-lg:px-10 max-md:px-2.5">
+    <div class="max-h-[100vh] overflow-y-auto px-25 pt-34 pb-8 max-lg:px-10 max-md:px-2.5">
       <div class="mx-auto max-w-[1100px]">
-        <h2 class="text-[32px] font-bold">
-          Часто ищут
-        </h2>
+        <h2 class="text-[32px] font-bold">Часто ищут</h2>
 
         <div
           class="mt-6 grid grid-cols-3 gap-x-16 gap-y-6 max-lg:gap-x-8 max-md:grid-cols-2 max-md:gap-x-4"
         >
-          <div
-            v-for="movie in SEARCH_MOVIES_MOCKS"
-            :key="movie.id"
-            class="flex min-w-0 gap-2.5"
-          >
+          <div v-for="movie in SEARCH_MOVIES_MOCKS" :key="movie.id" class="flex min-w-0 gap-2.5">
             <img
               :src="movie.image"
               :alt="movie.title"
-              class="h-[75px] w-[154px] shrink-0 rounded-md object-cover pointer-events-none"
-            >
+              class="pointer-events-none h-[75px] w-[154px] shrink-0 rounded-md object-cover"
+            />
             <span class="text-sm text-white/80">{{ movie.title }}</span>
           </div>
         </div>
 
-        <h3 class="mt-10 text-sm font-semibold uppercase text-white-50">
-          Актёры и режиссёры
-        </h3>
+        <h3 class="text-white-50 mt-10 text-sm font-semibold uppercase">Актёры и режиссёры</h3>
 
         <div
           class="mt-4 grid grid-cols-3 gap-x-15 gap-y-4 max-lg:gap-x-8 max-md:grid-cols-2 max-md:gap-x-4"
         >
-          <div
-            v-for="person in SEARCH_PEOPLE_MOCKS"
-            :key="person.id"
-            class="flex flex-col"
-          >
+          <div v-for="person in SEARCH_PEOPLE_MOCKS" :key="person.id" class="flex flex-col">
             <span class="text-sm">
               {{ person.title }}
             </span>
 
-            <span class="text-[10px] text-white-50">
+            <span class="text-white-50 text-[10px]">
               {{ person.role }}
             </span>
           </div>
@@ -173,9 +144,5 @@ watch(isSearchOpened, (isOpened) => {
     </div>
   </div>
 
-  <div
-    v-if="isSearchOpened"
-    class="fixed inset-0 z-[9998] bg-black/70"
-    @click="closeSearch"
-  />
+  <div v-if="isSearchOpened" class="fixed inset-0 z-[9998] bg-black/70" @click="closeSearch" />
 </template>

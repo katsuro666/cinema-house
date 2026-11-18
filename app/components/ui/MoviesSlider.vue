@@ -61,7 +61,7 @@ const imageSizeClasses = computed(() => {
       :grab-cursor="true"
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
       class="movie-swiper"
-      :class="{ 'opacity-0 h-0': !swiper?.mounted }"
+      :class="{ 'h-0 opacity-0': !swiper?.mounted }"
       @swiper="setSwiper"
       @slide-change="updateNavState"
       @slides-length-change="updateNavState"
@@ -69,7 +69,7 @@ const imageSizeClasses = computed(() => {
       <SwiperSlide v-for="slide in slides" :key="slide.title" class="movie-slide">
         <div class="flex flex-col gap-2.5">
           <img
-            class="rounded-xl object-cover relative"
+            class="relative rounded-xl object-cover"
             :src="slide.poster_path"
             :alt="slide.title"
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
