@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/effect-creative'
 import { GENRES_MOCK } from '~/mocks/movies'
+import type { SwiperModule } from 'swiper/types'
 
 const props = defineProps<{
   slides: {
@@ -18,12 +19,12 @@ const props = defineProps<{
   titleInside?: boolean
   tintedImage?: boolean
   square?: boolean
+  modules?: SwiperModule[]
 }>()
 
 const swiper = ref<SwiperInstance | null>(null)
-const swiperModules = [Autoplay]
+const swiperModules = computed(() => (props.modules?.length ? props.modules : [Autoplay]))
 
-const isReady = ref(false)
 const isBeginning = ref(true)
 const isEnd = ref(false)
 
@@ -37,25 +38,21 @@ const setSwiper = (instance: SwiperInstance) => {
   updateNavState(instance)
 }
 
+// TODO: вынести жанры в стор
 const getMovieGenres = (genres: number[]) => {
-  return GENRES_MOCK.filter(genre => genres.includes(genre.id))
-    .map(genre => genre.name)
+  return GENRES_MOCK.filter((genre) => genres.includes(genre.id))
+    .map((genre) => genre.name)
     .join(', ')
 }
 
 const imageSizeClasses = computed(() => {
   return props.square ? 'w-[335px] h-[335px]' : 'w-[335px] h-[225px]'
 })
-
-onMounted(() => {
-  isReady.value = true
-})
 </script>
 
 <template>
   <div class="relative">
     <Swiper
-      v-if="isReady"
       :modules="swiperModules"
       :slides-per-view="props.slidesPerView || 4"
       :space-between="20"
@@ -64,30 +61,27 @@ onMounted(() => {
       :grab-cursor="true"
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
       class="movie-swiper"
+      :class="{ 'opacity-0 h-0': !swiper?.mounted }"
       @swiper="setSwiper"
       @slide-change="updateNavState"
       @slides-length-change="updateNavState"
     >
-      <SwiperSlide
-        v-for="slide in slides"
-        :key="slide.title"
-        class="movie-slide"
-      >
+      <SwiperSlide v-for="slide in slides" :key="slide.title" class="movie-slide">
         <div class="flex flex-col gap-2.5">
           <img
             class="rounded-xl object-cover relative"
             :src="slide.poster_path"
             :alt="slide.title"
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
-          >
+          />
 
           <ul class="flex gap-1">
             <li class="text-accent">
               {{ slide.vote_average }}
             </li>
 
-            <li class="text-white-50">
-              {{ slide.genre_ids ? getMovieGenres(slide.genre_ids) : '' }}
+            <li v-if="slide.genre_ids" class="text-white-50">
+              {{ getMovieGenres(slide.genre_ids) }}
             </li>
           </ul>
 
@@ -101,15 +95,8 @@ onMounted(() => {
       </SwiperSlide>
     </Swiper>
 
-    <div
-      v-else
-      class="flex justify-between"
-    >
-      <div
-        v-for="(item, idx) in 4"
-        :key="idx"
-        class="flex flex-col gap-2.5"
-      >
+    <div v-if="!swiper?.mounted" class="flex justify-between">
+      <div v-for="item in 4" :key="item" class="flex flex-col gap-2.5">
         <USkeleton :class="imageSizeClasses" />
 
         <template v-if="!titleInside">
@@ -119,7 +106,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <template v-if="isReady">
+    <template v-if="swiper?.mounted">
       <UButton
         v-if="!isBeginning"
         icon="i-lucide-move-left"

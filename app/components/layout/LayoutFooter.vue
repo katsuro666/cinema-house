@@ -103,8 +103,8 @@ const socialMediaLinks = [
 
     <div class="grid grid-cols-3 gap-20">
       <div
-        v-for="(column, columnIndex) in footerMenu"
-        :key="columnIndex"
+        v-for="(column, idx) in footerMenu"
+        :key="`${column.groups[idx]?.title}-${idx}`"
         class="flex flex-col gap-9"
       >
         <div

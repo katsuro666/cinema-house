@@ -36,23 +36,15 @@ const movies = [
   }
 ]
 
-const isReady = ref(false)
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = [Autoplay, EffectCreative]
 
-const setSwiper = (instance: SwiperInstance) => {
-  swiper.value = instance
-}
-
-onMounted(() => {
-  isReady.value = true
-})
+const setSwiper = (instance: SwiperInstance) => swiper.value = instance
 </script>
 
 <template>
   <div class="movie-carousel">
     <Swiper
-      v-if="isReady"
       :modules="swiperModules"
       :slides-per-view="'auto'"
       :space-between="-40"
@@ -66,20 +58,17 @@ onMounted(() => {
         next: { translate: ['72%', 0, -260], scale: 0.78, opacity: 0.72 }
       }"
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
-      class="movie-swiper"
+      class="movie-swiper relative"
+      :class="{ 'opacity-0': !swiper?.mounted }"
       @swiper="setSwiper"
     >
-      <SwiperSlide
-        v-for="movie in movies"
-        :key="movie.title"
-        class="movie-slide"
-      >
+      <SwiperSlide v-for="movie in movies" :key="movie.title" class="movie-slide">
         <div>
           <img
             class="rounded-xl object-cover w-[380px] h-[490px]"
             :src="movie.image"
             :alt="movie.title"
-          >
+          />
 
           <div class="mt-2.5 flex flex-col gap-1.5">
             <span>{{ movie.title }}</span>
@@ -92,7 +81,17 @@ onMounted(() => {
       </SwiperSlide>
     </Swiper>
 
-    <template v-if="isReady">
+    <div v-if="!swiper?.mounted" class="absolute top-0 flex">
+      <div class="flex flex-col gap-2">
+        <USkeleton class="rounded-xl w-[380px] h-[490px]" />
+        <USkeleton class="w-1/2 h-5" />
+        <USkeleton class="w-1/3 h-5" />
+      </div>
+      <USkeleton class="rounded-xl w-[220px] h-[340px] translate-y-20 -ml-5" />
+      <USkeleton class="rounded-xl w-[150px] h-[200px] translate-y-40 -ml-2" />
+    </div>
+
+    <template v-if="swiper?.mounted">
       <UButton
         icon="i-lucide-arrow-left"
         class="carousel-arrow left-0"

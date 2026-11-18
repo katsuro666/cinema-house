@@ -1,0 +1,6 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "sortTailwindcss": true,
+  "sortPackageJson": true
+}
