@@ -37,5 +37,11 @@ export default defineNuxtConfig({
         recursive: true
       }
     ]
+  },
+
+  runtimeConfig: {
+    public: {
+      tmdbToken: import.meta.env.NUXT_PUBLIC_TMDB_TOKEN
+    }
   }
 })
