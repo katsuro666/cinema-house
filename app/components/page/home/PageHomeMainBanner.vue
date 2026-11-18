@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { ROUTES } from '~/constants/routes'
+
+const router = useRouter()
+const goToMovie = (id: string) => {
+  router.push(`/${ROUTES.MOVIE}/${id}`)
+}
+</script>
+
 <template>
   <section class="banner flex py-15 pb-23">
     <div class="flex max-w-[425px] flex-col gap-5">
@@ -6,8 +15,8 @@
       </h1>
 
       <p class="text-white-50">
-        Ежедневно пополняемая библиотека <br />
-        с лучшими фильмами и сериалами — в дубляже <br />
+        Ежедневно пополняемая библиотека <br>
+        с лучшими фильмами и сериалами — в дубляже <br>
         и оригинале. Целый месяц бесплатно!
       </p>
 
@@ -20,7 +29,7 @@
       />
     </div>
 
-    <PageHomeMovieCarousel />
+    <PageHomeMovieCarousel @slide-click="goToMovie($event)" />
   </section>
 </template>
 

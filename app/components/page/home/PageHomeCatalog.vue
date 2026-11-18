@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import MoviesSlider from '~/components/ui/MoviesSlider.vue'
+import { ROUTES } from '~/constants/routes'
 import { GENRES_MOCK, MOVIES_MOCK } from '~/mocks/movies'
+
+const router = useRouter()
 
 const moviesByGenre = computed(() => {
   return GENRES_MOCK.map((genre) => {
@@ -10,6 +13,12 @@ const moviesByGenre = computed(() => {
     }
   })
 })
+
+const goToMovie = (id: string) => {
+  router.push(`/${ROUTES.MOVIE}/${id}`)
+}
+
+// TODO: добавить api запрос и заменить моки
 </script>
 
 <template>
@@ -22,7 +31,10 @@ const moviesByGenre = computed(() => {
           {{ movie.genre }}
         </h3>
 
-        <MoviesSlider :slides="movie.movies" />
+        <MoviesSlider
+          :slides="movie.movies"
+          @slide-click="goToMovie($event)"
+        />
       </div>
     </div>
 
@@ -30,8 +42,8 @@ const moviesByGenre = computed(() => {
       label="Посмотреть всё"
       color="white"
       variant="outline"
-      size="xl"
-      class="w-fit px-6 py-4.5 font-semibold"
+      size="2xl"
+      class="w-fit font-semibold"
     />
   </section>
 </template>

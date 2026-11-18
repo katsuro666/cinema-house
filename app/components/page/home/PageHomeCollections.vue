@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import MoviesSlider from '~/components/ui/MoviesSlider.vue'
 import { COLLECTIONS_MOCK } from '~/mocks/movies'
+
+// TODO: добавить api запрос и заменить моки
 </script>
 
 <template>

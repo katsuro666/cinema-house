@@ -9,6 +9,7 @@ import type { SwiperModule } from 'swiper/types'
 
 const props = defineProps<{
   slides: {
+    id: string | number
     title: string
     vote_average?: number
     genre_ids?: number[]
@@ -21,6 +22,8 @@ const props = defineProps<{
   square?: boolean
   modules?: SwiperModule[]
 }>()
+
+const emit = defineEmits(['slide-click'])
 
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = computed(() => (props.modules?.length ? props.modules : [Autoplay]))
@@ -69,11 +72,12 @@ const imageSizeClasses = computed(() => {
       <SwiperSlide v-for="slide in slides" :key="slide.title" class="movie-slide">
         <div class="flex flex-col gap-2.5">
           <img
-            class="relative rounded-xl object-cover"
+            class="cursor-pointer relative rounded-xl object-cover"
             :src="slide.poster_path"
             :alt="slide.title"
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
-          />
+            @click="emit('slide-click', slide.id.toString())"
+          >
 
           <ul class="flex gap-1">
             <li class="text-accent">

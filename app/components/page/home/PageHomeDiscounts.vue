@@ -61,8 +61,8 @@ const discounts = [
           :label="discount.btn.label"
           :color="discount.btn.color"
           :variant="discount.btn.variant"
-          size="xl"
-          class="mt-4 w-fit px-6 py-4.5"
+          size="2xl"
+          class="w-fit mt-4"
         />
       </div>
     </div>

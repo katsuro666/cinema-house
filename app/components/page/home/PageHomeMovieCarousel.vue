@@ -7,6 +7,7 @@ import 'swiper/css/effect-creative'
 
 const movies = [
   {
+    id: 1,
     title: 'Бесстыжие',
     subtitle: '11 сезон. Финал',
     date: '12 декабря',
@@ -14,6 +15,7 @@ const movies = [
     image: '/images/mocks/movie-1.png'
   },
   {
+    id: 2,
     title: 'Остров надежды',
     subtitle: '1 сезон. 8 серий',
     date: '18 декабря',
@@ -21,6 +23,7 @@ const movies = [
     image: '/images/mocks/movie-2.png'
   },
   {
+    id: 3,
     title: 'По следу',
     subtitle: 'Фильм 2026 года',
     date: '21 декабря',
@@ -28,18 +31,23 @@ const movies = [
     image: '/images/mocks/movie-3.png'
   },
   {
+    id: 4,
     title: 'Последний рейс',
     subtitle: '2 сезон. 4 серии',
     date: '27 декабря',
     badge: 'Премьера',
-    image: '/images/mocks/movie-1.png'
+    image: '/images/mocks/movie-4.jpg'
   }
 ]
+
+const emit = defineEmits(['slide-click'])
 
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = [Autoplay, EffectCreative]
 
 const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
+
+// TODO: добавить api запрос и заменить моки
 </script>
 
 <template>
@@ -65,10 +73,11 @@ const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
       <SwiperSlide v-for="movie in movies" :key="movie.title" class="movie-slide">
         <div>
           <img
-            class="h-[490px] w-[380px] rounded-xl object-cover"
+            class="cursor-pointer h-[490px] w-[380px] rounded-xl object-cover"
             :src="movie.image"
             :alt="movie.title"
-          />
+            @click="emit('slide-click', movie.id.toString())"
+          >
 
           <div class="mt-2.5 flex flex-col gap-1.5">
             <span>{{ movie.title }}</span>

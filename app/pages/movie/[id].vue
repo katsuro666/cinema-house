@@ -1,0 +1,8 @@
+<script setup lang="ts">
+const route = useRoute()
+const pageId = route.params.id as string
+</script>
+
+<template>
+  <PageMovie :page-id="pageId" />
+</template>

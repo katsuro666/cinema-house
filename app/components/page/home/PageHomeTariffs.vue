@@ -69,7 +69,7 @@ const getAccessClass = (idx: number, openedSections: number, isIcon?: boolean) =
         </div>
 
         <div class="border-white-50 flex items-center gap-4 border-t pt-7.5">
-          <UButton color="accent" size="xl" class="cursor-pointer px-6 py-4.5 font-medium">
+          <UButton color="accent" size="2xl" class="cursor-pointer font-medium">
             Оформить подписку
           </UButton>
           <span class="text-2xl font-bold text-white">{{ tariff.price }}₽</span>
