@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeasonChangesById200ChangesItemItemsItemValue = {
   episode_id?: number;

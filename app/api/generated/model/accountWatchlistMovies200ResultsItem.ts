@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountWatchlistMovies200ResultsItem = {
   adult?: boolean;

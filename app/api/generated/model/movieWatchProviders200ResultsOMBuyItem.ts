@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieWatchProviders200ResultsOMBuyItem = {
   logo_path?: string;

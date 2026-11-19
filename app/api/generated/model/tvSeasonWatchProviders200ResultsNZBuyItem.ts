@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeasonWatchProviders200ResultsNZBuyItem = {
   logo_path?: string;

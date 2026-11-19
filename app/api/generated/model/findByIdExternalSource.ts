@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type FindByIdExternalSource = typeof FindByIdExternalSource[keyof typeof FindByIdExternalSource];
 

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieWatchProviders200ResultsAEFlatrateItem = {
   logo_path?: string;

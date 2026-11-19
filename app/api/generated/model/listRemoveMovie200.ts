@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ListRemoveMovie200 = {
   status_code?: number;

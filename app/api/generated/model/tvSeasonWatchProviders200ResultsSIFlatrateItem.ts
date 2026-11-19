@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeasonWatchProviders200ResultsSIFlatrateItem = {
   logo_path?: string;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesTranslations200TranslationsItemData = {
   name?: string;

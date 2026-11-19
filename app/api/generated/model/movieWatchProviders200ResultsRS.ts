@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsRSBuyItem } from './movieWatchProviders200ResultsRSBuyItem';
 import type { MovieWatchProviders200ResultsRSFlatrateItem } from './movieWatchProviders200ResultsRSFlatrateItem';
 

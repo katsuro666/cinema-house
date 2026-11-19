@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { PersonCombinedCredits200CastItem } from './personCombinedCredits200CastItem';
 import type { PersonCombinedCredits200CrewItem } from './personCombinedCredits200CrewItem';
 

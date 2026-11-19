@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesWatchProviders200ResultsLTFlatrateItem = {
   logo_path?: string;

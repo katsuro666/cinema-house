@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type FindById200MovieResultsItem = {
   adult?: boolean;

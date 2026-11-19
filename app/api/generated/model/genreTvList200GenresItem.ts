@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type GenreTvList200GenresItem = {
   id?: number;

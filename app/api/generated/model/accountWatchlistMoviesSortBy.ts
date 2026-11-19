@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountWatchlistMoviesSortBy = typeof AccountWatchlistMoviesSortBy[keyof typeof AccountWatchlistMoviesSortBy];
 

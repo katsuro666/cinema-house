@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeriesWatchProviders200ResultsKEFlatrateItem } from './tvSeriesWatchProviders200ResultsKEFlatrateItem';
 
 export type TvSeriesWatchProviders200ResultsKE = {

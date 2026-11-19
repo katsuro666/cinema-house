@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesWatchProviders200ResultsDEBuyItem = {
   logo_path?: string;

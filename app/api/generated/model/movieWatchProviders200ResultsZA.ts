@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsZABuyItem } from './movieWatchProviders200ResultsZABuyItem';
 import type { MovieWatchProviders200ResultsZAFlatrateItem } from './movieWatchProviders200ResultsZAFlatrateItem';
 import type { MovieWatchProviders200ResultsZARentItem } from './movieWatchProviders200ResultsZARentItem';

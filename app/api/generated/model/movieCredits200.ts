@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieCredits200CastItem } from './movieCredits200CastItem';
 import type { MovieCredits200CrewItem } from './movieCredits200CrewItem';
 

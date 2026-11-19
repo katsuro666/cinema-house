@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsKWBuyItem } from './movieWatchProviders200ResultsKWBuyItem';
 import type { MovieWatchProviders200ResultsKWFlatrateItem } from './movieWatchProviders200ResultsKWFlatrateItem';
 

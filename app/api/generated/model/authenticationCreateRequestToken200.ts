@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AuthenticationCreateRequestToken200 = {
   success?: boolean;

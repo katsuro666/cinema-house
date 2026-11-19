@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ListRemoveMovieBody = {
   RAW_BODY: string;

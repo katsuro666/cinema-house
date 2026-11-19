@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { DiscoverTv200ResultsItem } from './discoverTv200ResultsItem';
 
 export type DiscoverTv200 = {

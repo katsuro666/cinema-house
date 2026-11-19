@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AuthenticationCreateGuestSession200 = {
   success?: boolean;

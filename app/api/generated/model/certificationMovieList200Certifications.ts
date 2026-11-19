@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { CertificationMovieList200CertificationsARItem } from './certificationMovieList200CertificationsARItem';
 import type { CertificationMovieList200CertificationsAUItem } from './certificationMovieList200CertificationsAUItem';
 import type { CertificationMovieList200CertificationsBGItem } from './certificationMovieList200CertificationsBGItem';

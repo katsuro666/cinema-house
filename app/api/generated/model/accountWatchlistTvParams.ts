@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountWatchlistTvSortBy } from './accountWatchlistTvSortBy';
 
 export type AccountWatchlistTvParams = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type KeywordMovies200ResultsItem = {
   adult?: boolean;

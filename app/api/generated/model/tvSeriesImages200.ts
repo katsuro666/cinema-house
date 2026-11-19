@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeriesImages200BackdropsItem } from './tvSeriesImages200BackdropsItem';
 import type { TvSeriesImages200LogosItem } from './tvSeriesImages200LogosItem';
 import type { TvSeriesImages200PostersItem } from './tvSeriesImages200PostersItem';

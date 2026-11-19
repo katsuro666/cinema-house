@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { GenreMovieList200GenresItem } from './genreMovieList200GenresItem';
 
 export type GenreMovieList200 = {

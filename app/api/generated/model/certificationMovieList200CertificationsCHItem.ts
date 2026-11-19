@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type CertificationMovieList200CertificationsCHItem = {
   certification?: string;

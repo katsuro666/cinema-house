@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ReviewDetails200AuthorDetails = {
   name?: string;

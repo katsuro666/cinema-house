@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvEpisodeVideosParams = {
   /** filter the list results by language, supports more than one value by using a comma */

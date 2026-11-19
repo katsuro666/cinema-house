@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type CollectionImages200PostersItem = {
   aspect_ratio?: number;

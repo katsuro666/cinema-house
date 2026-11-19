@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvEpisodeDetails200GuestStarsItem = {
   character?: string;

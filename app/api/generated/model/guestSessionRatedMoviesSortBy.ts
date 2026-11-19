@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type GuestSessionRatedMoviesSortBy = typeof GuestSessionRatedMoviesSortBy[keyof typeof GuestSessionRatedMoviesSortBy];
 

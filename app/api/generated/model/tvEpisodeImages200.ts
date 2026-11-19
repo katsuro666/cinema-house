@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvEpisodeImages200StillsItem } from './tvEpisodeImages200StillsItem';
 
 export type TvEpisodeImages200 = {

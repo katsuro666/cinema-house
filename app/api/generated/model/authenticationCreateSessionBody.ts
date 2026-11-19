@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AuthenticationCreateSessionBody = {
   RAW_BODY: string;

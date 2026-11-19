@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieNowPlayingList200Dates } from './movieNowPlayingList200Dates';
 import type { MovieNowPlayingList200ResultsItem } from './movieNowPlayingList200ResultsItem';
 

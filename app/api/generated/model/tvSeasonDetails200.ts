@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeasonDetails200EpisodesItem } from './tvSeasonDetails200EpisodesItem';
 import type { TvSeasonDetails200NetworksItem } from './tvSeasonDetails200NetworksItem';
 

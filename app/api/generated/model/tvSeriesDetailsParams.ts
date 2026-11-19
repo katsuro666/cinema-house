@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesDetailsParams = {
   /** comma separated list of endpoints within this namespace, 20 items max */

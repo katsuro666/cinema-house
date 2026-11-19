@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieChanges200ChangesItem } from './movieChanges200ChangesItem';
 
 export type MovieChanges200 = {

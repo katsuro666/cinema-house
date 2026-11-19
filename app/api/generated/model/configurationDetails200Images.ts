@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ConfigurationDetails200Images = {
   base_url?: string;

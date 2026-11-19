@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type CertificationsTvList200CertificationsPTItem = {
   certification?: string;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { KeywordMovies200ResultsItem } from './keywordMovies200ResultsItem';
 
 export type KeywordMovies200 = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type DiscoverMovieSortBy = typeof DiscoverMovieSortBy[keyof typeof DiscoverMovieSortBy];
 

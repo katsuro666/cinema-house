@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type PersonMovieCredits200CastItem = {
   adult?: boolean;

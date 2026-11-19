@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type WatchProvidersMovieList200ResultsItemDisplayPriorities = {
   CA?: number;

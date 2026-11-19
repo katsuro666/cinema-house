@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type WatchProvidersAvailableRegions200ResultsItem = {
   iso_3166_1?: string;

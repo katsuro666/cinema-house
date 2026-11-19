@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsUGBuyItem } from './movieWatchProviders200ResultsUGBuyItem';
 import type { MovieWatchProviders200ResultsUGRentItem } from './movieWatchProviders200ResultsUGRentItem';
 

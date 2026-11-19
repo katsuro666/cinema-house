@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { CreditDetails200MediaSeasonsItem } from './creditDetails200MediaSeasonsItem';
 
 export type CreditDetails200Media = {

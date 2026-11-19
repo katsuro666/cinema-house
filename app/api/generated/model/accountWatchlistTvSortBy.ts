@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountWatchlistTvSortBy = typeof AccountWatchlistTvSortBy[keyof typeof AccountWatchlistTvSortBy];
 

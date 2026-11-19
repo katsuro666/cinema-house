@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type CollectionTranslations200TranslationsItemData = {
   title?: string;

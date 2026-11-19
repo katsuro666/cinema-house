@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type GuestSessionRatedTvEpisodes200ResultsItem = {
   air_date?: string;

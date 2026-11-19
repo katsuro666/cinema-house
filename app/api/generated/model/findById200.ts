@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { FindById200MovieResultsItem } from './findById200MovieResultsItem';
 
 export type FindById200 = {

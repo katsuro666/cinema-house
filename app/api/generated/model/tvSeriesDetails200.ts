@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeriesDetails200CreatedByItem } from './tvSeriesDetails200CreatedByItem';
 import type { TvSeriesDetails200GenresItem } from './tvSeriesDetails200GenresItem';
 import type { TvSeriesDetails200LastEpisodeToAir } from './tvSeriesDetails200LastEpisodeToAir';

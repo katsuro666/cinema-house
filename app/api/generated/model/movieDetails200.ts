@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieDetails200BelongsToCollection } from './movieDetails200BelongsToCollection';
 import type { MovieDetails200GenresItem } from './movieDetails200GenresItem';
 import type { MovieDetails200ProductionCompaniesItem } from './movieDetails200ProductionCompaniesItem';

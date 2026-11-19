@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsJPBuyItem } from './movieWatchProviders200ResultsJPBuyItem';
 import type { MovieWatchProviders200ResultsJPFlatrateItem } from './movieWatchProviders200ResultsJPFlatrateItem';
 import type { MovieWatchProviders200ResultsJPRentItem } from './movieWatchProviders200ResultsJPRentItem';

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeasonVideos200ResultsItem = {
   iso_639_1?: string;

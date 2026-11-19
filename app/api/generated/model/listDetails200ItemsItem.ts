@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ListDetails200ItemsItem = {
   adult?: boolean;

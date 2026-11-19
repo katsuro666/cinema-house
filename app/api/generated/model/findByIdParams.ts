@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { FindByIdExternalSource } from './findByIdExternalSource';
 
 export type FindByIdParams = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type DiscoverTvSortBy = typeof DiscoverTvSortBy[keyof typeof DiscoverTvSortBy];
 

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesLatestId200SeasonsItem = {
   air_date?: unknown;

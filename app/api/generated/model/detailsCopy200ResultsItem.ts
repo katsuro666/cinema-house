@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type DetailsCopy200ResultsItem = {
   name?: string;

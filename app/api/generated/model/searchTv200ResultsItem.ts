@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type SearchTv200ResultsItem = {
   adult?: boolean;

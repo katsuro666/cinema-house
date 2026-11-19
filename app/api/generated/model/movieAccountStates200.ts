@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieAccountStates200Rated } from './movieAccountStates200Rated';
 
 export type MovieAccountStates200 = {

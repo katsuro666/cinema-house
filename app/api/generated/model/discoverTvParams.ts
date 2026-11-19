@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { DiscoverTvSortBy } from './discoverTvSortBy';
 
 export type DiscoverTvParams = {

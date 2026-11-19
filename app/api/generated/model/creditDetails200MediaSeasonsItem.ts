@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type CreditDetails200MediaSeasonsItem = {
   air_date?: string;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { SearchMulti200ResultsItem } from './searchMulti200ResultsItem';
 
 export type SearchMulti200 = {

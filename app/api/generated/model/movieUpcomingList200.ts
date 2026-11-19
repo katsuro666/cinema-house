@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieUpcomingList200Dates } from './movieUpcomingList200Dates';
 import type { MovieUpcomingList200ResultsItem } from './movieUpcomingList200ResultsItem';
 

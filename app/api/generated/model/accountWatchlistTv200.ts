@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountWatchlistTv200ResultsItem } from './accountWatchlistTv200ResultsItem';
 
 export type AccountWatchlistTv200 = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export * from './accountAddFavorite200';
 export * from './accountAddFavoriteBody';

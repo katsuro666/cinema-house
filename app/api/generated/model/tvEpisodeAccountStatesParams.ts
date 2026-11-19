@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvEpisodeAccountStatesParams = {
   session_id?: string;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type PersonTaggedImages200ResultsItemMedia = {
   adult?: boolean;

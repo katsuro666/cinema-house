@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieDetails200SpokenLanguagesItem = {
   english_name?: string;

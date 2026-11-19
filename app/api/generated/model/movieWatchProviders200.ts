@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200Results } from './movieWatchProviders200Results';
 
 export type MovieWatchProviders200 = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountWatchlistTv200ResultsItem = {
   adult?: boolean;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountGetFavoritesSortBy } from './accountGetFavoritesSortBy';
 
 export type AccountGetFavoritesParams = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountDetails200AvatarGravatar } from './accountDetails200AvatarGravatar';
 import type { AccountDetails200AvatarTmdb } from './accountDetails200AvatarTmdb';
 

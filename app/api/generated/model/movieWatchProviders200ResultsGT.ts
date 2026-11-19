@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsGTFlatrateItem } from './movieWatchProviders200ResultsGTFlatrateItem';
 
 export type MovieWatchProviders200ResultsGT = {

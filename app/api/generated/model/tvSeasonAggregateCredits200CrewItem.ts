@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeasonAggregateCredits200CrewItemJobsItem } from './tvSeasonAggregateCredits200CrewItemJobsItem';
 
 export type TvSeasonAggregateCredits200CrewItem = {

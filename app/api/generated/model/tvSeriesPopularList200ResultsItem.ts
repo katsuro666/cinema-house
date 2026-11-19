@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesPopularList200ResultsItem = {
   backdrop_path?: string;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TrendingPeople200ResultsItemKnownForItem = {
   adult?: boolean;

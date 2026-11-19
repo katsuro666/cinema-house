@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountRatedMoviesSortBy } from './accountRatedMoviesSortBy';
 
 export type AccountRatedMoviesParams = {

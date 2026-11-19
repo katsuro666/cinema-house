@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { SearchKeyword200ResultsItem } from './searchKeyword200ResultsItem';
 
 export type SearchKeyword200 = {

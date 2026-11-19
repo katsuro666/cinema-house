@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesContentRatings200ResultsItem = {
   descriptors?: unknown[];

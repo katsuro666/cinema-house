@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ConfigurationCountries200Item = {
   iso_3166_1?: string;

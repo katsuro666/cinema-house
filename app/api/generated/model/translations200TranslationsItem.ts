@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { Translations200TranslationsItemData } from './translations200TranslationsItemData';
 
 export type Translations200TranslationsItem = {

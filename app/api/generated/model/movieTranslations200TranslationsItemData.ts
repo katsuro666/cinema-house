@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieTranslations200TranslationsItemData = {
   homepage?: string;

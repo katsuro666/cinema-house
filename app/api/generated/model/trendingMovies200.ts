@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TrendingMovies200ResultsItem } from './trendingMovies200ResultsItem';
 
 export type TrendingMovies200 = {

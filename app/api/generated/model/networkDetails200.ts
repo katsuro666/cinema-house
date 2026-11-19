@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type NetworkDetails200 = {
   headquarters?: string;

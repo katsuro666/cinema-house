@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { PersonTaggedImages200ResultsItemMedia } from './personTaggedImages200ResultsItemMedia';
 
 export type PersonTaggedImages200ResultsItem = {

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AlternativeNamesCopy200LogosItem = {
   aspect_ratio?: number;

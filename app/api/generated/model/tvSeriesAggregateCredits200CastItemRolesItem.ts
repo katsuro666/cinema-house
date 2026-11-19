@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesAggregateCredits200CastItemRolesItem = {
   credit_id?: string;

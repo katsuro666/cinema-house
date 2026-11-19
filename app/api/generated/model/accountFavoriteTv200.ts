@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountFavoriteTv200ResultsItem } from './accountFavoriteTv200ResultsItem';
 
 export type AccountFavoriteTv200 = {

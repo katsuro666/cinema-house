@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvEpisodeChangesById200ChangesItemItemsItem = {
   id?: string;

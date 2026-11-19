@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { MovieWatchProviders200ResultsMDBuyItem } from './movieWatchProviders200ResultsMDBuyItem';
 import type { MovieWatchProviders200ResultsMDFlatrateItem } from './movieWatchProviders200ResultsMDFlatrateItem';
 

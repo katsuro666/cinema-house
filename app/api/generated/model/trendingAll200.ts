@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TrendingAll200ResultsItem } from './trendingAll200ResultsItem';
 
 export type TrendingAll200 = {

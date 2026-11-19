@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeriesChanges200ChangesItemItemsItemOriginalValue } from './tvSeriesChanges200ChangesItemItemsItemOriginalValue';
 import type { TvSeriesChanges200ChangesItemItemsItemValue } from './tvSeriesChanges200ChangesItemItemsItemValue';
 

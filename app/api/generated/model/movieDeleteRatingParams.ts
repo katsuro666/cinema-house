@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieDeleteRatingParams = {
   guest_session_id?: string;

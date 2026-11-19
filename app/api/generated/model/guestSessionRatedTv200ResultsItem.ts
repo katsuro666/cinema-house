@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type GuestSessionRatedTv200ResultsItem = {
   adult?: boolean;

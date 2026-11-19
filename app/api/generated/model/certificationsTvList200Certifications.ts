@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { CertificationsTvList200CertificationsARItem } from './certificationsTvList200CertificationsARItem';
 import type { CertificationsTvList200CertificationsAUItem } from './certificationsTvList200CertificationsAUItem';
 import type { CertificationsTvList200CertificationsBGItem } from './certificationsTvList200CertificationsBGItem';

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { GuestSessionRatedTvEpisodesSortBy } from './guestSessionRatedTvEpisodesSortBy';
 
 export type GuestSessionRatedTvEpisodesParams = {

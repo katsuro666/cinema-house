@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type PersonImages200ProfilesItem = {
   aspect_ratio?: number;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountRatedTvEpisodes200ResultsItem = {
   air_date?: string;

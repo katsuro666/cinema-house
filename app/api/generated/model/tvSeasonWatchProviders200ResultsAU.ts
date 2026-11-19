@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeasonWatchProviders200ResultsAUBuyItem } from './tvSeasonWatchProviders200ResultsAUBuyItem';
 import type { TvSeasonWatchProviders200ResultsAUFlatrateItem } from './tvSeasonWatchProviders200ResultsAUFlatrateItem';
 

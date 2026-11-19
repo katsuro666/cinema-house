@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AccountDetails200Avatar } from './accountDetails200Avatar';
 
 export type AccountDetails200 = {

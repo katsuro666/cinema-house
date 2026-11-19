@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesEpisodeGroups200ResultsItemNetwork = {
   id?: number;

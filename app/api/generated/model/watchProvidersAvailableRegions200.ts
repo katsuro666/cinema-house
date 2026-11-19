@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { WatchProvidersAvailableRegions200ResultsItem } from './watchProvidersAvailableRegions200ResultsItem';
 
 export type WatchProvidersAvailableRegions200 = {

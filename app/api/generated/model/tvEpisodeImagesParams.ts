@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvEpisodeImagesParams = {
   /** specify a comma separated list of ISO-639-1 values to query, for example: `en-US,null` */

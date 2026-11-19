@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type ConfigurationLanguages200Item = {
   iso_639_1?: string;

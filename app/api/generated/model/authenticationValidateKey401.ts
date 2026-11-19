@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AuthenticationValidateKey401 = {
   status_code?: number;

@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { ListsCopy200ResultsItem } from './listsCopy200ResultsItem';
 
 export type ListsCopy200 = {

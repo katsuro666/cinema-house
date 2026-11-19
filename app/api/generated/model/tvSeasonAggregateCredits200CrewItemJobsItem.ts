@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeasonAggregateCredits200CrewItemJobsItem = {
   credit_id?: string;

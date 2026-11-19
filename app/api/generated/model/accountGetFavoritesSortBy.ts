@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type AccountGetFavoritesSortBy = typeof AccountGetFavoritesSortBy[keyof typeof AccountGetFavoritesSortBy];
 

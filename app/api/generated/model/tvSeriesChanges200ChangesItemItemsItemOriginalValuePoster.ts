@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type TvSeriesChanges200ChangesItemItemsItemOriginalValuePoster = {
   file_path?: string;

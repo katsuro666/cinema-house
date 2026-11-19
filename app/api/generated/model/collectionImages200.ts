@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { CollectionImages200BackdropsItem } from './collectionImages200BackdropsItem';
 import type { CollectionImages200PostersItem } from './collectionImages200PostersItem';
 

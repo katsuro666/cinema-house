@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 
 export type MovieImages200BackdropsItem = {
   aspect_ratio?: number;

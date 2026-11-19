@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { AlternativeNamesCopy200LogosItem } from './alternativeNamesCopy200LogosItem';
 
 export type AlternativeNamesCopy200 = {

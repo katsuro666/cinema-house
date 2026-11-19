@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvEpisodeGroupDetails200GroupsItem } from './tvEpisodeGroupDetails200GroupsItem';
 import type { TvEpisodeGroupDetails200Network } from './tvEpisodeGroupDetails200Network';
 

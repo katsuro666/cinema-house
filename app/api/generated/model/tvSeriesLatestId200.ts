@@ -1,6 +1,4 @@
-/**
- * @ts-nocheck
- */
+// @ts-nocheck
 import type { TvSeriesLatestId200LastEpisodeToAir } from './tvSeriesLatestId200LastEpisodeToAir';
 import type { TvSeriesLatestId200SeasonsItem } from './tvSeriesLatestId200SeasonsItem';
 
