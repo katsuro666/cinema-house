@@ -4,21 +4,13 @@ import { ROUTES } from '~/constants/routes'
 import { GENRES_MOCK, MOVIES_MOCK } from '~/mocks/movies'
 
 const router = useRouter()
+const { genres } = storeToRefs(useGenresStore())
 
-const moviesByGenre = computed(() => {
-  return GENRES_MOCK.map((genre) => {
-    return {
-      genre: genre.name,
-      movies: MOVIES_MOCK.filter((movie) => movie.genre_ids.includes(genre.id))
-    }
-  })
-})
+const { moviesByGenre } = useMoviesByGenres(computed(() => genres.value.slice(0, 5)))
 
 const goToMovie = (id: string) => {
   router.push(`/${ROUTES.MOVIE}/${id}`)
 }
-
-// TODO: добавить api запрос и заменить моки
 </script>
 
 <template>
@@ -26,7 +18,7 @@ const goToMovie = (id: string) => {
     <h2 class="text-[32px] font-bold">Каталог фильмов и сериалов</h2>
 
     <div class="flex flex-col gap-12.5">
-      <div v-for="movie in moviesByGenre" :key="movie.genre" class="flex flex-col gap-5">
+      <div v-for="movie in moviesByGenre" :key="movie.genreId" class="flex flex-col gap-5">
         <h3 class="text-2xl font-semibold">
           {{ movie.genre }}
         </h3>

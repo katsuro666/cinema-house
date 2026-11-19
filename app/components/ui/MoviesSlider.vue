@@ -8,13 +8,13 @@ import { GENRES_MOCK } from '~/mocks/movies'
 import type { SwiperModule } from 'swiper/types'
 
 const props = defineProps<{
-  slides: {
-    id: string | number
+  slides: Partial<{
+    id: number
     title: string
-    vote_average?: number
-    genre_ids?: number[]
+    vote_average: number
+    genre_ids: number[]
     poster_path: string
-  }[]
+  }>[]
   slidesPerView?: number
   looped?: boolean
   titleInside?: boolean
@@ -24,6 +24,8 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits(['slide-click'])
+
+const genresStore = useGenresStore()
 
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = computed(() => (props.modules?.length ? props.modules : [Autoplay]))
@@ -41,23 +43,22 @@ const setSwiper = (instance: SwiperInstance) => {
   updateNavState(instance)
 }
 
-// TODO: вынести жанры в стор
-const getMovieGenres = (genres: number[]) => {
-  return GENRES_MOCK.filter((genre) => genres.includes(genre.id))
-    .map((genre) => genre.name)
-    .join(', ')
-}
-
 const imageSizeClasses = computed(() => {
   return props.square ? 'w-[335px] h-[335px]' : 'w-[335px] h-[225px]'
 })
+
+const imgClick = (id?: number) => {
+  if (id) emit('slide-click', id.toString())
+}
+
+const slidesPerView = computed(() => props.slidesPerView || 4)
 </script>
 
 <template>
   <div class="relative">
     <Swiper
       :modules="swiperModules"
-      :slides-per-view="props.slidesPerView || 4"
+      :slides-per-view="slidesPerView"
       :space-between="20"
       :loop="looped"
       :speed="700"
@@ -69,28 +70,29 @@ const imageSizeClasses = computed(() => {
       @slide-change="updateNavState"
       @slides-length-change="updateNavState"
     >
-      <SwiperSlide v-for="slide in slides" :key="slide.title" class="movie-slide">
+      <SwiperSlide v-for="(slide, idx) in slides" :key="slide.id" class="movie-slide">
         <div class="flex flex-col gap-2.5">
           <img
             class="relative cursor-pointer rounded-xl object-cover"
-            :src="slide.poster_path"
+            :src="getImageUrl(slide.poster_path)"
             :alt="slide.title"
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
-            @click="emit('slide-click', slide.id.toString())"
+            :loading="idx < slidesPerView ? 'eager' : 'lazy'"
+            @click="imgClick(slide.id)"
           />
 
           <ul class="flex gap-1">
-            <li class="text-accent">
-              {{ slide.vote_average }}
+            <li v-if="slide.vote_average" class="text-accent">
+              {{ Number(slide.vote_average).toFixed(1) }}
             </li>
 
-            <li v-if="slide.genre_ids" class="text-white-50">
-              {{ getMovieGenres(slide.genre_ids) }}
+            <li v-if="slide.genre_ids" class="text-white-50 truncate">
+              {{ genresStore.getGenresNames(slide.genre_ids) }}
             </li>
           </ul>
 
           <span
-            class="text-xl font-semibold"
+            class="truncate text-xl font-semibold"
             :class="{ 'absolute bottom-[25px] left-[25px] max-w-[50%]': titleInside }"
           >
             {{ slide.title }}

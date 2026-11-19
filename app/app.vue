@@ -17,6 +17,9 @@ useSeoMeta({
   ogDescription: description,
   twitterCard: 'summary'
 })
+
+const genresStore = useGenresStore()
+await callOnce('genres', () => genresStore.fetchGenres())
 </script>
 
 <template>
