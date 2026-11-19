@@ -1,0 +1,5 @@
+export enum AVAILABLE_LANGUAGES {
+  RU = 'ru-RU'
+}
+
+export const DEFAULT_LANGUAGE = AVAILABLE_LANGUAGES.RU

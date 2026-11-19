@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   pages: true,
 
   devtools: {
-    enabled: true
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
   },
 
   css: ['~/assets/css/main.css'],
