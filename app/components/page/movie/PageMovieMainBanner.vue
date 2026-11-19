@@ -6,13 +6,13 @@ const props = defineProps<{
 }>()
 
 const movieGenres = computed(() => {
-  return props.movie.genres.map(genre => genre.name).join(', ')
+  return props.movie.genres.map((genre) => genre.name).join(', ')
 })
 </script>
 
 <template>
   <section class="relative z-5 min-h-[700px] pt-80 pb-11">
-    <div class="flex flex-col gap-4 relative z-5">
+    <div class="relative z-5 flex flex-col gap-4">
       <h1 class="text-7xl font-extrabold">
         {{ movie.title }}
       </h1>
@@ -38,12 +38,7 @@ const movieGenres = computed(() => {
           }"
         />
 
-        <UButton
-          label="Трейлер"
-          color="white"
-          variant="outline"
-          size="2xl"
-        />
+        <UButton label="Трейлер" color="white" variant="outline" size="2xl" />
 
         <UButton
           color="white"
@@ -73,12 +68,12 @@ const movieGenres = computed(() => {
       src="/images/mocks/movie-4.jpg"
       alt="Фоновое изображение"
       class="absolute inset-0 h-full w-full object-cover"
-    >
+    />
 
     <img
       src="/images/blurred-bg-horizontal.png"
       alt="Фоновое изображение"
       class="absolute -bottom-45 left-0 h-100 w-full"
-    >
+    />
   </div>
 </template>

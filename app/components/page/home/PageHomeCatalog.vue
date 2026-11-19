@@ -31,10 +31,7 @@ const goToMovie = (id: string) => {
           {{ movie.genre }}
         </h3>
 
-        <MoviesSlider
-          :slides="movie.movies"
-          @slide-click="goToMovie($event)"
-        />
+        <MoviesSlider :slides="movie.movies" @slide-click="goToMovie($event)" />
       </div>
     </div>
 

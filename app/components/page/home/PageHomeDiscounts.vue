@@ -62,7 +62,7 @@ const discounts = [
           :color="discount.btn.color"
           :variant="discount.btn.variant"
           size="2xl"
-          class="w-fit mt-4"
+          class="mt-4 w-fit"
         />
       </div>
     </div>

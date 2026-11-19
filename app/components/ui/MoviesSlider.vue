@@ -72,12 +72,12 @@ const imageSizeClasses = computed(() => {
       <SwiperSlide v-for="slide in slides" :key="slide.title" class="movie-slide">
         <div class="flex flex-col gap-2.5">
           <img
-            class="cursor-pointer relative rounded-xl object-cover"
+            class="relative cursor-pointer rounded-xl object-cover"
             :src="slide.poster_path"
             :alt="slide.title"
             :class="[{ 'opacity-50': tintedImage }, imageSizeClasses]"
             @click="emit('slide-click', slide.id.toString())"
-          >
+          />
 
           <ul class="flex gap-1">
             <li class="text-accent">

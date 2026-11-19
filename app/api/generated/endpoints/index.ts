@@ -1,1 +1,1 @@
-export * from './default/default'
+export * from './default/default';

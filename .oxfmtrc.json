@@ -3,5 +3,6 @@
   "singleQuote": true,
   "sortTailwindcss": true,
   "sortPackageJson": true,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "ignorePatterns": ["app/api/generated/**"]
 }

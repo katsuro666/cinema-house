@@ -3,9 +3,11 @@ pre-commit:
   commands:
     lint:
       priority: 1
+      exclude: 'app/api/generated/**'
       run: pnpm lint:fix {staged_files}
       stage_fixed: true
     format:
       priority: 2
+      exclude: 'app/api/generated/**'
       run: pnpm fmt {staged_files}
       stage_fixed: true

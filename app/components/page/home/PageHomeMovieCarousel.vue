@@ -73,11 +73,11 @@ const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
       <SwiperSlide v-for="movie in movies" :key="movie.title" class="movie-slide">
         <div>
           <img
-            class="cursor-pointer h-[490px] w-[380px] rounded-xl object-cover"
+            class="h-[490px] w-[380px] cursor-pointer rounded-xl object-cover"
             :src="movie.image"
             :alt="movie.title"
             @click="emit('slide-click', movie.id.toString())"
-          >
+          />
 
           <div class="mt-2.5 flex flex-col gap-1.5">
             <span>{{ movie.title }}</span>

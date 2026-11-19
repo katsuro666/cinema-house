@@ -11,6 +11,7 @@ export default defineConfig({
       schemas: 'app/api/generated/model',
       client: 'fetch',
       override: {
+        header: () => ['@ts-nocheck'],
         mutator: {
           path: './app/api/mutator.ts',
           name: 'tmdbFetcher'

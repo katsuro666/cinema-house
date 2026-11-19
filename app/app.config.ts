@@ -15,7 +15,7 @@ export default defineAppConfig({
       variants: {
         color: {
           'white-50': 'hover:!text-white',
-          'accent': '!text-white'
+          accent: '!text-white'
         },
         size: {
           '2xl': 'py-4.5 px-6'
