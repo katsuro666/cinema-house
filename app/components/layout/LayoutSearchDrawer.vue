@@ -5,15 +5,8 @@ import {
   searchMulti
 } from '~/api/generated/endpoints'
 import { DEFAULT_LANGUAGE } from '~/constants/localization'
-import { ROUTES } from '~/constants/routes'
 import { watchDebounced } from '@vueuse/core'
-import type {
-  SearchMulti200ResultsItem,
-  TrendingAll200ResultsItem,
-  TrendingPeople200ResultsItem
-} from '~/api/generated/model'
-import { isMovie, isTVShow } from '~/utils/media'
-import { isActor, isPerson } from '~/utils/person'
+import type { SearchMulti200ResultsItem, TrendingPeople200ResultsItem } from '~/api/generated/model'
 
 enum SEARCH_STATUSES {
   IDLE = 'idle',
@@ -61,10 +54,6 @@ const displayedMedia = computed(() =>
 const displayedPeople = computed(() =>
   isQueryActive.value ? searchedPeople.value : trendingPeople.value
 )
-
-const getMediaRoute = (item: TrendingAll200ResultsItem | SearchMulti200ResultsItem) => {
-  return isTVShow(item.media_type) ? `${ROUTES.TV}/${item.id}` : `${ROUTES.MOVIE}/${item.id}`
-}
 
 const getPersonRole = (department?: string) => {
   if (!department) return 'Неизвестно'
