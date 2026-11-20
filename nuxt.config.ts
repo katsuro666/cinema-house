@@ -45,7 +45,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      tmdbToken: import.meta.env.NUXT_PUBLIC_TMDB_TOKEN
+      tmdbToken: import.meta.env.NUXT_TMDB_TOKEN
     }
   }
 })
