@@ -4,12 +4,11 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/effect-creative'
-import { GENRES_MOCK } from '~/mocks/movies'
 import type { SwiperModule } from 'swiper/types'
 
 const props = defineProps<{
   slides: Partial<{
-    id: number
+    id: number | string
     title: string
     vote_average: number
     genre_ids: number[]
@@ -47,7 +46,7 @@ const imageSizeClasses = computed(() => {
   return props.square ? 'w-[335px] h-[335px]' : 'w-[335px] h-[225px]'
 })
 
-const imgClick = (id?: number) => {
+const imgClick = (id?: number | string) => {
   if (id) emit('slide-click', id.toString())
 }
 
@@ -93,7 +92,10 @@ const slidesPerView = computed(() => props.slidesPerView || 4)
 
           <span
             class="truncate text-xl font-semibold"
-            :class="{ 'absolute bottom-[25px] left-[25px] max-w-[50%]': titleInside }"
+            :class="{
+              'absolute bottom-[25px] left-[25px] max-w-[50%] text-clip whitespace-normal':
+                titleInside
+            }"
           >
             {{ slide.title }}
           </span>

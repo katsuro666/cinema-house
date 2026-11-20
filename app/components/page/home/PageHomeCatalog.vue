@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MoviesSlider from '~/components/ui/MoviesSlider.vue'
 import { ROUTES } from '~/constants/routes'
-import { GENRES_MOCK, MOVIES_MOCK } from '~/mocks/movies'
 
 const router = useRouter()
 const { genres } = storeToRefs(useGenresStore())
