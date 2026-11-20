@@ -3,11 +3,14 @@ pre-commit:
   commands:
     lint:
       priority: 1
+      glob: '*.{js,ts,vue,mjs,cjs}'
       exclude: 'app/api/generated/**'
       run: pnpm lint:fix {staged_files}
       stage_fixed: true
+
     format:
       priority: 2
+      glob: '*.{js,ts,vue,mjs,cjs,json,css,scss,md,yaml,yml}'
       exclude: 'app/api/generated/**'
       run: pnpm fmt {staged_files}
       stage_fixed: true
