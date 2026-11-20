@@ -14,3 +14,7 @@ pre-commit:
       exclude: 'app/api/generated/**'
       run: pnpm fmt {staged_files}
       stage_fixed: true
+
+    typecheck:
+      priority: 3
+      run: pnpm typecheck

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { MOVIE_MOCK } from '~/mocks/movies'
-
 defineProps<{
   pageId: string
 }>()
@@ -9,5 +7,5 @@ defineProps<{
 </script>
 
 <template>
-  <PageMovieMainBanner :movie="MOVIE_MOCK" />
+  <!-- <PageMovieMainBanner :movie="" /> -->
 </template>

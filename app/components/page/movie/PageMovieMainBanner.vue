@@ -64,11 +64,10 @@ const movieGenres = computed(() => {
   </section>
 
   <div class="pointer-events-none absolute top-0 left-0 z-1 h-[700px] w-full">
-    <img
-      src="/images/mocks/movie-4.jpg"
+    <!-- <img
       alt="Фоновое изображение"
       class="absolute inset-0 h-full w-full object-cover"
-    />
+    /> -->
 
     <img
       src="/images/blurred-bg-horizontal.png"
