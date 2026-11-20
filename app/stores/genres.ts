@@ -1,7 +1,7 @@
 import { sentenceCase } from 'change-case'
 import { defineStore } from 'pinia'
 import { genreMovieList } from '~/api/generated/endpoints'
-import type { GenreMovieList200GenresItem } from '~/api/generated/model'
+import type { GenreMovieList200GenresItem, MovieDetails200GenresItem } from '~/api/generated/model'
 import { DEFAULT_LANGUAGE } from '~/constants/localization'
 
 export const useGenresStore = defineStore('genres-store', () => {
@@ -21,12 +21,16 @@ export const useGenresStore = defineStore('genres-store', () => {
     return new Map(genres.value.map(({ id, name }) => [id, sentenceCase(name!)]))
   })
 
-  const getGenreName = (id: number) => {
+  const getGenreName = (id?: number) => {
     return genresMap.value.get(id)
   }
 
   const getGenresNames = (ids: number[]) => {
     return ids.map(getGenreName).join(', ')
+  }
+
+  const getGenresNamesFromArr = (arr: MovieDetails200GenresItem[]) => {
+    return arr.map((genre) => getGenreName(genre.id)).join(', ')
   }
 
   return {
@@ -35,6 +39,7 @@ export const useGenresStore = defineStore('genres-store', () => {
     fetchGenres,
     genresMap,
     getGenreName,
-    getGenresNames
+    getGenresNames,
+    getGenresNamesFromArr
   }
 })

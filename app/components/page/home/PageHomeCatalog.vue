@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import MoviesSlider from '~/components/ui/MoviesSlider.vue'
 import { ROUTES } from '~/constants/routes'
 
 const router = useRouter()
@@ -22,7 +21,7 @@ const goToMovie = (id: string) => {
           {{ movie.genre }}
         </h3>
 
-        <MoviesSlider :slides="movie.movies" @slide-click="goToMovie($event)" />
+        <UiMoviesSlider :slides="movie.movies" @slide-click="goToMovie($event)" />
       </div>
     </div>
 

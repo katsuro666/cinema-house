@@ -94,9 +94,7 @@ const socialMediaLinks = [
     }"
   >
     <template #left>
-      <span class="text-[32px] font-extrabold uppercase">
-        Кино<span class="text-accent">Дом</span>
-      </span>
+      <UiAppLogo />
 
       <span class="text-white/20"> © КиноДом {{ new Date().getFullYear() }} </span>
     </template>

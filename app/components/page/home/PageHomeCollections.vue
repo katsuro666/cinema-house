@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import MoviesSlider from '~/components/ui/MoviesSlider.vue'
-
 const THEMATIC_COLLECTIONS = [
   {
     id: 'comics-lovers',
@@ -83,7 +81,7 @@ const goToCollection = (id: string) => {
   <section class="mt-30 flex flex-col gap-15">
     <h2 class="text-[32px] font-bold">Тематические подборки</h2>
 
-    <MoviesSlider
+    <UiMoviesSlider
       :slides="THEMATIC_COLLECTIONS"
       title-inside
       tinted-image

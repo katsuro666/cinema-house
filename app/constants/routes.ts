@@ -1,3 +1,4 @@
 export enum ROUTES {
-  MOVIE = 'movie'
+  MOVIE = 'movie',
+  TV = 'tv'
 }

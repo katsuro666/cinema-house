@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Movie } from '~/types/movie'
+import type { MovieDetails200 } from '~/api/generated/model'
 
 const props = defineProps<{
-  movie: Movie
+  movie: MovieDetails200
 }>()
 
-const movieGenres = computed(() => {
-  return props.movie.genres.map((genre) => genre.name).join(', ')
-})
+const genresStore = useGenresStore()
+
+const movieGenres = computed(() => genresStore.getGenresNamesFromArr(props.movie.genres ?? []))
 </script>
 
 <template>
