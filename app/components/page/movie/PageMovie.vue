@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { movieDetails } from '~/api/generated/endpoints'
+import { movieCredits, movieDetails } from '~/api/generated/endpoints'
 import { DEFAULT_LANGUAGE } from '~/constants/localization'
 
 const props = defineProps<{
@@ -12,6 +12,10 @@ const isTv = computed(() => props.tv)
 const { data: movie } = await useAsyncData(`movie-${props.movieId}`, async () => {
   return (await movieDetails(props.movieId, { language: DEFAULT_LANGUAGE })).data
 })
+
+const { data: credits } = await useAsyncData(`movie-credits-${props.movieId}`, async () => {
+  return (await movieCredits(props.movieId, { language: DEFAULT_LANGUAGE })).data
+})
 </script>
 
 <template>
@@ -23,6 +27,6 @@ const { data: movie } = await useAsyncData(`movie-${props.movieId}`, async () =>
       <span>Рецензии</span>
     </div>
 
-    <div class="min-w-1/4">мета информация</div>
+    <PageMovieMeta class="min-w-1/4 shrink-0" :movie="movie" :credits="credits" />
   </div>
 </template>
