@@ -12,15 +12,15 @@ export const isPremiere = (date?: string | null) => {
   return diff >= 0 && diff <= TWO_WEEKS_MS
 }
 
-export const formattedReleaseDate = (date?: string | null) => {
+export const formattedReleaseDate = (date?: string | null, withYear = false) => {
   if (!date) return ''
 
   return new Intl.DateTimeFormat('ru-RU', {
     day: 'numeric',
-    month: 'long'
+    month: 'long',
+    ...(withYear && { year: 'numeric' })
   }).format(new Date(date))
 }
-
 export const formattedReleaseYear = (date?: string | null) => {
   if (!date) return ''
 
