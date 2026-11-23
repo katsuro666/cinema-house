@@ -16,4 +16,13 @@ const { data: movie } = await useAsyncData(`movie-${props.movieId}`, async () =>
 
 <template>
   <PageMovieMainBanner :movie="movie" />
+  <div class="flex justify-between gap-25">
+    <div class="flex flex-col gap-20">
+      <PageMovieAbout :is-tv="isTv" :description="movie?.overview" />
+
+      <span>Рецензии</span>
+    </div>
+
+    <div class="min-w-1/4">мета информация</div>
+  </div>
 </template>
