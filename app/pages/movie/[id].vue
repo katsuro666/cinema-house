@@ -4,5 +4,5 @@ const pageId = route.params.id as string
 </script>
 
 <template>
-  <PageMovie :page-id="pageId" />
+  <PageMovie :movie-id="+pageId" />
 </template>

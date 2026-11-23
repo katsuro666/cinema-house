@@ -3,7 +3,7 @@
     <LayoutHeader />
 
     <UMain
-      class="!min-h-0 max-w-[var(--ui-container)] grow px-25 pt-8 pb-30 max-lg:px-10 max-md:px-2.5"
+      class="mx-auto !min-h-0 w-full max-w-[var(--ui-container)] grow px-25 pt-8 pb-30 max-lg:px-10 max-md:px-2.5"
     >
       <slot />
     </UMain>

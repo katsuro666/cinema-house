@@ -20,3 +20,18 @@ export const formattedReleaseDate = (date?: string | null) => {
     month: 'long'
   }).format(new Date(date))
 }
+
+export const formattedReleaseYear = (date?: string | null) => {
+  if (!date) return ''
+
+  return new Date(date).getFullYear().toString()
+}
+
+export const formattedRuntime = (runtime?: number | null) => {
+  if (!runtime) return ''
+
+  const hours = Math.floor(runtime / 60)
+  const minutes = runtime % 60
+
+  return hours ? `${hours} ч ${minutes} мин` : `${minutes} мин`
+}

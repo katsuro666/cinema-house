@@ -1,11 +1,19 @@
 <script setup lang="ts">
-defineProps<{
-  pageId: string
+import { movieDetails } from '~/api/generated/endpoints'
+import { DEFAULT_LANGUAGE } from '~/constants/localization'
+
+const props = defineProps<{
+  movieId: number
+  tv?: boolean
 }>()
 
-// TODO: добавить апи запрос на все секции по id фильма
+const isTv = computed(() => props.tv)
+
+const { data: movie } = await useAsyncData(`movie-${props.movieId}`, async () => {
+  return (await movieDetails(props.movieId, { language: DEFAULT_LANGUAGE })).data
+})
 </script>
 
 <template>
-  <!-- <PageMovieMainBanner :movie="" /> -->
+  <PageMovieMainBanner :movie="movie" />
 </template>
