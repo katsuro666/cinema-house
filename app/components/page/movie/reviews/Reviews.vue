@@ -23,6 +23,7 @@ const showAllReviews = () => (visibleReviewsCount.value = 100)
       <PageMovieReviewsItem v-for="review in visibleReviews" :key="review.id" :review="review" />
 
       <UButton
+        v-if="visibleReviews.length > visibleReviewsCount"
         label="Посмотреть всё"
         size="2xl"
         variant="outline"
