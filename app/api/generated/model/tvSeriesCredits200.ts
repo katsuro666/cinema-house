@@ -1,0 +1,9 @@
+// @ts-nocheck
+import type { TvSeriesCredits200CastItem } from './tvSeriesCredits200CastItem';
+import type { TvSeriesCredits200CrewItem } from './tvSeriesCredits200CrewItem';
+
+export type TvSeriesCredits200 = {
+  cast?: TvSeriesCredits200CastItem[];
+  crew?: TvSeriesCredits200CrewItem[];
+  id?: number;
+};

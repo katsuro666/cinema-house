@@ -1,0 +1,14 @@
+// @ts-nocheck
+import type { SearchPerson200ResultsItemKnownForItem } from './searchPerson200ResultsItemKnownForItem';
+
+export type SearchPerson200ResultsItem = {
+  adult?: boolean;
+  gender?: number;
+  id?: number;
+  known_for_department?: string;
+  name?: string;
+  original_name?: string;
+  popularity?: number;
+  profile_path?: string;
+  known_for?: SearchPerson200ResultsItemKnownForItem[];
+};

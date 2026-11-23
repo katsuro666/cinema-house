@@ -1,0 +1,5 @@
+// @ts-nocheck
+
+export type ListCreateParams = {
+  session_id: string;
+};

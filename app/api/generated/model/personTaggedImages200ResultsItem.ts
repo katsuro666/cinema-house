@@ -1,0 +1,16 @@
+// @ts-nocheck
+import type { PersonTaggedImages200ResultsItemMedia } from './personTaggedImages200ResultsItemMedia';
+
+export type PersonTaggedImages200ResultsItem = {
+  aspect_ratio?: number;
+  file_path?: string;
+  height?: number;
+  id?: string;
+  iso_639_1?: string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
+  image_type?: string;
+  media?: PersonTaggedImages200ResultsItemMedia;
+  media_type?: string;
+};

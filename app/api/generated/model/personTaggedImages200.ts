@@ -1,0 +1,10 @@
+// @ts-nocheck
+import type { PersonTaggedImages200ResultsItem } from './personTaggedImages200ResultsItem';
+
+export type PersonTaggedImages200 = {
+  id?: number;
+  page?: number;
+  results?: PersonTaggedImages200ResultsItem[];
+  total_pages?: number;
+  total_results?: number;
+};

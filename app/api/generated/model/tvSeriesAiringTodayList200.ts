@@ -1,0 +1,9 @@
+// @ts-nocheck
+import type { TvSeriesAiringTodayList200ResultsItem } from './tvSeriesAiringTodayList200ResultsItem';
+
+export type TvSeriesAiringTodayList200 = {
+  page?: number;
+  results?: TvSeriesAiringTodayList200ResultsItem[];
+  total_pages?: number;
+  total_results?: number;
+};

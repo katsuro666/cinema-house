@@ -1,0 +1,9 @@
+// @ts-nocheck
+import type { TvSeriesWatchProviders200ResultsAUBuyItem } from './tvSeriesWatchProviders200ResultsAUBuyItem';
+import type { TvSeriesWatchProviders200ResultsAUFlatrateItem } from './tvSeriesWatchProviders200ResultsAUFlatrateItem';
+
+export type TvSeriesWatchProviders200ResultsAU = {
+  link?: string;
+  flatrate?: TvSeriesWatchProviders200ResultsAUFlatrateItem[];
+  buy?: TvSeriesWatchProviders200ResultsAUBuyItem[];
+};

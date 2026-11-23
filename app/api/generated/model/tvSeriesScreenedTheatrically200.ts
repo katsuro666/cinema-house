@@ -1,0 +1,7 @@
+// @ts-nocheck
+import type { TvSeriesScreenedTheatrically200ResultsItem } from './tvSeriesScreenedTheatrically200ResultsItem';
+
+export type TvSeriesScreenedTheatrically200 = {
+  id?: number;
+  results?: TvSeriesScreenedTheatrically200ResultsItem[];
+};

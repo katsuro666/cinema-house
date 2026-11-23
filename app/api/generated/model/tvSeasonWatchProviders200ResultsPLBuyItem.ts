@@ -1,0 +1,8 @@
+// @ts-nocheck
+
+export type TvSeasonWatchProviders200ResultsPLBuyItem = {
+  logo_path?: string;
+  provider_id?: number;
+  provider_name?: string;
+  display_priority?: number;
+};

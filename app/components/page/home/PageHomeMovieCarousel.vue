@@ -4,42 +4,21 @@ import { Autoplay, EffectCreative } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/effect-creative'
+import { moviePopularList } from '~/api/generated/endpoints'
+import { DEFAULT_LANGUAGE } from '~/constants/localization'
 
-const movies = [
-  {
-    title: 'Бесстыжие',
-    subtitle: '11 сезон. Финал',
-    date: '12 декабря',
-    badge: 'Премьера',
-    image: '/images/mocks/movie-1.png'
-  },
-  {
-    title: 'Остров надежды',
-    subtitle: '1 сезон. 8 серий',
-    date: '18 декабря',
-    badge: 'Новинка',
-    image: '/images/mocks/movie-2.png'
-  },
-  {
-    title: 'По следу',
-    subtitle: 'Фильм 2026 года',
-    date: '21 декабря',
-    badge: 'Скоро',
-    image: '/images/mocks/movie-3.png'
-  },
-  {
-    title: 'Последний рейс',
-    subtitle: '2 сезон. 4 серии',
-    date: '27 декабря',
-    badge: 'Премьера',
-    image: '/images/mocks/movie-1.png'
-  }
-]
+const emit = defineEmits(['slide-click'])
 
 const swiper = ref<SwiperInstance | null>(null)
 const swiperModules = [Autoplay, EffectCreative]
 
 const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
+
+const { data: movies, status } = await useAsyncData('popular-movies', async () => {
+  return (await moviePopularList({ language: DEFAULT_LANGUAGE })).data.results
+})
+
+const isLoading = computed(() => status.value === 'pending' || !swiper.value?.mounted)
 </script>
 
 <template>
@@ -59,29 +38,37 @@ const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
       }"
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
       class="movie-swiper relative"
-      :class="{ 'opacity-0': !swiper?.mounted }"
+      :class="{ 'opacity-0': isLoading }"
       @swiper="setSwiper"
     >
-      <SwiperSlide v-for="movie in movies" :key="movie.title" class="movie-slide">
+      <SwiperSlide v-for="movie in movies" :key="movie.id" class="movie-slide">
         <div>
           <img
-            class="h-[490px] w-[380px] rounded-xl object-cover"
-            :src="movie.image"
+            class="h-[490px] w-[380px] cursor-pointer rounded-xl object-cover"
+            :src="getImageUrl(movie.poster_path)"
             :alt="movie.title"
+            @click="emit('slide-click', movie.id?.toString())"
           />
 
           <div class="mt-2.5 flex flex-col gap-1.5">
             <span>{{ movie.title }}</span>
-            <div class="text-accent flex items-center gap-5 text-xs">
-              <span class="border-accent rounded-md border px-2">{{ movie.badge }}</span>
-              <span>{{ movie.date }}</span>
+
+            <div v-if="movie.release_date" class="text-accent flex items-center gap-5 text-xs">
+              <span
+                v-if="isPremiere(movie.release_date)"
+                class="border-accent rounded-md border px-2"
+              >
+                Премьера
+              </span>
+
+              <span>{{ formattedReleaseDate(movie.release_date) }}</span>
             </div>
           </div>
         </div>
       </SwiperSlide>
     </Swiper>
 
-    <div v-if="!swiper?.mounted" class="absolute top-0 flex">
+    <div v-if="isLoading" class="absolute top-0 flex">
       <div class="flex flex-col gap-2">
         <USkeleton class="h-[490px] w-[380px] rounded-xl" />
         <USkeleton class="h-5 w-1/2" />
@@ -91,7 +78,7 @@ const setSwiper = (instance: SwiperInstance) => (swiper.value = instance)
       <USkeleton class="-ml-2 h-[200px] w-[150px] translate-y-40 rounded-xl" />
     </div>
 
-    <template v-if="swiper?.mounted">
+    <template v-if="!isLoading">
       <UButton
         icon="i-lucide-arrow-left"
         class="carousel-arrow left-0"

@@ -1,0 +1,12 @@
+// @ts-nocheck
+import type { AccountDetails200Avatar } from './accountDetails200Avatar';
+
+export type AccountDetails200 = {
+  avatar?: AccountDetails200Avatar;
+  id?: number;
+  iso_639_1?: string;
+  iso_3166_1?: string;
+  name?: string;
+  include_adult?: boolean;
+  username?: string;
+};

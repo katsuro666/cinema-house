@@ -1,0 +1,13 @@
+// @ts-nocheck
+import type { PersonPopularList200ResultsItemKnownForItem } from './personPopularList200ResultsItemKnownForItem';
+
+export type PersonPopularList200ResultsItem = {
+  adult?: boolean;
+  gender?: number;
+  id?: number;
+  known_for?: PersonPopularList200ResultsItemKnownForItem[];
+  known_for_department?: string;
+  name?: string;
+  popularity?: number;
+  profile_path?: string;
+};

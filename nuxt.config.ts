@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   pages: true,
 
   devtools: {
-    enabled: true
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
   },
 
   css: ['~/assets/css/main.css'],
@@ -37,5 +41,11 @@ export default defineNuxtConfig({
         recursive: true
       }
     ]
+  },
+
+  runtimeConfig: {
+    public: {
+      tmdbToken: import.meta.env.NUXT_TMDB_TOKEN
+    }
   }
 })

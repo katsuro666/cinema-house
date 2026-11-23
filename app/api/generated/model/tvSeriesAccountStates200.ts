@@ -1,0 +1,9 @@
+// @ts-nocheck
+import type { TvSeriesAccountStates200Rated } from './tvSeriesAccountStates200Rated';
+
+export type TvSeriesAccountStates200 = {
+  id?: number;
+  favorite?: boolean;
+  rated?: TvSeriesAccountStates200Rated;
+  watchlist?: boolean;
+};

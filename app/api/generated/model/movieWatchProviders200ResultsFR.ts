@@ -1,0 +1,11 @@
+// @ts-nocheck
+import type { MovieWatchProviders200ResultsFRBuyItem } from './movieWatchProviders200ResultsFRBuyItem';
+import type { MovieWatchProviders200ResultsFRFlatrateItem } from './movieWatchProviders200ResultsFRFlatrateItem';
+import type { MovieWatchProviders200ResultsFRRentItem } from './movieWatchProviders200ResultsFRRentItem';
+
+export type MovieWatchProviders200ResultsFR = {
+  link?: string;
+  rent?: MovieWatchProviders200ResultsFRRentItem[];
+  buy?: MovieWatchProviders200ResultsFRBuyItem[];
+  flatrate?: MovieWatchProviders200ResultsFRFlatrateItem[];
+};

@@ -1,0 +1,7 @@
+// @ts-nocheck
+import type { TvSeriesWatchProviders200ResultsSIFlatrateItem } from './tvSeriesWatchProviders200ResultsSIFlatrateItem';
+
+export type TvSeriesWatchProviders200ResultsSI = {
+  link?: string;
+  flatrate?: TvSeriesWatchProviders200ResultsSIFlatrateItem[];
+};

@@ -2,6 +2,6 @@ allowBuilds:
   '@parcel/watcher': false
   '@tailwindcss/oxide': false
   esbuild: false
-  lefthook: set this to true or false
+  lefthook: true
   unrs-resolver: false
   vue-demi: false

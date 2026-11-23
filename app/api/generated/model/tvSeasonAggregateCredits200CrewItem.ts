@@ -1,0 +1,16 @@
+// @ts-nocheck
+import type { TvSeasonAggregateCredits200CrewItemJobsItem } from './tvSeasonAggregateCredits200CrewItemJobsItem';
+
+export type TvSeasonAggregateCredits200CrewItem = {
+  adult?: boolean;
+  gender?: number;
+  id?: number;
+  known_for_department?: string;
+  name?: string;
+  original_name?: string;
+  popularity?: number;
+  profile_path?: unknown;
+  jobs?: TvSeasonAggregateCredits200CrewItemJobsItem[];
+  department?: string;
+  total_episode_count?: number;
+};

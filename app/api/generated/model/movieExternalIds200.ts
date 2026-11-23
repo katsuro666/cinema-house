@@ -1,0 +1,10 @@
+// @ts-nocheck
+
+export type MovieExternalIds200 = {
+  id?: number;
+  imdb_id?: string;
+  wikidata_id?: unknown;
+  facebook_id?: string;
+  instagram_id?: unknown;
+  twitter_id?: unknown;
+};

@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import MoviesSlider from '~/components/ui/MoviesSlider.vue'
-import { GENRES_MOCK, MOVIES_MOCK } from '~/mocks/movies'
+import { ROUTES } from '~/constants/routes'
 
-const moviesByGenre = computed(() => {
-  return GENRES_MOCK.map((genre) => {
-    return {
-      genre: genre.name,
-      movies: MOVIES_MOCK.filter((movie) => movie.genre_ids.includes(genre.id))
-    }
-  })
-})
+const router = useRouter()
+const { genres } = storeToRefs(useGenresStore())
+
+const { moviesByGenre } = useMoviesByGenres(computed(() => genres.value.slice(0, 5)))
+
+const goToMovie = (id: string) => {
+  router.push(`/${ROUTES.MOVIE}/${id}`)
+}
 </script>
 
 <template>
@@ -17,12 +16,12 @@ const moviesByGenre = computed(() => {
     <h2 class="text-[32px] font-bold">Каталог фильмов и сериалов</h2>
 
     <div class="flex flex-col gap-12.5">
-      <div v-for="movie in moviesByGenre" :key="movie.genre" class="flex flex-col gap-5">
+      <div v-for="movie in moviesByGenre" :key="movie.genreId" class="flex flex-col gap-5">
         <h3 class="text-2xl font-semibold">
           {{ movie.genre }}
         </h3>
 
-        <MoviesSlider :slides="movie.movies" />
+        <UiMoviesSlider :slides="movie.movies" @slide-click="goToMovie($event)" />
       </div>
     </div>
 
@@ -30,8 +29,8 @@ const moviesByGenre = computed(() => {
       label="Посмотреть всё"
       color="white"
       variant="outline"
-      size="xl"
-      class="w-fit px-6 py-4.5 font-semibold"
+      size="2xl"
+      class="w-fit font-semibold"
     />
   </section>
 </template>

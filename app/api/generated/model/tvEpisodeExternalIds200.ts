@@ -1,0 +1,11 @@
+// @ts-nocheck
+
+export type TvEpisodeExternalIds200 = {
+  id?: number;
+  imdb_id?: string;
+  freebase_mid?: string;
+  freebase_id?: string;
+  tvdb_id?: number;
+  tvrage_id?: number;
+  wikidata_id?: string;
+};

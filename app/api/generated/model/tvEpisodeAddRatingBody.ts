@@ -1,0 +1,5 @@
+// @ts-nocheck
+
+export type TvEpisodeAddRatingBody = {
+  RAW_BODY: string;
+};

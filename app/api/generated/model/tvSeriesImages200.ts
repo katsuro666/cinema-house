@@ -1,0 +1,11 @@
+// @ts-nocheck
+import type { TvSeriesImages200BackdropsItem } from './tvSeriesImages200BackdropsItem';
+import type { TvSeriesImages200LogosItem } from './tvSeriesImages200LogosItem';
+import type { TvSeriesImages200PostersItem } from './tvSeriesImages200PostersItem';
+
+export type TvSeriesImages200 = {
+  backdrops?: TvSeriesImages200BackdropsItem[];
+  id?: number;
+  logos?: TvSeriesImages200LogosItem[];
+  posters?: TvSeriesImages200PostersItem[];
+};

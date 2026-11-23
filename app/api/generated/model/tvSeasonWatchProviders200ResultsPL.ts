@@ -1,0 +1,9 @@
+// @ts-nocheck
+import type { TvSeasonWatchProviders200ResultsPLBuyItem } from './tvSeasonWatchProviders200ResultsPLBuyItem';
+import type { TvSeasonWatchProviders200ResultsPLFlatrateItem } from './tvSeasonWatchProviders200ResultsPLFlatrateItem';
+
+export type TvSeasonWatchProviders200ResultsPL = {
+  link?: string;
+  flatrate?: TvSeasonWatchProviders200ResultsPLFlatrateItem[];
+  buy?: TvSeasonWatchProviders200ResultsPLBuyItem[];
+};

@@ -1,0 +1,11 @@
+// @ts-nocheck
+
+export type TvSeriesLatestId200SeasonsItem = {
+  air_date?: unknown;
+  episode_count?: number;
+  id?: number;
+  name?: string;
+  overview?: string;
+  poster_path?: unknown;
+  season_number?: number;
+};

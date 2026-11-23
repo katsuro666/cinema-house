@@ -1,0 +1,6692 @@
+// @ts-nocheck
+import type {
+  AccountAddFavorite200,
+  AccountAddFavoriteBody,
+  AccountAddFavoriteParams,
+  AccountAddToWatchlist200,
+  AccountAddToWatchlistBody,
+  AccountAddToWatchlistParams,
+  AccountDetails200,
+  AccountDetailsParams,
+  AccountFavoriteTv200,
+  AccountFavoriteTvParams,
+  AccountGetFavorites200,
+  AccountGetFavoritesParams,
+  AccountLists200,
+  AccountListsParams,
+  AccountRatedMovies200,
+  AccountRatedMoviesParams,
+  AccountRatedTv200,
+  AccountRatedTvEpisodes200,
+  AccountRatedTvEpisodesParams,
+  AccountRatedTvParams,
+  AccountWatchlistMovies200,
+  AccountWatchlistMoviesParams,
+  AccountWatchlistTv200,
+  AccountWatchlistTvParams,
+  AlternativeNamesCopy200,
+  AuthenticationCreateGuestSession200,
+  AuthenticationCreateRequestToken200,
+  AuthenticationCreateSession200,
+  AuthenticationCreateSessionBody,
+  AuthenticationCreateSessionFromLogin200,
+  AuthenticationCreateSessionFromLoginBody,
+  AuthenticationCreateSessionFromV4Token200,
+  AuthenticationCreateSessionFromV4TokenBody,
+  AuthenticationDeleteSession200,
+  AuthenticationDeleteSessionBody,
+  AuthenticationValidateKey200,
+  AuthenticationValidateKey401,
+  CertificationMovieList200,
+  CertificationsTvList200,
+  ChangesMovieList200,
+  ChangesMovieListParams,
+  ChangesPeopleList200,
+  ChangesPeopleListParams,
+  ChangesTvList200,
+  ChangesTvListParams,
+  CollectionDetails200,
+  CollectionDetailsParams,
+  CollectionImages200,
+  CollectionImagesParams,
+  CollectionTranslations200,
+  CompanyAlternativeNames200,
+  CompanyDetails200,
+  CompanyImages200,
+  ConfigurationCountries200Item,
+  ConfigurationCountriesParams,
+  ConfigurationDetails200,
+  ConfigurationJobs200Item,
+  ConfigurationLanguages200Item,
+  ConfigurationTimezones200Item,
+  CreditDetails200,
+  CreditDetailsParams,
+  DetailsCopy200,
+  DiscoverMovie200,
+  DiscoverMovieParams,
+  DiscoverTv200,
+  DiscoverTvParams,
+  FindById200,
+  FindByIdParams,
+  GenreMovieList200,
+  GenreMovieListParams,
+  GenreTvList200,
+  GenreTvListParams,
+  GuestSessionRatedMovies200,
+  GuestSessionRatedMoviesParams,
+  GuestSessionRatedTv200,
+  GuestSessionRatedTvEpisodes200,
+  GuestSessionRatedTvEpisodesParams,
+  GuestSessionRatedTvParams,
+  KeywordDetails200,
+  KeywordMovies200,
+  KeywordMoviesParams,
+  ListAddMovie200,
+  ListAddMovieBody,
+  ListAddMovieParams,
+  ListCheckItemStatus200,
+  ListCheckItemStatusParams,
+  ListClear200,
+  ListClearParams,
+  ListCreate200,
+  ListCreateBody,
+  ListCreateParams,
+  ListDelete200,
+  ListDeleteParams,
+  ListDetails200,
+  ListDetailsParams,
+  ListRemoveMovie200,
+  ListRemoveMovieBody,
+  ListRemoveMovieParams,
+  ListsCopy200,
+  ListsCopyParams,
+  MovieAccountStates200,
+  MovieAccountStatesParams,
+  MovieAddRating200,
+  MovieAddRatingBody,
+  MovieAddRatingParams,
+  MovieAlternativeTitles200,
+  MovieAlternativeTitlesParams,
+  MovieChanges200,
+  MovieChangesParams,
+  MovieCredits200,
+  MovieCreditsParams,
+  MovieDeleteRating200,
+  MovieDeleteRatingParams,
+  MovieDetails200,
+  MovieDetailsParams,
+  MovieExternalIds200,
+  MovieImages200,
+  MovieImagesParams,
+  MovieKeywords200,
+  MovieLatestId200,
+  MovieLists200,
+  MovieListsParams,
+  MovieNowPlayingList200,
+  MovieNowPlayingListParams,
+  MoviePopularList200,
+  MoviePopularListParams,
+  MovieRecommendations200,
+  MovieRecommendationsParams,
+  MovieReleaseDates200,
+  MovieReviews200,
+  MovieReviewsParams,
+  MovieSimilar200,
+  MovieSimilarParams,
+  MovieTopRatedList200,
+  MovieTopRatedListParams,
+  MovieTranslations200,
+  MovieUpcomingList200,
+  MovieUpcomingListParams,
+  MovieVideos200,
+  MovieVideosParams,
+  MovieWatchProviders200,
+  NetworkDetails200,
+  PersonChanges200,
+  PersonChangesParams,
+  PersonCombinedCredits200,
+  PersonCombinedCreditsParams,
+  PersonDetails200,
+  PersonDetailsParams,
+  PersonExternalIds200,
+  PersonImages200,
+  PersonLatestId200,
+  PersonMovieCredits200,
+  PersonMovieCreditsParams,
+  PersonPopularList200,
+  PersonPopularListParams,
+  PersonTaggedImages200,
+  PersonTaggedImagesParams,
+  PersonTvCredits200,
+  PersonTvCreditsParams,
+  ReviewDetails200,
+  SearchCollection200,
+  SearchCollectionParams,
+  SearchCompany200,
+  SearchCompanyParams,
+  SearchKeyword200,
+  SearchKeywordParams,
+  SearchMovie200,
+  SearchMovieParams,
+  SearchMulti200,
+  SearchMultiParams,
+  SearchPerson200,
+  SearchPersonParams,
+  SearchTv200,
+  SearchTvParams,
+  Translations200,
+  TrendingAll200,
+  TrendingAllParams,
+  TrendingMovies200,
+  TrendingMoviesParams,
+  TrendingPeople200,
+  TrendingPeopleParams,
+  TrendingTv200,
+  TrendingTvParams,
+  TvEpisodeAccountStates200,
+  TvEpisodeAccountStatesParams,
+  TvEpisodeAddRating200,
+  TvEpisodeAddRatingBody,
+  TvEpisodeAddRatingParams,
+  TvEpisodeChangesById200,
+  TvEpisodeCredits200,
+  TvEpisodeCreditsParams,
+  TvEpisodeDeleteRating200,
+  TvEpisodeDeleteRatingParams,
+  TvEpisodeDetails200,
+  TvEpisodeDetailsParams,
+  TvEpisodeExternalIds200,
+  TvEpisodeGroupDetails200,
+  TvEpisodeImages200,
+  TvEpisodeImagesParams,
+  TvEpisodeTranslations200,
+  TvEpisodeVideos200,
+  TvEpisodeVideosParams,
+  TvSeasonAccountStates200,
+  TvSeasonAccountStatesParams,
+  TvSeasonAggregateCredits200,
+  TvSeasonAggregateCreditsParams,
+  TvSeasonChangesById200,
+  TvSeasonChangesByIdParams,
+  TvSeasonCredits200,
+  TvSeasonCreditsParams,
+  TvSeasonDetails200,
+  TvSeasonDetailsParams,
+  TvSeasonExternalIds200,
+  TvSeasonImages200,
+  TvSeasonImagesParams,
+  TvSeasonTranslations200,
+  TvSeasonVideos200,
+  TvSeasonVideosParams,
+  TvSeasonWatchProviders200,
+  TvSeasonWatchProvidersParams,
+  TvSeriesAccountStates200,
+  TvSeriesAccountStatesParams,
+  TvSeriesAddRating200,
+  TvSeriesAddRatingBody,
+  TvSeriesAddRatingParams,
+  TvSeriesAggregateCredits200,
+  TvSeriesAggregateCreditsParams,
+  TvSeriesAiringTodayList200,
+  TvSeriesAiringTodayListParams,
+  TvSeriesAlternativeTitles200,
+  TvSeriesChanges200,
+  TvSeriesChangesParams,
+  TvSeriesContentRatings200,
+  TvSeriesCredits200,
+  TvSeriesCreditsParams,
+  TvSeriesDeleteRating200,
+  TvSeriesDeleteRatingParams,
+  TvSeriesDetails200,
+  TvSeriesDetailsParams,
+  TvSeriesEpisodeGroups200,
+  TvSeriesExternalIds200,
+  TvSeriesImages200,
+  TvSeriesImagesParams,
+  TvSeriesKeywords200,
+  TvSeriesLatestId200,
+  TvSeriesOnTheAirList200,
+  TvSeriesOnTheAirListParams,
+  TvSeriesPopularList200,
+  TvSeriesPopularListParams,
+  TvSeriesRecommendations200,
+  TvSeriesRecommendationsParams,
+  TvSeriesReviews200,
+  TvSeriesReviewsParams,
+  TvSeriesScreenedTheatrically200,
+  TvSeriesSimilar200,
+  TvSeriesSimilarParams,
+  TvSeriesTopRatedList200,
+  TvSeriesTopRatedListParams,
+  TvSeriesTranslations200,
+  TvSeriesVideos200,
+  TvSeriesVideosParams,
+  TvSeriesWatchProviders200,
+  WatchProviderTvList200,
+  WatchProviderTvListParams,
+  WatchProvidersAvailableRegions200,
+  WatchProvidersAvailableRegionsParams,
+  WatchProvidersMovieList200,
+  WatchProvidersMovieListParams
+} from '../../model';
+
+import { tmdbFetcher } from '../../../mutator';
+
+const getHeaders = (...sources: (RequestInit['headers'] | Record<string, string | undefined>)[]) => {
+  const seen = new Set<string>();
+  const layers: [string, string | readonly string[]][][] = [];
+  for (const source of sources.reverse()) {
+    if (!source) continue;
+    const entries = source instanceof Headers
+      ? source.entries()
+      : Symbol.iterator in source
+        ? Array.from(source as Iterable<Iterable<string>>, (entry) => Array.from(entry) as [string, string])
+        : Object.entries<string | readonly string[] | undefined>(source);
+    const layer: [string, string | readonly string[]][] = [];
+    for (const [name, value] of entries) {
+      if (value !== undefined && !seen.has(name.toLowerCase())) layer.push([name, value]);
+    }
+    for (const [name] of layer) seen.add(name.toLowerCase());
+    layers.push(layer);
+  }
+  return Object.fromEntries(layers.reverse().flat()) as Extract<RequestInit['headers'], Record<string, unknown>>;
+};
+
+export type authenticationValidateKeyResponse200 = {
+  data: AuthenticationValidateKey200
+  status: 200
+}
+
+export type authenticationValidateKeyResponse401 = {
+  data: AuthenticationValidateKey401
+  status: 401
+}
+
+export type authenticationValidateKeyResponseSuccess = (authenticationValidateKeyResponse200) & {
+  headers: Headers;
+};
+export type authenticationValidateKeyResponseError = (authenticationValidateKeyResponse401) & {
+  headers: Headers;
+};
+
+export type authenticationValidateKeyResponse = (authenticationValidateKeyResponseSuccess | authenticationValidateKeyResponseError)
+
+export const getAuthenticationValidateKeyUrl = () => {
+
+
+
+
+  return `/3/authentication`
+}
+
+/**
+ * Test your API Key to see if it's valid.
+ * @summary Validate Key
+ */
+export const authenticationValidateKey = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationValidateKeyResponse> => {
+
+  return tmdbFetcher<authenticationValidateKeyResponse>(getAuthenticationValidateKeyUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountDetailsResponse200 = {
+  data: AccountDetails200
+  status: 200
+}
+
+export type accountDetailsResponseSuccess = (accountDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountDetailsResponse = (accountDetailsResponseSuccess)
+
+export const getAccountDetailsUrl = (params?: AccountDetailsParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}?${stringifiedParams}` : `/3/account/${accountId}`
+}
+
+/**
+ * Get the public details of an account on TMDB.
+ * @summary Details
+ */
+export const accountDetails = async (params?: AccountDetailsParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountDetailsResponse> => {
+
+  return tmdbFetcher<accountDetailsResponse>(getAccountDetailsUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountAddFavoriteResponse200 = {
+  data: AccountAddFavorite200
+  status: 200
+}
+
+export type accountAddFavoriteResponseSuccess = (accountAddFavoriteResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountAddFavoriteResponse = (accountAddFavoriteResponseSuccess)
+
+export const getAccountAddFavoriteUrl = (params?: AccountAddFavoriteParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/favorite?${stringifiedParams}` : `/3/account/${accountId}/favorite`
+}
+
+/**
+ * Mark a movie or TV show as a favourite.
+ * @summary Add Favorite
+ */
+export const accountAddFavorite = async (accountAddFavoriteBody?: AccountAddFavoriteBody,
+    params?: AccountAddFavoriteParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountAddFavoriteResponse> => {
+
+  return tmdbFetcher<accountAddFavoriteResponse>(getAccountAddFavoriteUrl(params,accountId),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(accountAddFavoriteBody)
+  }
+);}
+
+
+export type accountAddToWatchlistResponse200 = {
+  data: AccountAddToWatchlist200
+  status: 200
+}
+
+export type accountAddToWatchlistResponseSuccess = (accountAddToWatchlistResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountAddToWatchlistResponse = (accountAddToWatchlistResponseSuccess)
+
+export const getAccountAddToWatchlistUrl = (params?: AccountAddToWatchlistParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/watchlist?${stringifiedParams}` : `/3/account/${accountId}/watchlist`
+}
+
+/**
+ * Add a movie or TV show to your watchlist.
+ * @summary Add To Watchlist
+ */
+export const accountAddToWatchlist = async (accountAddToWatchlistBody?: AccountAddToWatchlistBody,
+    params?: AccountAddToWatchlistParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountAddToWatchlistResponse> => {
+
+  return tmdbFetcher<accountAddToWatchlistResponse>(getAccountAddToWatchlistUrl(params,accountId),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(accountAddToWatchlistBody)
+  }
+);}
+
+
+export type accountGetFavoritesResponse200 = {
+  data: AccountGetFavorites200
+  status: 200
+}
+
+export type accountGetFavoritesResponseSuccess = (accountGetFavoritesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountGetFavoritesResponse = (accountGetFavoritesResponseSuccess)
+
+export const getAccountGetFavoritesUrl = (params?: AccountGetFavoritesParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/favorite/movies?${stringifiedParams}` : `/3/account/${accountId}/favorite/movies`
+}
+
+/**
+ * Get a users list of favourite movies.
+ * @summary Favorite Movies
+ */
+export const accountGetFavorites = async (params?: AccountGetFavoritesParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountGetFavoritesResponse> => {
+
+  return tmdbFetcher<accountGetFavoritesResponse>(getAccountGetFavoritesUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountFavoriteTvResponse200 = {
+  data: AccountFavoriteTv200
+  status: 200
+}
+
+export type accountFavoriteTvResponseSuccess = (accountFavoriteTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountFavoriteTvResponse = (accountFavoriteTvResponseSuccess)
+
+export const getAccountFavoriteTvUrl = (params?: AccountFavoriteTvParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/favorite/tv?${stringifiedParams}` : `/3/account/${accountId}/favorite/tv`
+}
+
+/**
+ * Get a users list of favourite TV shows.
+ * @summary Favorite TV
+ */
+export const accountFavoriteTv = async (params?: AccountFavoriteTvParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountFavoriteTvResponse> => {
+
+  return tmdbFetcher<accountFavoriteTvResponse>(getAccountFavoriteTvUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountListsResponse200 = {
+  data: AccountLists200
+  status: 200
+}
+
+export type accountListsResponseSuccess = (accountListsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountListsResponse = (accountListsResponseSuccess)
+
+export const getAccountListsUrl = (params?: AccountListsParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/lists?${stringifiedParams}` : `/3/account/${accountId}/lists`
+}
+
+/**
+ * Get a users list of custom lists.
+ * @summary Lists
+ */
+export const accountLists = async (params?: AccountListsParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountListsResponse> => {
+
+  return tmdbFetcher<accountListsResponse>(getAccountListsUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountRatedMoviesResponse200 = {
+  data: AccountRatedMovies200
+  status: 200
+}
+
+export type accountRatedMoviesResponseSuccess = (accountRatedMoviesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountRatedMoviesResponse = (accountRatedMoviesResponseSuccess)
+
+export const getAccountRatedMoviesUrl = (params?: AccountRatedMoviesParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/rated/movies?${stringifiedParams}` : `/3/account/${accountId}/rated/movies`
+}
+
+/**
+ * Get a users list of rated movies.
+ * @summary Rated Movies
+ */
+export const accountRatedMovies = async (params?: AccountRatedMoviesParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountRatedMoviesResponse> => {
+
+  return tmdbFetcher<accountRatedMoviesResponse>(getAccountRatedMoviesUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountRatedTvResponse200 = {
+  data: AccountRatedTv200
+  status: 200
+}
+
+export type accountRatedTvResponseSuccess = (accountRatedTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountRatedTvResponse = (accountRatedTvResponseSuccess)
+
+export const getAccountRatedTvUrl = (params?: AccountRatedTvParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/rated/tv?${stringifiedParams}` : `/3/account/${accountId}/rated/tv`
+}
+
+/**
+ * Get a users list of rated TV shows.
+ * @summary Rated TV
+ */
+export const accountRatedTv = async (params?: AccountRatedTvParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountRatedTvResponse> => {
+
+  return tmdbFetcher<accountRatedTvResponse>(getAccountRatedTvUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountRatedTvEpisodesResponse200 = {
+  data: AccountRatedTvEpisodes200
+  status: 200
+}
+
+export type accountRatedTvEpisodesResponseSuccess = (accountRatedTvEpisodesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountRatedTvEpisodesResponse = (accountRatedTvEpisodesResponseSuccess)
+
+export const getAccountRatedTvEpisodesUrl = (params?: AccountRatedTvEpisodesParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/rated/tv/episodes?${stringifiedParams}` : `/3/account/${accountId}/rated/tv/episodes`
+}
+
+/**
+ * Get a users list of rated TV episodes.
+ * @summary Rated TV Episodes
+ */
+export const accountRatedTvEpisodes = async (params?: AccountRatedTvEpisodesParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountRatedTvEpisodesResponse> => {
+
+  return tmdbFetcher<accountRatedTvEpisodesResponse>(getAccountRatedTvEpisodesUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountWatchlistMoviesResponse200 = {
+  data: AccountWatchlistMovies200
+  status: 200
+}
+
+export type accountWatchlistMoviesResponseSuccess = (accountWatchlistMoviesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountWatchlistMoviesResponse = (accountWatchlistMoviesResponseSuccess)
+
+export const getAccountWatchlistMoviesUrl = (params?: AccountWatchlistMoviesParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/watchlist/movies?${stringifiedParams}` : `/3/account/${accountId}/watchlist/movies`
+}
+
+/**
+ * Get a list of movies added to a users watchlist.
+ * @summary Watchlist Movies
+ */
+export const accountWatchlistMovies = async (params?: AccountWatchlistMoviesParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountWatchlistMoviesResponse> => {
+
+  return tmdbFetcher<accountWatchlistMoviesResponse>(getAccountWatchlistMoviesUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type accountWatchlistTvResponse200 = {
+  data: AccountWatchlistTv200
+  status: 200
+}
+
+export type accountWatchlistTvResponseSuccess = (accountWatchlistTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type accountWatchlistTvResponse = (accountWatchlistTvResponseSuccess)
+
+export const getAccountWatchlistTvUrl = (params?: AccountWatchlistTvParams,
+    accountId: number = null,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/account/${accountId}/watchlist/tv?${stringifiedParams}` : `/3/account/${accountId}/watchlist/tv`
+}
+
+/**
+ * Get a list of TV shows added to a users watchlist.
+ * @summary Watchlist TV
+ */
+export const accountWatchlistTv = async (params?: AccountWatchlistTvParams,
+    accountId: number = null, options?: Parameters<typeof tmdbFetcher>[1]): Promise<accountWatchlistTvResponse> => {
+
+  return tmdbFetcher<accountWatchlistTvResponse>(getAccountWatchlistTvUrl(params,accountId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type authenticationCreateGuestSessionResponse200 = {
+  data: AuthenticationCreateGuestSession200
+  status: 200
+}
+
+export type authenticationCreateGuestSessionResponseSuccess = (authenticationCreateGuestSessionResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationCreateGuestSessionResponse = (authenticationCreateGuestSessionResponseSuccess)
+
+export const getAuthenticationCreateGuestSessionUrl = () => {
+
+
+
+
+  return `/3/authentication/guest_session/new`
+}
+
+/**
+ * @summary Create Guest Session
+ */
+export const authenticationCreateGuestSession = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationCreateGuestSessionResponse> => {
+
+  return tmdbFetcher<authenticationCreateGuestSessionResponse>(getAuthenticationCreateGuestSessionUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type authenticationCreateRequestTokenResponse200 = {
+  data: AuthenticationCreateRequestToken200
+  status: 200
+}
+
+export type authenticationCreateRequestTokenResponseSuccess = (authenticationCreateRequestTokenResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationCreateRequestTokenResponse = (authenticationCreateRequestTokenResponseSuccess)
+
+export const getAuthenticationCreateRequestTokenUrl = () => {
+
+
+
+
+  return `/3/authentication/token/new`
+}
+
+/**
+ * @summary Create Request Token
+ */
+export const authenticationCreateRequestToken = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationCreateRequestTokenResponse> => {
+
+  return tmdbFetcher<authenticationCreateRequestTokenResponse>(getAuthenticationCreateRequestTokenUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type authenticationCreateSessionResponse200 = {
+  data: AuthenticationCreateSession200
+  status: 200
+}
+
+export type authenticationCreateSessionResponseSuccess = (authenticationCreateSessionResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationCreateSessionResponse = (authenticationCreateSessionResponseSuccess)
+
+export const getAuthenticationCreateSessionUrl = () => {
+
+
+
+
+  return `/3/authentication/session/new`
+}
+
+/**
+ * @summary Create Session
+ */
+export const authenticationCreateSession = async (authenticationCreateSessionBody?: AuthenticationCreateSessionBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationCreateSessionResponse> => {
+
+  return tmdbFetcher<authenticationCreateSessionResponse>(getAuthenticationCreateSessionUrl(),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(authenticationCreateSessionBody)
+  }
+);}
+
+
+export type authenticationCreateSessionFromV4TokenResponse200 = {
+  data: AuthenticationCreateSessionFromV4Token200
+  status: 200
+}
+
+export type authenticationCreateSessionFromV4TokenResponseSuccess = (authenticationCreateSessionFromV4TokenResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationCreateSessionFromV4TokenResponse = (authenticationCreateSessionFromV4TokenResponseSuccess)
+
+export const getAuthenticationCreateSessionFromV4TokenUrl = () => {
+
+
+
+
+  return `/3/authentication/session/convert/4`
+}
+
+/**
+ * @summary Create Session (from v4 token)
+ */
+export const authenticationCreateSessionFromV4Token = async (authenticationCreateSessionFromV4TokenBody?: AuthenticationCreateSessionFromV4TokenBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationCreateSessionFromV4TokenResponse> => {
+
+  return tmdbFetcher<authenticationCreateSessionFromV4TokenResponse>(getAuthenticationCreateSessionFromV4TokenUrl(),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(authenticationCreateSessionFromV4TokenBody)
+  }
+);}
+
+
+export type authenticationCreateSessionFromLoginResponse200 = {
+  data: AuthenticationCreateSessionFromLogin200
+  status: 200
+}
+
+export type authenticationCreateSessionFromLoginResponseSuccess = (authenticationCreateSessionFromLoginResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationCreateSessionFromLoginResponse = (authenticationCreateSessionFromLoginResponseSuccess)
+
+export const getAuthenticationCreateSessionFromLoginUrl = () => {
+
+
+
+
+  return `/3/authentication/token/validate_with_login`
+}
+
+/**
+ * This method allows an application to validate a request token by entering a username and password.
+ * @summary Create Session (with login)
+ */
+export const authenticationCreateSessionFromLogin = async (authenticationCreateSessionFromLoginBody?: AuthenticationCreateSessionFromLoginBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationCreateSessionFromLoginResponse> => {
+
+  return tmdbFetcher<authenticationCreateSessionFromLoginResponse>(getAuthenticationCreateSessionFromLoginUrl(),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(authenticationCreateSessionFromLoginBody)
+  }
+);}
+
+
+export type authenticationDeleteSessionResponse200 = {
+  data: AuthenticationDeleteSession200
+  status: 200
+}
+
+export type authenticationDeleteSessionResponseSuccess = (authenticationDeleteSessionResponse200) & {
+  headers: Headers;
+};
+;
+
+export type authenticationDeleteSessionResponse = (authenticationDeleteSessionResponseSuccess)
+
+export const getAuthenticationDeleteSessionUrl = () => {
+
+
+
+
+  return `/3/authentication/session`
+}
+
+/**
+ * @summary Delete Session
+ */
+export const authenticationDeleteSession = async (authenticationDeleteSessionBody?: AuthenticationDeleteSessionBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<authenticationDeleteSessionResponse> => {
+
+  return tmdbFetcher<authenticationDeleteSessionResponse>(getAuthenticationDeleteSessionUrl(),
+  {
+    ...options,
+    method: 'DELETE',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(authenticationDeleteSessionBody)
+  }
+);}
+
+
+export type certificationMovieListResponse200 = {
+  data: CertificationMovieList200
+  status: 200
+}
+
+export type certificationMovieListResponseSuccess = (certificationMovieListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type certificationMovieListResponse = (certificationMovieListResponseSuccess)
+
+export const getCertificationMovieListUrl = () => {
+
+
+
+
+  return `/3/certification/movie/list`
+}
+
+/**
+ * Get an up to date list of the officially supported movie certifications on TMDB.
+ * @summary Movie Certifications
+ */
+export const certificationMovieList = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<certificationMovieListResponse> => {
+
+  return tmdbFetcher<certificationMovieListResponse>(getCertificationMovieListUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type certificationsTvListResponse200 = {
+  data: CertificationsTvList200
+  status: 200
+}
+
+export type certificationsTvListResponseSuccess = (certificationsTvListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type certificationsTvListResponse = (certificationsTvListResponseSuccess)
+
+export const getCertificationsTvListUrl = () => {
+
+
+
+
+  return `/3/certification/tv/list`
+}
+
+/**
+ * @summary TV Certifications
+ */
+export const certificationsTvList = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<certificationsTvListResponse> => {
+
+  return tmdbFetcher<certificationsTvListResponse>(getCertificationsTvListUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type changesMovieListResponse200 = {
+  data: ChangesMovieList200
+  status: 200
+}
+
+export type changesMovieListResponseSuccess = (changesMovieListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type changesMovieListResponse = (changesMovieListResponseSuccess)
+
+export const getChangesMovieListUrl = (params?: ChangesMovieListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/changes?${stringifiedParams}` : `/3/movie/changes`
+}
+
+/**
+ * Get a list of all of the movie ids that have been changed in the past 24 hours.
+ * @summary Movie List
+ */
+export const changesMovieList = async (params?: ChangesMovieListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<changesMovieListResponse> => {
+
+  return tmdbFetcher<changesMovieListResponse>(getChangesMovieListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type changesPeopleListResponse200 = {
+  data: ChangesPeopleList200
+  status: 200
+}
+
+export type changesPeopleListResponseSuccess = (changesPeopleListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type changesPeopleListResponse = (changesPeopleListResponseSuccess)
+
+export const getChangesPeopleListUrl = (params?: ChangesPeopleListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/changes?${stringifiedParams}` : `/3/person/changes`
+}
+
+/**
+ * @summary People List
+ */
+export const changesPeopleList = async (params?: ChangesPeopleListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<changesPeopleListResponse> => {
+
+  return tmdbFetcher<changesPeopleListResponse>(getChangesPeopleListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type changesTvListResponse200 = {
+  data: ChangesTvList200
+  status: 200
+}
+
+export type changesTvListResponseSuccess = (changesTvListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type changesTvListResponse = (changesTvListResponseSuccess)
+
+export const getChangesTvListUrl = (params?: ChangesTvListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/changes?${stringifiedParams}` : `/3/tv/changes`
+}
+
+/**
+ * @summary TV List
+ */
+export const changesTvList = async (params?: ChangesTvListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<changesTvListResponse> => {
+
+  return tmdbFetcher<changesTvListResponse>(getChangesTvListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type collectionDetailsResponse200 = {
+  data: CollectionDetails200
+  status: 200
+}
+
+export type collectionDetailsResponseSuccess = (collectionDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type collectionDetailsResponse = (collectionDetailsResponseSuccess)
+
+export const getCollectionDetailsUrl = (collectionId: number,
+    params?: CollectionDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/collection/${collectionId}?${stringifiedParams}` : `/3/collection/${collectionId}`
+}
+
+/**
+ * Get collection details by ID.
+ * @summary Details
+ */
+export const collectionDetails = async (collectionId: number,
+    params?: CollectionDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<collectionDetailsResponse> => {
+
+  return tmdbFetcher<collectionDetailsResponse>(getCollectionDetailsUrl(collectionId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type collectionImagesResponse200 = {
+  data: CollectionImages200
+  status: 200
+}
+
+export type collectionImagesResponseSuccess = (collectionImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type collectionImagesResponse = (collectionImagesResponseSuccess)
+
+export const getCollectionImagesUrl = (collectionId: number,
+    params?: CollectionImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/collection/${collectionId}/images?${stringifiedParams}` : `/3/collection/${collectionId}/images`
+}
+
+/**
+ * Get the images that belong to a collection.
+ * @summary Images
+ */
+export const collectionImages = async (collectionId: number,
+    params?: CollectionImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<collectionImagesResponse> => {
+
+  return tmdbFetcher<collectionImagesResponse>(getCollectionImagesUrl(collectionId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type collectionTranslationsResponse200 = {
+  data: CollectionTranslations200
+  status: 200
+}
+
+export type collectionTranslationsResponseSuccess = (collectionTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type collectionTranslationsResponse = (collectionTranslationsResponseSuccess)
+
+export const getCollectionTranslationsUrl = (collectionId: number,) => {
+
+
+
+
+  return `/3/collection/${collectionId}/translations`
+}
+
+/**
+ * @summary Translations
+ */
+export const collectionTranslations = async (collectionId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<collectionTranslationsResponse> => {
+
+  return tmdbFetcher<collectionTranslationsResponse>(getCollectionTranslationsUrl(collectionId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type companyDetailsResponse200 = {
+  data: CompanyDetails200
+  status: 200
+}
+
+export type companyDetailsResponseSuccess = (companyDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type companyDetailsResponse = (companyDetailsResponseSuccess)
+
+export const getCompanyDetailsUrl = (companyId: number,) => {
+
+
+
+
+  return `/3/company/${companyId}`
+}
+
+/**
+ * Get the company details by ID.
+ * @summary Details
+ */
+export const companyDetails = async (companyId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<companyDetailsResponse> => {
+
+  return tmdbFetcher<companyDetailsResponse>(getCompanyDetailsUrl(companyId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type companyAlternativeNamesResponse200 = {
+  data: CompanyAlternativeNames200
+  status: 200
+}
+
+export type companyAlternativeNamesResponseSuccess = (companyAlternativeNamesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type companyAlternativeNamesResponse = (companyAlternativeNamesResponseSuccess)
+
+export const getCompanyAlternativeNamesUrl = (companyId: number,) => {
+
+
+
+
+  return `/3/company/${companyId}/alternative_names`
+}
+
+/**
+ * Get the company details by ID.
+ * @summary Alternative Names
+ */
+export const companyAlternativeNames = async (companyId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<companyAlternativeNamesResponse> => {
+
+  return tmdbFetcher<companyAlternativeNamesResponse>(getCompanyAlternativeNamesUrl(companyId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type companyImagesResponse200 = {
+  data: CompanyImages200
+  status: 200
+}
+
+export type companyImagesResponseSuccess = (companyImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type companyImagesResponse = (companyImagesResponseSuccess)
+
+export const getCompanyImagesUrl = (companyId: number,) => {
+
+
+
+
+  return `/3/company/${companyId}/images`
+}
+
+/**
+ * Get the company logos by id.
+ * @summary Images
+ */
+export const companyImages = async (companyId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<companyImagesResponse> => {
+
+  return tmdbFetcher<companyImagesResponse>(getCompanyImagesUrl(companyId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationDetailsResponse200 = {
+  data: ConfigurationDetails200
+  status: 200
+}
+
+export type configurationDetailsResponseSuccess = (configurationDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationDetailsResponse = (configurationDetailsResponseSuccess)
+
+export const getConfigurationDetailsUrl = () => {
+
+
+
+
+  return `/3/configuration`
+}
+
+/**
+ * Query the API configuration details.
+ * @summary Details
+ */
+export const configurationDetails = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationDetailsResponse> => {
+
+  return tmdbFetcher<configurationDetailsResponse>(getConfigurationDetailsUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationCountriesResponse200 = {
+  data: ConfigurationCountries200Item[]
+  status: 200
+}
+
+export type configurationCountriesResponseSuccess = (configurationCountriesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationCountriesResponse = (configurationCountriesResponseSuccess)
+
+export const getConfigurationCountriesUrl = (params?: ConfigurationCountriesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/configuration/countries?${stringifiedParams}` : `/3/configuration/countries`
+}
+
+/**
+ * Get the list of countries (ISO 3166-1 tags) used throughout TMDB.
+ * @summary Countries
+ */
+export const configurationCountries = async (params?: ConfigurationCountriesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationCountriesResponse> => {
+
+  return tmdbFetcher<configurationCountriesResponse>(getConfigurationCountriesUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationJobsResponse200 = {
+  data: ConfigurationJobs200Item[]
+  status: 200
+}
+
+export type configurationJobsResponseSuccess = (configurationJobsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationJobsResponse = (configurationJobsResponseSuccess)
+
+export const getConfigurationJobsUrl = () => {
+
+
+
+
+  return `/3/configuration/jobs`
+}
+
+/**
+ * Get the list of the jobs and departments we use on TMDB.
+ * @summary Jobs
+ */
+export const configurationJobs = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationJobsResponse> => {
+
+  return tmdbFetcher<configurationJobsResponse>(getConfigurationJobsUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationLanguagesResponse200 = {
+  data: ConfigurationLanguages200Item[]
+  status: 200
+}
+
+export type configurationLanguagesResponseSuccess = (configurationLanguagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationLanguagesResponse = (configurationLanguagesResponseSuccess)
+
+export const getConfigurationLanguagesUrl = () => {
+
+
+
+
+  return `/3/configuration/languages`
+}
+
+/**
+ * Get the list of languages (ISO 639-1 tags) used throughout TMDB.
+ * @summary Languages
+ */
+export const configurationLanguages = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationLanguagesResponse> => {
+
+  return tmdbFetcher<configurationLanguagesResponse>(getConfigurationLanguagesUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationPrimaryTranslationsResponse200 = {
+  data: string[]
+  status: 200
+}
+
+export type configurationPrimaryTranslationsResponseSuccess = (configurationPrimaryTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationPrimaryTranslationsResponse = (configurationPrimaryTranslationsResponseSuccess)
+
+export const getConfigurationPrimaryTranslationsUrl = () => {
+
+
+
+
+  return `/3/configuration/primary_translations`
+}
+
+/**
+ * Get a list of the officially supported translations on TMDB.
+ * @summary Primary Translations
+ */
+export const configurationPrimaryTranslations = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationPrimaryTranslationsResponse> => {
+
+  return tmdbFetcher<configurationPrimaryTranslationsResponse>(getConfigurationPrimaryTranslationsUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type configurationTimezonesResponse200 = {
+  data: ConfigurationTimezones200Item[]
+  status: 200
+}
+
+export type configurationTimezonesResponseSuccess = (configurationTimezonesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type configurationTimezonesResponse = (configurationTimezonesResponseSuccess)
+
+export const getConfigurationTimezonesUrl = () => {
+
+
+
+
+  return `/3/configuration/timezones`
+}
+
+/**
+ * Get the list of timezones used throughout TMDB.
+ * @summary Timezones
+ */
+export const configurationTimezones = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<configurationTimezonesResponse> => {
+
+  return tmdbFetcher<configurationTimezonesResponse>(getConfigurationTimezonesUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type creditDetailsResponse200 = {
+  data: CreditDetails200
+  status: 200
+}
+
+export type creditDetailsResponseSuccess = (creditDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type creditDetailsResponse = (creditDetailsResponseSuccess)
+
+export const getCreditDetailsUrl = (creditId: string,
+    params?: CreditDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/credit/${creditId}?${stringifiedParams}` : `/3/credit/${creditId}`
+}
+
+/**
+ * Get a movie or TV credit details by ID.
+ * @summary Details
+ */
+export const creditDetails = async (creditId: string,
+    params?: CreditDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<creditDetailsResponse> => {
+
+  return tmdbFetcher<creditDetailsResponse>(getCreditDetailsUrl(creditId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type discoverMovieResponse200 = {
+  data: DiscoverMovie200
+  status: 200
+}
+
+export type discoverMovieResponseSuccess = (discoverMovieResponse200) & {
+  headers: Headers;
+};
+;
+
+export type discoverMovieResponse = (discoverMovieResponseSuccess)
+
+export const getDiscoverMovieUrl = (params?: DiscoverMovieParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/discover/movie?${stringifiedParams}` : `/3/discover/movie`
+}
+
+/**
+ * Find movies using over 30 filters and sort options.
+ * @summary Movie
+ */
+export const discoverMovie = async (params?: DiscoverMovieParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<discoverMovieResponse> => {
+
+  return tmdbFetcher<discoverMovieResponse>(getDiscoverMovieUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type discoverTvResponse200 = {
+  data: DiscoverTv200
+  status: 200
+}
+
+export type discoverTvResponseSuccess = (discoverTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type discoverTvResponse = (discoverTvResponseSuccess)
+
+export const getDiscoverTvUrl = (params?: DiscoverTvParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/discover/tv?${stringifiedParams}` : `/3/discover/tv`
+}
+
+/**
+ * Find TV shows using over 30 filters and sort options.
+ * @summary TV
+ */
+export const discoverTv = async (params?: DiscoverTvParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<discoverTvResponse> => {
+
+  return tmdbFetcher<discoverTvResponse>(getDiscoverTvUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type findByIdResponse200 = {
+  data: FindById200
+  status: 200
+}
+
+export type findByIdResponseSuccess = (findByIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type findByIdResponse = (findByIdResponseSuccess)
+
+export const getFindByIdUrl = (externalId: string,
+    params: FindByIdParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/find/${externalId}?${stringifiedParams}` : `/3/find/${externalId}`
+}
+
+/**
+ * Find data by external ID's.
+ * @summary Find By ID
+ */
+export const findById = async (externalId: string,
+    params: FindByIdParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<findByIdResponse> => {
+
+  return tmdbFetcher<findByIdResponse>(getFindByIdUrl(externalId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type genreMovieListResponse200 = {
+  data: GenreMovieList200
+  status: 200
+}
+
+export type genreMovieListResponseSuccess = (genreMovieListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type genreMovieListResponse = (genreMovieListResponseSuccess)
+
+export const getGenreMovieListUrl = (params?: GenreMovieListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/genre/movie/list?${stringifiedParams}` : `/3/genre/movie/list`
+}
+
+/**
+ * Get the list of official genres for movies.
+ * @summary Movie List
+ */
+export const genreMovieList = async (params?: GenreMovieListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<genreMovieListResponse> => {
+
+  return tmdbFetcher<genreMovieListResponse>(getGenreMovieListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type genreTvListResponse200 = {
+  data: GenreTvList200
+  status: 200
+}
+
+export type genreTvListResponseSuccess = (genreTvListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type genreTvListResponse = (genreTvListResponseSuccess)
+
+export const getGenreTvListUrl = (params?: GenreTvListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/genre/tv/list?${stringifiedParams}` : `/3/genre/tv/list`
+}
+
+/**
+ * Get the list of official genres for TV shows.
+ * @summary TV List
+ */
+export const genreTvList = async (params?: GenreTvListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<genreTvListResponse> => {
+
+  return tmdbFetcher<genreTvListResponse>(getGenreTvListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type guestSessionRatedMoviesResponse200 = {
+  data: GuestSessionRatedMovies200
+  status: 200
+}
+
+export type guestSessionRatedMoviesResponseSuccess = (guestSessionRatedMoviesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type guestSessionRatedMoviesResponse = (guestSessionRatedMoviesResponseSuccess)
+
+export const getGuestSessionRatedMoviesUrl = (guestSessionId: string,
+    params?: GuestSessionRatedMoviesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/guest_session/${guestSessionId}/rated/movies?${stringifiedParams}` : `/3/guest_session/${guestSessionId}/rated/movies`
+}
+
+/**
+ * Get the rated movies for a guest session.
+ * @summary Rated Movies
+ */
+export const guestSessionRatedMovies = async (guestSessionId: string,
+    params?: GuestSessionRatedMoviesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<guestSessionRatedMoviesResponse> => {
+
+  return tmdbFetcher<guestSessionRatedMoviesResponse>(getGuestSessionRatedMoviesUrl(guestSessionId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type guestSessionRatedTvResponse200 = {
+  data: GuestSessionRatedTv200
+  status: 200
+}
+
+export type guestSessionRatedTvResponseSuccess = (guestSessionRatedTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type guestSessionRatedTvResponse = (guestSessionRatedTvResponseSuccess)
+
+export const getGuestSessionRatedTvUrl = (guestSessionId: string,
+    params?: GuestSessionRatedTvParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/guest_session/${guestSessionId}/rated/tv?${stringifiedParams}` : `/3/guest_session/${guestSessionId}/rated/tv`
+}
+
+/**
+ * Get the rated TV shows for a guest session.
+ * @summary Rated TV
+ */
+export const guestSessionRatedTv = async (guestSessionId: string,
+    params?: GuestSessionRatedTvParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<guestSessionRatedTvResponse> => {
+
+  return tmdbFetcher<guestSessionRatedTvResponse>(getGuestSessionRatedTvUrl(guestSessionId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type guestSessionRatedTvEpisodesResponse200 = {
+  data: GuestSessionRatedTvEpisodes200
+  status: 200
+}
+
+export type guestSessionRatedTvEpisodesResponseSuccess = (guestSessionRatedTvEpisodesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type guestSessionRatedTvEpisodesResponse = (guestSessionRatedTvEpisodesResponseSuccess)
+
+export const getGuestSessionRatedTvEpisodesUrl = (guestSessionId: string,
+    params?: GuestSessionRatedTvEpisodesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/guest_session/${guestSessionId}/rated/tv/episodes?${stringifiedParams}` : `/3/guest_session/${guestSessionId}/rated/tv/episodes`
+}
+
+/**
+ * Get the rated TV episodes for a guest session.
+ * @summary Rated TV Episodes
+ */
+export const guestSessionRatedTvEpisodes = async (guestSessionId: string,
+    params?: GuestSessionRatedTvEpisodesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<guestSessionRatedTvEpisodesResponse> => {
+
+  return tmdbFetcher<guestSessionRatedTvEpisodesResponse>(getGuestSessionRatedTvEpisodesUrl(guestSessionId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type keywordDetailsResponse200 = {
+  data: KeywordDetails200
+  status: 200
+}
+
+export type keywordDetailsResponseSuccess = (keywordDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type keywordDetailsResponse = (keywordDetailsResponseSuccess)
+
+export const getKeywordDetailsUrl = (keywordId: number,) => {
+
+
+
+
+  return `/3/keyword/${keywordId}`
+}
+
+/**
+ * @summary Details
+ */
+export const keywordDetails = async (keywordId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<keywordDetailsResponse> => {
+
+  return tmdbFetcher<keywordDetailsResponse>(getKeywordDetailsUrl(keywordId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type keywordMoviesResponse200 = {
+  data: KeywordMovies200
+  status: 200
+}
+
+export type keywordMoviesResponseSuccess = (keywordMoviesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type keywordMoviesResponse = (keywordMoviesResponseSuccess)
+
+export const getKeywordMoviesUrl = (keywordId: string,
+    params?: KeywordMoviesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/keyword/${keywordId}/movies?${stringifiedParams}` : `/3/keyword/${keywordId}/movies`
+}
+
+/**
+ * @summary Movies
+ */
+export const keywordMovies = async (keywordId: string,
+    params?: KeywordMoviesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<keywordMoviesResponse> => {
+
+  return tmdbFetcher<keywordMoviesResponse>(getKeywordMoviesUrl(keywordId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type listAddMovieResponse200 = {
+  data: ListAddMovie200
+  status: 200
+}
+
+export type listAddMovieResponseSuccess = (listAddMovieResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listAddMovieResponse = (listAddMovieResponseSuccess)
+
+export const getListAddMovieUrl = (listId: number,
+    params: ListAddMovieParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}/add_item?${stringifiedParams}` : `/3/list/${listId}/add_item`
+}
+
+/**
+ * Add a movie to a list.
+ * @summary Add Movie
+ */
+export const listAddMovie = async (listId: number,
+    params: ListAddMovieParams,
+    listAddMovieBody?: ListAddMovieBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listAddMovieResponse> => {
+
+  return tmdbFetcher<listAddMovieResponse>(getListAddMovieUrl(listId,params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(listAddMovieBody)
+  }
+);}
+
+
+export type listCheckItemStatusResponse200 = {
+  data: ListCheckItemStatus200
+  status: 200
+}
+
+export type listCheckItemStatusResponseSuccess = (listCheckItemStatusResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listCheckItemStatusResponse = (listCheckItemStatusResponseSuccess)
+
+export const getListCheckItemStatusUrl = (listId: number,
+    params?: ListCheckItemStatusParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}/item_status?${stringifiedParams}` : `/3/list/${listId}/item_status`
+}
+
+/**
+ * Use this method to check if an item has already been added to the list.
+ * @summary Check Item Status
+ */
+export const listCheckItemStatus = async (listId: number,
+    params?: ListCheckItemStatusParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listCheckItemStatusResponse> => {
+
+  return tmdbFetcher<listCheckItemStatusResponse>(getListCheckItemStatusUrl(listId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type listClearResponse200 = {
+  data: ListClear200
+  status: 200
+}
+
+export type listClearResponseSuccess = (listClearResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listClearResponse = (listClearResponseSuccess)
+
+export const getListClearUrl = (listId: number,
+    params: ListClearParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}/clear?${stringifiedParams}` : `/3/list/${listId}/clear`
+}
+
+/**
+ * Clear all items from a list.
+ * @summary Clear
+ */
+export const listClear = async (listId: number,
+    params: ListClearParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listClearResponse> => {
+
+  return tmdbFetcher<listClearResponse>(getListClearUrl(listId,params),
+  {
+    ...options,
+    method: 'POST'
+
+
+  }
+);}
+
+
+export type listCreateResponse200 = {
+  data: ListCreate200
+  status: 200
+}
+
+export type listCreateResponseSuccess = (listCreateResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listCreateResponse = (listCreateResponseSuccess)
+
+export const getListCreateUrl = (params: ListCreateParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list?${stringifiedParams}` : `/3/list`
+}
+
+/**
+ * @summary Create
+ */
+export const listCreate = async (params: ListCreateParams,
+    listCreateBody?: ListCreateBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listCreateResponse> => {
+
+  return tmdbFetcher<listCreateResponse>(getListCreateUrl(params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(listCreateBody)
+  }
+);}
+
+
+export type listDeleteResponse200 = {
+  data: ListDelete200
+  status: 200
+}
+
+export type listDeleteResponseSuccess = (listDeleteResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listDeleteResponse = (listDeleteResponseSuccess)
+
+export const getListDeleteUrl = (listId: number,
+    params: ListDeleteParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}?${stringifiedParams}` : `/3/list/${listId}`
+}
+
+/**
+ * Delete a list.
+ * @summary Delete
+ */
+export const listDelete = async (listId: number,
+    params: ListDeleteParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listDeleteResponse> => {
+
+  return tmdbFetcher<listDeleteResponse>(getListDeleteUrl(listId,params),
+  {
+    ...options,
+    method: 'DELETE'
+
+
+  }
+);}
+
+
+export type listDetailsResponse200 = {
+  data: ListDetails200
+  status: 200
+}
+
+export type listDetailsResponseSuccess = (listDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listDetailsResponse = (listDetailsResponseSuccess)
+
+export const getListDetailsUrl = (listId: number,
+    params?: ListDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}?${stringifiedParams}` : `/3/list/${listId}`
+}
+
+/**
+ * @summary Details
+ */
+export const listDetails = async (listId: number,
+    params?: ListDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listDetailsResponse> => {
+
+  return tmdbFetcher<listDetailsResponse>(getListDetailsUrl(listId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type listRemoveMovieResponse200 = {
+  data: ListRemoveMovie200
+  status: 200
+}
+
+export type listRemoveMovieResponseSuccess = (listRemoveMovieResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listRemoveMovieResponse = (listRemoveMovieResponseSuccess)
+
+export const getListRemoveMovieUrl = (listId: number,
+    params: ListRemoveMovieParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/list/${listId}/remove_item?${stringifiedParams}` : `/3/list/${listId}/remove_item`
+}
+
+/**
+ * Remove a movie from a list.
+ * @summary Remove Movie
+ */
+export const listRemoveMovie = async (listId: number,
+    params: ListRemoveMovieParams,
+    listRemoveMovieBody?: ListRemoveMovieBody, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listRemoveMovieResponse> => {
+
+  return tmdbFetcher<listRemoveMovieResponse>(getListRemoveMovieUrl(listId,params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(listRemoveMovieBody)
+  }
+);}
+
+
+export type movieNowPlayingListResponse200 = {
+  data: MovieNowPlayingList200
+  status: 200
+}
+
+export type movieNowPlayingListResponseSuccess = (movieNowPlayingListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieNowPlayingListResponse = (movieNowPlayingListResponseSuccess)
+
+export const getMovieNowPlayingListUrl = (params?: MovieNowPlayingListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/now_playing?${stringifiedParams}` : `/3/movie/now_playing`
+}
+
+/**
+ * Get a list of movies that are currently in theatres.
+ * @summary Now Playing
+ */
+export const movieNowPlayingList = async (params?: MovieNowPlayingListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieNowPlayingListResponse> => {
+
+  return tmdbFetcher<movieNowPlayingListResponse>(getMovieNowPlayingListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type moviePopularListResponse200 = {
+  data: MoviePopularList200
+  status: 200
+}
+
+export type moviePopularListResponseSuccess = (moviePopularListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type moviePopularListResponse = (moviePopularListResponseSuccess)
+
+export const getMoviePopularListUrl = (params?: MoviePopularListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/popular?${stringifiedParams}` : `/3/movie/popular`
+}
+
+/**
+ * Get a list of movies ordered by popularity.
+ * @summary Popular
+ */
+export const moviePopularList = async (params?: MoviePopularListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<moviePopularListResponse> => {
+
+  return tmdbFetcher<moviePopularListResponse>(getMoviePopularListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieTopRatedListResponse200 = {
+  data: MovieTopRatedList200
+  status: 200
+}
+
+export type movieTopRatedListResponseSuccess = (movieTopRatedListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieTopRatedListResponse = (movieTopRatedListResponseSuccess)
+
+export const getMovieTopRatedListUrl = (params?: MovieTopRatedListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/top_rated?${stringifiedParams}` : `/3/movie/top_rated`
+}
+
+/**
+ * Get a list of movies ordered by rating.
+ * @summary Top Rated
+ */
+export const movieTopRatedList = async (params?: MovieTopRatedListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieTopRatedListResponse> => {
+
+  return tmdbFetcher<movieTopRatedListResponse>(getMovieTopRatedListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieUpcomingListResponse200 = {
+  data: MovieUpcomingList200
+  status: 200
+}
+
+export type movieUpcomingListResponseSuccess = (movieUpcomingListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieUpcomingListResponse = (movieUpcomingListResponseSuccess)
+
+export const getMovieUpcomingListUrl = (params?: MovieUpcomingListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/upcoming?${stringifiedParams}` : `/3/movie/upcoming`
+}
+
+/**
+ * Get a list of movies that are being released soon.
+ * @summary Upcoming
+ */
+export const movieUpcomingList = async (params?: MovieUpcomingListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieUpcomingListResponse> => {
+
+  return tmdbFetcher<movieUpcomingListResponse>(getMovieUpcomingListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieDetailsResponse200 = {
+  data: MovieDetails200
+  status: 200
+}
+
+export type movieDetailsResponseSuccess = (movieDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieDetailsResponse = (movieDetailsResponseSuccess)
+
+export const getMovieDetailsUrl = (movieId: number,
+    params?: MovieDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}?${stringifiedParams}` : `/3/movie/${movieId}`
+}
+
+/**
+ * Get the top level details of a movie by ID.
+ * @summary Details
+ */
+export const movieDetails = async (movieId: number,
+    params?: MovieDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieDetailsResponse> => {
+
+  return tmdbFetcher<movieDetailsResponse>(getMovieDetailsUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieAccountStatesResponse200 = {
+  data: MovieAccountStates200
+  status: 200
+}
+
+export type movieAccountStatesResponseSuccess = (movieAccountStatesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieAccountStatesResponse = (movieAccountStatesResponseSuccess)
+
+export const getMovieAccountStatesUrl = (movieId: number,
+    params?: MovieAccountStatesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/account_states?${stringifiedParams}` : `/3/movie/${movieId}/account_states`
+}
+
+/**
+ * Get the rating, watchlist and favourite status of an account.
+ * @summary Account States
+ */
+export const movieAccountStates = async (movieId: number,
+    params?: MovieAccountStatesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieAccountStatesResponse> => {
+
+  return tmdbFetcher<movieAccountStatesResponse>(getMovieAccountStatesUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieAlternativeTitlesResponse200 = {
+  data: MovieAlternativeTitles200
+  status: 200
+}
+
+export type movieAlternativeTitlesResponseSuccess = (movieAlternativeTitlesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieAlternativeTitlesResponse = (movieAlternativeTitlesResponseSuccess)
+
+export const getMovieAlternativeTitlesUrl = (movieId: number,
+    params?: MovieAlternativeTitlesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/alternative_titles?${stringifiedParams}` : `/3/movie/${movieId}/alternative_titles`
+}
+
+/**
+ * Get the alternative titles for a movie.
+ * @summary Alternative Titles
+ */
+export const movieAlternativeTitles = async (movieId: number,
+    params?: MovieAlternativeTitlesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieAlternativeTitlesResponse> => {
+
+  return tmdbFetcher<movieAlternativeTitlesResponse>(getMovieAlternativeTitlesUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieChangesResponse200 = {
+  data: MovieChanges200
+  status: 200
+}
+
+export type movieChangesResponseSuccess = (movieChangesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieChangesResponse = (movieChangesResponseSuccess)
+
+export const getMovieChangesUrl = (movieId: number,
+    params?: MovieChangesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/changes?${stringifiedParams}` : `/3/movie/${movieId}/changes`
+}
+
+/**
+ * Get the recent changes for a movie.
+ * @summary Changes
+ */
+export const movieChanges = async (movieId: number,
+    params?: MovieChangesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieChangesResponse> => {
+
+  return tmdbFetcher<movieChangesResponse>(getMovieChangesUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieCreditsResponse200 = {
+  data: MovieCredits200
+  status: 200
+}
+
+export type movieCreditsResponseSuccess = (movieCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieCreditsResponse = (movieCreditsResponseSuccess)
+
+export const getMovieCreditsUrl = (movieId: number,
+    params?: MovieCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/credits?${stringifiedParams}` : `/3/movie/${movieId}/credits`
+}
+
+/**
+ * @summary Credits
+ */
+export const movieCredits = async (movieId: number,
+    params?: MovieCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieCreditsResponse> => {
+
+  return tmdbFetcher<movieCreditsResponse>(getMovieCreditsUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieExternalIdsResponse200 = {
+  data: MovieExternalIds200
+  status: 200
+}
+
+export type movieExternalIdsResponseSuccess = (movieExternalIdsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieExternalIdsResponse = (movieExternalIdsResponseSuccess)
+
+export const getMovieExternalIdsUrl = (movieId: number,) => {
+
+
+
+
+  return `/3/movie/${movieId}/external_ids`
+}
+
+/**
+ * @summary External IDs
+ */
+export const movieExternalIds = async (movieId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieExternalIdsResponse> => {
+
+  return tmdbFetcher<movieExternalIdsResponse>(getMovieExternalIdsUrl(movieId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieImagesResponse200 = {
+  data: MovieImages200
+  status: 200
+}
+
+export type movieImagesResponseSuccess = (movieImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieImagesResponse = (movieImagesResponseSuccess)
+
+export const getMovieImagesUrl = (movieId: number,
+    params?: MovieImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/images?${stringifiedParams}` : `/3/movie/${movieId}/images`
+}
+
+/**
+ * Get the images that belong to a movie.
+ * @summary Images
+ */
+export const movieImages = async (movieId: number,
+    params?: MovieImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieImagesResponse> => {
+
+  return tmdbFetcher<movieImagesResponse>(getMovieImagesUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieKeywordsResponse200 = {
+  data: MovieKeywords200
+  status: 200
+}
+
+export type movieKeywordsResponseSuccess = (movieKeywordsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieKeywordsResponse = (movieKeywordsResponseSuccess)
+
+export const getMovieKeywordsUrl = (movieId: string,) => {
+
+
+
+
+  return `/3/movie/${movieId}/keywords`
+}
+
+/**
+ * @summary Keywords
+ */
+export const movieKeywords = async (movieId: string, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieKeywordsResponse> => {
+
+  return tmdbFetcher<movieKeywordsResponse>(getMovieKeywordsUrl(movieId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieLatestIdResponse200 = {
+  data: MovieLatestId200
+  status: 200
+}
+
+export type movieLatestIdResponseSuccess = (movieLatestIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieLatestIdResponse = (movieLatestIdResponseSuccess)
+
+export const getMovieLatestIdUrl = () => {
+
+
+
+
+  return `/3/movie/latest`
+}
+
+/**
+ * Get the newest movie ID.
+ * @summary Latest
+ */
+export const movieLatestId = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieLatestIdResponse> => {
+
+  return tmdbFetcher<movieLatestIdResponse>(getMovieLatestIdUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieListsResponse200 = {
+  data: MovieLists200
+  status: 200
+}
+
+export type movieListsResponseSuccess = (movieListsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieListsResponse = (movieListsResponseSuccess)
+
+export const getMovieListsUrl = (movieId: number,
+    params?: MovieListsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/lists?${stringifiedParams}` : `/3/movie/${movieId}/lists`
+}
+
+/**
+ * Get the lists that a movie has been added to.
+ * @summary Lists
+ */
+export const movieLists = async (movieId: number,
+    params?: MovieListsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieListsResponse> => {
+
+  return tmdbFetcher<movieListsResponse>(getMovieListsUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieRecommendationsResponse200 = {
+  data: MovieRecommendations200
+  status: 200
+}
+
+export type movieRecommendationsResponseSuccess = (movieRecommendationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieRecommendationsResponse = (movieRecommendationsResponseSuccess)
+
+export const getMovieRecommendationsUrl = (movieId: number,
+    params?: MovieRecommendationsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/recommendations?${stringifiedParams}` : `/3/movie/${movieId}/recommendations`
+}
+
+/**
+ * @summary Recommendations
+ */
+export const movieRecommendations = async (movieId: number,
+    params?: MovieRecommendationsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieRecommendationsResponse> => {
+
+  return tmdbFetcher<movieRecommendationsResponse>(getMovieRecommendationsUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieReleaseDatesResponse200 = {
+  data: MovieReleaseDates200
+  status: 200
+}
+
+export type movieReleaseDatesResponseSuccess = (movieReleaseDatesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieReleaseDatesResponse = (movieReleaseDatesResponseSuccess)
+
+export const getMovieReleaseDatesUrl = (movieId: number,) => {
+
+
+
+
+  return `/3/movie/${movieId}/release_dates`
+}
+
+/**
+ * Get the release dates and certifications for a movie.
+ * @summary Release Dates
+ */
+export const movieReleaseDates = async (movieId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieReleaseDatesResponse> => {
+
+  return tmdbFetcher<movieReleaseDatesResponse>(getMovieReleaseDatesUrl(movieId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieReviewsResponse200 = {
+  data: MovieReviews200
+  status: 200
+}
+
+export type movieReviewsResponseSuccess = (movieReviewsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieReviewsResponse = (movieReviewsResponseSuccess)
+
+export const getMovieReviewsUrl = (movieId: number,
+    params?: MovieReviewsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/reviews?${stringifiedParams}` : `/3/movie/${movieId}/reviews`
+}
+
+/**
+ * Get the user reviews for a movie.
+ * @summary Reviews
+ */
+export const movieReviews = async (movieId: number,
+    params?: MovieReviewsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieReviewsResponse> => {
+
+  return tmdbFetcher<movieReviewsResponse>(getMovieReviewsUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieSimilarResponse200 = {
+  data: MovieSimilar200
+  status: 200
+}
+
+export type movieSimilarResponseSuccess = (movieSimilarResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieSimilarResponse = (movieSimilarResponseSuccess)
+
+export const getMovieSimilarUrl = (movieId: number,
+    params?: MovieSimilarParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/similar?${stringifiedParams}` : `/3/movie/${movieId}/similar`
+}
+
+/**
+ * Get the similar movies based on genres and keywords.
+ * @summary Similar
+ */
+export const movieSimilar = async (movieId: number,
+    params?: MovieSimilarParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieSimilarResponse> => {
+
+  return tmdbFetcher<movieSimilarResponse>(getMovieSimilarUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieTranslationsResponse200 = {
+  data: MovieTranslations200
+  status: 200
+}
+
+export type movieTranslationsResponseSuccess = (movieTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieTranslationsResponse = (movieTranslationsResponseSuccess)
+
+export const getMovieTranslationsUrl = (movieId: number,) => {
+
+
+
+
+  return `/3/movie/${movieId}/translations`
+}
+
+/**
+ * Get the translations for a movie.
+ * @summary Translations
+ */
+export const movieTranslations = async (movieId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieTranslationsResponse> => {
+
+  return tmdbFetcher<movieTranslationsResponse>(getMovieTranslationsUrl(movieId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieVideosResponse200 = {
+  data: MovieVideos200
+  status: 200
+}
+
+export type movieVideosResponseSuccess = (movieVideosResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieVideosResponse = (movieVideosResponseSuccess)
+
+export const getMovieVideosUrl = (movieId: number,
+    params?: MovieVideosParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/videos?${stringifiedParams}` : `/3/movie/${movieId}/videos`
+}
+
+/**
+ * @summary Videos
+ */
+export const movieVideos = async (movieId: number,
+    params?: MovieVideosParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieVideosResponse> => {
+
+  return tmdbFetcher<movieVideosResponse>(getMovieVideosUrl(movieId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieWatchProvidersResponse200 = {
+  data: MovieWatchProviders200
+  status: 200
+}
+
+export type movieWatchProvidersResponseSuccess = (movieWatchProvidersResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieWatchProvidersResponse = (movieWatchProvidersResponseSuccess)
+
+export const getMovieWatchProvidersUrl = (movieId: number,) => {
+
+
+
+
+  return `/3/movie/${movieId}/watch/providers`
+}
+
+/**
+ * Get the list of streaming providers we have for a movie.
+ * @summary Watch Providers
+ */
+export const movieWatchProviders = async (movieId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieWatchProvidersResponse> => {
+
+  return tmdbFetcher<movieWatchProvidersResponse>(getMovieWatchProvidersUrl(movieId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type movieAddRatingResponse200 = {
+  data: MovieAddRating200
+  status: 200
+}
+
+export type movieAddRatingResponseSuccess = (movieAddRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieAddRatingResponse = (movieAddRatingResponseSuccess)
+
+export const getMovieAddRatingUrl = (movieId: number,
+    params?: MovieAddRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/rating?${stringifiedParams}` : `/3/movie/${movieId}/rating`
+}
+
+/**
+ * Rate a movie and save it to your rated list.
+ * @summary Add Rating
+ */
+export const movieAddRating = async (movieId: number,
+    movieAddRatingBody?: MovieAddRatingBody,
+    params?: MovieAddRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieAddRatingResponse> => {
+
+  return tmdbFetcher<movieAddRatingResponse>(getMovieAddRatingUrl(movieId,params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(movieAddRatingBody)
+  }
+);}
+
+
+export type movieDeleteRatingResponse200 = {
+  data: MovieDeleteRating200
+  status: 200
+}
+
+export type movieDeleteRatingResponseSuccess = (movieDeleteRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type movieDeleteRatingResponse = (movieDeleteRatingResponseSuccess)
+
+export const getMovieDeleteRatingUrl = (movieId: number,
+    params?: MovieDeleteRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/movie/${movieId}/rating?${stringifiedParams}` : `/3/movie/${movieId}/rating`
+}
+
+/**
+ * Delete a user rating.
+ * @summary Delete Rating
+ */
+export const movieDeleteRating = async (movieId: number,
+    params?: MovieDeleteRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<movieDeleteRatingResponse> => {
+
+  return tmdbFetcher<movieDeleteRatingResponse>(getMovieDeleteRatingUrl(movieId,params),
+  {
+    ...options,
+    method: 'DELETE'
+
+
+  }
+);}
+
+
+export type networkDetailsResponse200 = {
+  data: NetworkDetails200
+  status: 200
+}
+
+export type networkDetailsResponseSuccess = (networkDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type networkDetailsResponse = (networkDetailsResponseSuccess)
+
+export const getNetworkDetailsUrl = (networkId: number,) => {
+
+
+
+
+  return `/3/network/${networkId}`
+}
+
+/**
+ * @summary Details
+ */
+export const networkDetails = async (networkId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<networkDetailsResponse> => {
+
+  return tmdbFetcher<networkDetailsResponse>(getNetworkDetailsUrl(networkId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type detailsCopyResponse200 = {
+  data: DetailsCopy200
+  status: 200
+}
+
+export type detailsCopyResponseSuccess = (detailsCopyResponse200) & {
+  headers: Headers;
+};
+;
+
+export type detailsCopyResponse = (detailsCopyResponseSuccess)
+
+export const getDetailsCopyUrl = (networkId: number,) => {
+
+
+
+
+  return `/3/network/${networkId}/alternative_names`
+}
+
+/**
+ * Get the alternative names of a network.
+ * @summary Alternative Names
+ */
+export const detailsCopy = async (networkId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<detailsCopyResponse> => {
+
+  return tmdbFetcher<detailsCopyResponse>(getDetailsCopyUrl(networkId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type alternativeNamesCopyResponse200 = {
+  data: AlternativeNamesCopy200
+  status: 200
+}
+
+export type alternativeNamesCopyResponseSuccess = (alternativeNamesCopyResponse200) & {
+  headers: Headers;
+};
+;
+
+export type alternativeNamesCopyResponse = (alternativeNamesCopyResponseSuccess)
+
+export const getAlternativeNamesCopyUrl = (networkId: number,) => {
+
+
+
+
+  return `/3/network/${networkId}/images`
+}
+
+/**
+ * Get the TV network logos by id.
+ * @summary Images
+ */
+export const alternativeNamesCopy = async (networkId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<alternativeNamesCopyResponse> => {
+
+  return tmdbFetcher<alternativeNamesCopyResponse>(getAlternativeNamesCopyUrl(networkId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personPopularListResponse200 = {
+  data: PersonPopularList200
+  status: 200
+}
+
+export type personPopularListResponseSuccess = (personPopularListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personPopularListResponse = (personPopularListResponseSuccess)
+
+export const getPersonPopularListUrl = (params?: PersonPopularListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/popular?${stringifiedParams}` : `/3/person/popular`
+}
+
+/**
+ * Get a list of people ordered by popularity.
+ * @summary Popular
+ */
+export const personPopularList = async (params?: PersonPopularListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personPopularListResponse> => {
+
+  return tmdbFetcher<personPopularListResponse>(getPersonPopularListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personDetailsResponse200 = {
+  data: PersonDetails200
+  status: 200
+}
+
+export type personDetailsResponseSuccess = (personDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personDetailsResponse = (personDetailsResponseSuccess)
+
+export const getPersonDetailsUrl = (personId: number,
+    params?: PersonDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}?${stringifiedParams}` : `/3/person/${personId}`
+}
+
+/**
+ * Query the top level details of a person.
+ * @summary Details
+ */
+export const personDetails = async (personId: number,
+    params?: PersonDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personDetailsResponse> => {
+
+  return tmdbFetcher<personDetailsResponse>(getPersonDetailsUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personChangesResponse200 = {
+  data: PersonChanges200
+  status: 200
+}
+
+export type personChangesResponseSuccess = (personChangesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personChangesResponse = (personChangesResponseSuccess)
+
+export const getPersonChangesUrl = (personId: number,
+    params?: PersonChangesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}/changes?${stringifiedParams}` : `/3/person/${personId}/changes`
+}
+
+/**
+ * Get the recent changes for a person.
+ * @summary Changes
+ */
+export const personChanges = async (personId: number,
+    params?: PersonChangesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personChangesResponse> => {
+
+  return tmdbFetcher<personChangesResponse>(getPersonChangesUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personCombinedCreditsResponse200 = {
+  data: PersonCombinedCredits200
+  status: 200
+}
+
+export type personCombinedCreditsResponseSuccess = (personCombinedCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personCombinedCreditsResponse = (personCombinedCreditsResponseSuccess)
+
+export const getPersonCombinedCreditsUrl = (personId: string,
+    params?: PersonCombinedCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}/combined_credits?${stringifiedParams}` : `/3/person/${personId}/combined_credits`
+}
+
+/**
+ * Get the combined movie and TV credits that belong to a person.
+ * @summary Combined Credits
+ */
+export const personCombinedCredits = async (personId: string,
+    params?: PersonCombinedCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personCombinedCreditsResponse> => {
+
+  return tmdbFetcher<personCombinedCreditsResponse>(getPersonCombinedCreditsUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personExternalIdsResponse200 = {
+  data: PersonExternalIds200
+  status: 200
+}
+
+export type personExternalIdsResponseSuccess = (personExternalIdsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personExternalIdsResponse = (personExternalIdsResponseSuccess)
+
+export const getPersonExternalIdsUrl = (personId: number,) => {
+
+
+
+
+  return `/3/person/${personId}/external_ids`
+}
+
+/**
+ * Get the external ID's that belong to a person.
+ * @summary External IDs
+ */
+export const personExternalIds = async (personId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personExternalIdsResponse> => {
+
+  return tmdbFetcher<personExternalIdsResponse>(getPersonExternalIdsUrl(personId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personImagesResponse200 = {
+  data: PersonImages200
+  status: 200
+}
+
+export type personImagesResponseSuccess = (personImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personImagesResponse = (personImagesResponseSuccess)
+
+export const getPersonImagesUrl = (personId: number,) => {
+
+
+
+
+  return `/3/person/${personId}/images`
+}
+
+/**
+ * Get the profile images that belong to a person.
+ * @summary Images
+ */
+export const personImages = async (personId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personImagesResponse> => {
+
+  return tmdbFetcher<personImagesResponse>(getPersonImagesUrl(personId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personLatestIdResponse200 = {
+  data: PersonLatestId200
+  status: 200
+}
+
+export type personLatestIdResponseSuccess = (personLatestIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personLatestIdResponse = (personLatestIdResponseSuccess)
+
+export const getPersonLatestIdUrl = () => {
+
+
+
+
+  return `/3/person/latest`
+}
+
+/**
+ * Get the newest created person. This is a live response and will continuously change.
+ * @summary Latest
+ */
+export const personLatestId = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<personLatestIdResponse> => {
+
+  return tmdbFetcher<personLatestIdResponse>(getPersonLatestIdUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personMovieCreditsResponse200 = {
+  data: PersonMovieCredits200
+  status: 200
+}
+
+export type personMovieCreditsResponseSuccess = (personMovieCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personMovieCreditsResponse = (personMovieCreditsResponseSuccess)
+
+export const getPersonMovieCreditsUrl = (personId: number,
+    params?: PersonMovieCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}/movie_credits?${stringifiedParams}` : `/3/person/${personId}/movie_credits`
+}
+
+/**
+ * Get the movie credits for a person.
+ * @summary Movie Credits
+ */
+export const personMovieCredits = async (personId: number,
+    params?: PersonMovieCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personMovieCreditsResponse> => {
+
+  return tmdbFetcher<personMovieCreditsResponse>(getPersonMovieCreditsUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personTvCreditsResponse200 = {
+  data: PersonTvCredits200
+  status: 200
+}
+
+export type personTvCreditsResponseSuccess = (personTvCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personTvCreditsResponse = (personTvCreditsResponseSuccess)
+
+export const getPersonTvCreditsUrl = (personId: number,
+    params?: PersonTvCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}/tv_credits?${stringifiedParams}` : `/3/person/${personId}/tv_credits`
+}
+
+/**
+ * Get the TV credits that belong to a person.
+ * @summary TV Credits
+ */
+export const personTvCredits = async (personId: number,
+    params?: PersonTvCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personTvCreditsResponse> => {
+
+  return tmdbFetcher<personTvCreditsResponse>(getPersonTvCreditsUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type personTaggedImagesResponse200 = {
+  data: PersonTaggedImages200
+  status: 200
+}
+
+export type personTaggedImagesResponseSuccess = (personTaggedImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type personTaggedImagesResponse = (personTaggedImagesResponseSuccess)
+
+export const getPersonTaggedImagesUrl = (personId: number,
+    params?: PersonTaggedImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/person/${personId}/tagged_images?${stringifiedParams}` : `/3/person/${personId}/tagged_images`
+}
+
+/**
+ * Get the tagged images for a person.
+ * @summary Tagged Images
+ */
+export const personTaggedImages = async (personId: number,
+    params?: PersonTaggedImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<personTaggedImagesResponse> => {
+
+  return tmdbFetcher<personTaggedImagesResponse>(getPersonTaggedImagesUrl(personId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type translationsResponse200 = {
+  data: Translations200
+  status: 200
+}
+
+export type translationsResponseSuccess = (translationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type translationsResponse = (translationsResponseSuccess)
+
+export const getTranslationsUrl = (personId: number,) => {
+
+
+
+
+  return `/3/person/${personId}/translations`
+}
+
+/**
+ * Get the translations that belong to a person.
+ * @summary Translations
+ */
+export const translations = async (personId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<translationsResponse> => {
+
+  return tmdbFetcher<translationsResponse>(getTranslationsUrl(personId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type reviewDetailsResponse200 = {
+  data: ReviewDetails200
+  status: 200
+}
+
+export type reviewDetailsResponseSuccess = (reviewDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type reviewDetailsResponse = (reviewDetailsResponseSuccess)
+
+export const getReviewDetailsUrl = (reviewId: string,) => {
+
+
+
+
+  return `/3/review/${reviewId}`
+}
+
+/**
+ * Retrieve the details of a movie or TV show review.
+ * @summary Details
+ */
+export const reviewDetails = async (reviewId: string, options?: Parameters<typeof tmdbFetcher>[1]): Promise<reviewDetailsResponse> => {
+
+  return tmdbFetcher<reviewDetailsResponse>(getReviewDetailsUrl(reviewId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchCollectionResponse200 = {
+  data: SearchCollection200
+  status: 200
+}
+
+export type searchCollectionResponseSuccess = (searchCollectionResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchCollectionResponse = (searchCollectionResponseSuccess)
+
+export const getSearchCollectionUrl = (params: SearchCollectionParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/collection?${stringifiedParams}` : `/3/search/collection`
+}
+
+/**
+ * Search for collections by their original, translated and alternative names.
+ * @summary Collection
+ */
+export const searchCollection = async (params: SearchCollectionParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchCollectionResponse> => {
+
+  return tmdbFetcher<searchCollectionResponse>(getSearchCollectionUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchCompanyResponse200 = {
+  data: SearchCompany200
+  status: 200
+}
+
+export type searchCompanyResponseSuccess = (searchCompanyResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchCompanyResponse = (searchCompanyResponseSuccess)
+
+export const getSearchCompanyUrl = (params: SearchCompanyParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/company?${stringifiedParams}` : `/3/search/company`
+}
+
+/**
+ * Search for companies by their original and alternative names.
+ * @summary Company
+ */
+export const searchCompany = async (params: SearchCompanyParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchCompanyResponse> => {
+
+  return tmdbFetcher<searchCompanyResponse>(getSearchCompanyUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchKeywordResponse200 = {
+  data: SearchKeyword200
+  status: 200
+}
+
+export type searchKeywordResponseSuccess = (searchKeywordResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchKeywordResponse = (searchKeywordResponseSuccess)
+
+export const getSearchKeywordUrl = (params: SearchKeywordParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/keyword?${stringifiedParams}` : `/3/search/keyword`
+}
+
+/**
+ * Search for keywords by their name.
+ * @summary Keyword
+ */
+export const searchKeyword = async (params: SearchKeywordParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchKeywordResponse> => {
+
+  return tmdbFetcher<searchKeywordResponse>(getSearchKeywordUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchMovieResponse200 = {
+  data: SearchMovie200
+  status: 200
+}
+
+export type searchMovieResponseSuccess = (searchMovieResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchMovieResponse = (searchMovieResponseSuccess)
+
+export const getSearchMovieUrl = (params: SearchMovieParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/movie?${stringifiedParams}` : `/3/search/movie`
+}
+
+/**
+ * Search for movies by their original, translated and alternative titles.
+ * @summary Movie
+ */
+export const searchMovie = async (params: SearchMovieParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchMovieResponse> => {
+
+  return tmdbFetcher<searchMovieResponse>(getSearchMovieUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchMultiResponse200 = {
+  data: SearchMulti200
+  status: 200
+}
+
+export type searchMultiResponseSuccess = (searchMultiResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchMultiResponse = (searchMultiResponseSuccess)
+
+export const getSearchMultiUrl = (params: SearchMultiParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/multi?${stringifiedParams}` : `/3/search/multi`
+}
+
+/**
+ * Use multi search when you want to search for movies, TV shows and people in a single request.
+ * @summary Multi
+ */
+export const searchMulti = async (params: SearchMultiParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchMultiResponse> => {
+
+  return tmdbFetcher<searchMultiResponse>(getSearchMultiUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchPersonResponse200 = {
+  data: SearchPerson200
+  status: 200
+}
+
+export type searchPersonResponseSuccess = (searchPersonResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchPersonResponse = (searchPersonResponseSuccess)
+
+export const getSearchPersonUrl = (params: SearchPersonParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/person?${stringifiedParams}` : `/3/search/person`
+}
+
+/**
+ * Search for people by their name and also known as names.
+ * @summary Person
+ */
+export const searchPerson = async (params: SearchPersonParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchPersonResponse> => {
+
+  return tmdbFetcher<searchPersonResponse>(getSearchPersonUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type searchTvResponse200 = {
+  data: SearchTv200
+  status: 200
+}
+
+export type searchTvResponseSuccess = (searchTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type searchTvResponse = (searchTvResponseSuccess)
+
+export const getSearchTvUrl = (params: SearchTvParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/search/tv?${stringifiedParams}` : `/3/search/tv`
+}
+
+/**
+ * Search for TV shows by their original, translated and also known as names.
+ * @summary TV
+ */
+export const searchTv = async (params: SearchTvParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<searchTvResponse> => {
+
+  return tmdbFetcher<searchTvResponse>(getSearchTvUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type trendingAllResponse200 = {
+  data: TrendingAll200
+  status: 200
+}
+
+export type trendingAllResponseSuccess = (trendingAllResponse200) & {
+  headers: Headers;
+};
+;
+
+export type trendingAllResponse = (trendingAllResponseSuccess)
+
+export const getTrendingAllUrl = (params?: TrendingAllParams,
+    timeWindow: 'day' | 'week' = 'day',) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/trending/all/${timeWindow}?${stringifiedParams}` : `/3/trending/all/${timeWindow}`
+}
+
+/**
+ * Get the trending movies, TV shows and people.
+ * @summary All
+ */
+export const trendingAll = async (params?: TrendingAllParams,
+    timeWindow: 'day' | 'week' = 'day', options?: Parameters<typeof tmdbFetcher>[1]): Promise<trendingAllResponse> => {
+
+  return tmdbFetcher<trendingAllResponse>(getTrendingAllUrl(params,timeWindow),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type trendingMoviesResponse200 = {
+  data: TrendingMovies200
+  status: 200
+}
+
+export type trendingMoviesResponseSuccess = (trendingMoviesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type trendingMoviesResponse = (trendingMoviesResponseSuccess)
+
+export const getTrendingMoviesUrl = (params?: TrendingMoviesParams,
+    timeWindow: 'day' | 'week' = 'day',) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/trending/movie/${timeWindow}?${stringifiedParams}` : `/3/trending/movie/${timeWindow}`
+}
+
+/**
+ * Get the trending movies on TMDB.
+ * @summary Movies
+ */
+export const trendingMovies = async (params?: TrendingMoviesParams,
+    timeWindow: 'day' | 'week' = 'day', options?: Parameters<typeof tmdbFetcher>[1]): Promise<trendingMoviesResponse> => {
+
+  return tmdbFetcher<trendingMoviesResponse>(getTrendingMoviesUrl(params,timeWindow),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type trendingPeopleResponse200 = {
+  data: TrendingPeople200
+  status: 200
+}
+
+export type trendingPeopleResponseSuccess = (trendingPeopleResponse200) & {
+  headers: Headers;
+};
+;
+
+export type trendingPeopleResponse = (trendingPeopleResponseSuccess)
+
+export const getTrendingPeopleUrl = (params?: TrendingPeopleParams,
+    timeWindow: 'day' | 'week' = 'day',) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/trending/person/${timeWindow}?${stringifiedParams}` : `/3/trending/person/${timeWindow}`
+}
+
+/**
+ * Get the trending people on TMDB.
+ * @summary People
+ */
+export const trendingPeople = async (params?: TrendingPeopleParams,
+    timeWindow: 'day' | 'week' = 'day', options?: Parameters<typeof tmdbFetcher>[1]): Promise<trendingPeopleResponse> => {
+
+  return tmdbFetcher<trendingPeopleResponse>(getTrendingPeopleUrl(params,timeWindow),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type trendingTvResponse200 = {
+  data: TrendingTv200
+  status: 200
+}
+
+export type trendingTvResponseSuccess = (trendingTvResponse200) & {
+  headers: Headers;
+};
+;
+
+export type trendingTvResponse = (trendingTvResponseSuccess)
+
+export const getTrendingTvUrl = (params?: TrendingTvParams,
+    timeWindow: 'day' | 'week' = 'day',) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/trending/tv/${timeWindow}?${stringifiedParams}` : `/3/trending/tv/${timeWindow}`
+}
+
+/**
+ * Get the trending TV shows on TMDB.
+ * @summary TV
+ */
+export const trendingTv = async (params?: TrendingTvParams,
+    timeWindow: 'day' | 'week' = 'day', options?: Parameters<typeof tmdbFetcher>[1]): Promise<trendingTvResponse> => {
+
+  return tmdbFetcher<trendingTvResponse>(getTrendingTvUrl(params,timeWindow),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesAiringTodayListResponse200 = {
+  data: TvSeriesAiringTodayList200
+  status: 200
+}
+
+export type tvSeriesAiringTodayListResponseSuccess = (tvSeriesAiringTodayListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesAiringTodayListResponse = (tvSeriesAiringTodayListResponseSuccess)
+
+export const getTvSeriesAiringTodayListUrl = (params?: TvSeriesAiringTodayListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/airing_today?${stringifiedParams}` : `/3/tv/airing_today`
+}
+
+/**
+ * Get a list of TV shows airing today.
+ * @summary Airing Today
+ */
+export const tvSeriesAiringTodayList = async (params?: TvSeriesAiringTodayListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesAiringTodayListResponse> => {
+
+  return tmdbFetcher<tvSeriesAiringTodayListResponse>(getTvSeriesAiringTodayListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesOnTheAirListResponse200 = {
+  data: TvSeriesOnTheAirList200
+  status: 200
+}
+
+export type tvSeriesOnTheAirListResponseSuccess = (tvSeriesOnTheAirListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesOnTheAirListResponse = (tvSeriesOnTheAirListResponseSuccess)
+
+export const getTvSeriesOnTheAirListUrl = (params?: TvSeriesOnTheAirListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/on_the_air?${stringifiedParams}` : `/3/tv/on_the_air`
+}
+
+/**
+ * Get a list of TV shows that air in the next 7 days.
+ * @summary On The Air
+ */
+export const tvSeriesOnTheAirList = async (params?: TvSeriesOnTheAirListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesOnTheAirListResponse> => {
+
+  return tmdbFetcher<tvSeriesOnTheAirListResponse>(getTvSeriesOnTheAirListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesPopularListResponse200 = {
+  data: TvSeriesPopularList200
+  status: 200
+}
+
+export type tvSeriesPopularListResponseSuccess = (tvSeriesPopularListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesPopularListResponse = (tvSeriesPopularListResponseSuccess)
+
+export const getTvSeriesPopularListUrl = (params?: TvSeriesPopularListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/popular?${stringifiedParams}` : `/3/tv/popular`
+}
+
+/**
+ * Get a list of TV shows ordered by popularity.
+ * @summary Popular
+ */
+export const tvSeriesPopularList = async (params?: TvSeriesPopularListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesPopularListResponse> => {
+
+  return tmdbFetcher<tvSeriesPopularListResponse>(getTvSeriesPopularListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesTopRatedListResponse200 = {
+  data: TvSeriesTopRatedList200
+  status: 200
+}
+
+export type tvSeriesTopRatedListResponseSuccess = (tvSeriesTopRatedListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesTopRatedListResponse = (tvSeriesTopRatedListResponseSuccess)
+
+export const getTvSeriesTopRatedListUrl = (params?: TvSeriesTopRatedListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/top_rated?${stringifiedParams}` : `/3/tv/top_rated`
+}
+
+/**
+ * Get a list of TV shows ordered by rating.
+ * @summary Top Rated
+ */
+export const tvSeriesTopRatedList = async (params?: TvSeriesTopRatedListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesTopRatedListResponse> => {
+
+  return tmdbFetcher<tvSeriesTopRatedListResponse>(getTvSeriesTopRatedListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesDetailsResponse200 = {
+  data: TvSeriesDetails200
+  status: 200
+}
+
+export type tvSeriesDetailsResponseSuccess = (tvSeriesDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesDetailsResponse = (tvSeriesDetailsResponseSuccess)
+
+export const getTvSeriesDetailsUrl = (seriesId: number,
+    params?: TvSeriesDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}?${stringifiedParams}` : `/3/tv/${seriesId}`
+}
+
+/**
+ * Get the details of a TV show.
+ * @summary Details
+ */
+export const tvSeriesDetails = async (seriesId: number,
+    params?: TvSeriesDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesDetailsResponse> => {
+
+  return tmdbFetcher<tvSeriesDetailsResponse>(getTvSeriesDetailsUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesAccountStatesResponse200 = {
+  data: TvSeriesAccountStates200
+  status: 200
+}
+
+export type tvSeriesAccountStatesResponseSuccess = (tvSeriesAccountStatesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesAccountStatesResponse = (tvSeriesAccountStatesResponseSuccess)
+
+export const getTvSeriesAccountStatesUrl = (seriesId: number,
+    params?: TvSeriesAccountStatesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/account_states?${stringifiedParams}` : `/3/tv/${seriesId}/account_states`
+}
+
+/**
+ * Get the rating, watchlist and favourite status.
+ * @summary Account States
+ */
+export const tvSeriesAccountStates = async (seriesId: number,
+    params?: TvSeriesAccountStatesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesAccountStatesResponse> => {
+
+  return tmdbFetcher<tvSeriesAccountStatesResponse>(getTvSeriesAccountStatesUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesAggregateCreditsResponse200 = {
+  data: TvSeriesAggregateCredits200
+  status: 200
+}
+
+export type tvSeriesAggregateCreditsResponseSuccess = (tvSeriesAggregateCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesAggregateCreditsResponse = (tvSeriesAggregateCreditsResponseSuccess)
+
+export const getTvSeriesAggregateCreditsUrl = (seriesId: number,
+    params?: TvSeriesAggregateCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/aggregate_credits?${stringifiedParams}` : `/3/tv/${seriesId}/aggregate_credits`
+}
+
+/**
+ * Get the aggregate credits (cast and crew) that have been added to a TV show.
+ * @summary Aggregate Credits
+ */
+export const tvSeriesAggregateCredits = async (seriesId: number,
+    params?: TvSeriesAggregateCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesAggregateCreditsResponse> => {
+
+  return tmdbFetcher<tvSeriesAggregateCreditsResponse>(getTvSeriesAggregateCreditsUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesAlternativeTitlesResponse200 = {
+  data: TvSeriesAlternativeTitles200
+  status: 200
+}
+
+export type tvSeriesAlternativeTitlesResponseSuccess = (tvSeriesAlternativeTitlesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesAlternativeTitlesResponse = (tvSeriesAlternativeTitlesResponseSuccess)
+
+export const getTvSeriesAlternativeTitlesUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/alternative_titles`
+}
+
+/**
+ * Get the alternative titles that have been added to a TV show.
+ * @summary Alternative Titles
+ */
+export const tvSeriesAlternativeTitles = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesAlternativeTitlesResponse> => {
+
+  return tmdbFetcher<tvSeriesAlternativeTitlesResponse>(getTvSeriesAlternativeTitlesUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesChangesResponse200 = {
+  data: TvSeriesChanges200
+  status: 200
+}
+
+export type tvSeriesChangesResponseSuccess = (tvSeriesChangesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesChangesResponse = (tvSeriesChangesResponseSuccess)
+
+export const getTvSeriesChangesUrl = (seriesId: number,
+    params?: TvSeriesChangesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/changes?${stringifiedParams}` : `/3/tv/${seriesId}/changes`
+}
+
+/**
+ * Get the recent changes for a TV show.
+ * @summary Changes
+ */
+export const tvSeriesChanges = async (seriesId: number,
+    params?: TvSeriesChangesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesChangesResponse> => {
+
+  return tmdbFetcher<tvSeriesChangesResponse>(getTvSeriesChangesUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesContentRatingsResponse200 = {
+  data: TvSeriesContentRatings200
+  status: 200
+}
+
+export type tvSeriesContentRatingsResponseSuccess = (tvSeriesContentRatingsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesContentRatingsResponse = (tvSeriesContentRatingsResponseSuccess)
+
+export const getTvSeriesContentRatingsUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/content_ratings`
+}
+
+/**
+ * Get the content ratings that have been added to a TV show.
+ * @summary Content Ratings
+ */
+export const tvSeriesContentRatings = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesContentRatingsResponse> => {
+
+  return tmdbFetcher<tvSeriesContentRatingsResponse>(getTvSeriesContentRatingsUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesCreditsResponse200 = {
+  data: TvSeriesCredits200
+  status: 200
+}
+
+export type tvSeriesCreditsResponseSuccess = (tvSeriesCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesCreditsResponse = (tvSeriesCreditsResponseSuccess)
+
+export const getTvSeriesCreditsUrl = (seriesId: number,
+    params?: TvSeriesCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/credits?${stringifiedParams}` : `/3/tv/${seriesId}/credits`
+}
+
+/**
+ * Get the latest season credits of a TV show.
+ * @summary Credits
+ */
+export const tvSeriesCredits = async (seriesId: number,
+    params?: TvSeriesCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesCreditsResponse> => {
+
+  return tmdbFetcher<tvSeriesCreditsResponse>(getTvSeriesCreditsUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesEpisodeGroupsResponse200 = {
+  data: TvSeriesEpisodeGroups200
+  status: 200
+}
+
+export type tvSeriesEpisodeGroupsResponseSuccess = (tvSeriesEpisodeGroupsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesEpisodeGroupsResponse = (tvSeriesEpisodeGroupsResponseSuccess)
+
+export const getTvSeriesEpisodeGroupsUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/episode_groups`
+}
+
+/**
+ * Get the episode groups that have been added to a TV show.
+ * @summary Episode Groups
+ */
+export const tvSeriesEpisodeGroups = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesEpisodeGroupsResponse> => {
+
+  return tmdbFetcher<tvSeriesEpisodeGroupsResponse>(getTvSeriesEpisodeGroupsUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesExternalIdsResponse200 = {
+  data: TvSeriesExternalIds200
+  status: 200
+}
+
+export type tvSeriesExternalIdsResponseSuccess = (tvSeriesExternalIdsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesExternalIdsResponse = (tvSeriesExternalIdsResponseSuccess)
+
+export const getTvSeriesExternalIdsUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/external_ids`
+}
+
+/**
+ * Get a list of external IDs that have been added to a TV show.
+ * @summary External IDs
+ */
+export const tvSeriesExternalIds = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesExternalIdsResponse> => {
+
+  return tmdbFetcher<tvSeriesExternalIdsResponse>(getTvSeriesExternalIdsUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesImagesResponse200 = {
+  data: TvSeriesImages200
+  status: 200
+}
+
+export type tvSeriesImagesResponseSuccess = (tvSeriesImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesImagesResponse = (tvSeriesImagesResponseSuccess)
+
+export const getTvSeriesImagesUrl = (seriesId: number,
+    params?: TvSeriesImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/images?${stringifiedParams}` : `/3/tv/${seriesId}/images`
+}
+
+/**
+ * Get the images that belong to a TV series.
+ * @summary Images
+ */
+export const tvSeriesImages = async (seriesId: number,
+    params?: TvSeriesImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesImagesResponse> => {
+
+  return tmdbFetcher<tvSeriesImagesResponse>(getTvSeriesImagesUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesKeywordsResponse200 = {
+  data: TvSeriesKeywords200
+  status: 200
+}
+
+export type tvSeriesKeywordsResponseSuccess = (tvSeriesKeywordsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesKeywordsResponse = (tvSeriesKeywordsResponseSuccess)
+
+export const getTvSeriesKeywordsUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/keywords`
+}
+
+/**
+ * Get a list of keywords that have been added to a TV show.
+ * @summary Keywords
+ */
+export const tvSeriesKeywords = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesKeywordsResponse> => {
+
+  return tmdbFetcher<tvSeriesKeywordsResponse>(getTvSeriesKeywordsUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesLatestIdResponse200 = {
+  data: TvSeriesLatestId200
+  status: 200
+}
+
+export type tvSeriesLatestIdResponseSuccess = (tvSeriesLatestIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesLatestIdResponse = (tvSeriesLatestIdResponseSuccess)
+
+export const getTvSeriesLatestIdUrl = () => {
+
+
+
+
+  return `/3/tv/latest`
+}
+
+/**
+ * Get the newest TV show ID.
+ * @summary Latest
+ */
+export const tvSeriesLatestId = async ( options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesLatestIdResponse> => {
+
+  return tmdbFetcher<tvSeriesLatestIdResponse>(getTvSeriesLatestIdUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type listsCopyResponse200 = {
+  data: ListsCopy200
+  status: 200
+}
+
+export type listsCopyResponseSuccess = (listsCopyResponse200) & {
+  headers: Headers;
+};
+;
+
+export type listsCopyResponse = (listsCopyResponseSuccess)
+
+export const getListsCopyUrl = (seriesId: number,
+    params?: ListsCopyParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/lists?${stringifiedParams}` : `/3/tv/${seriesId}/lists`
+}
+
+/**
+ * Get the lists that a TV series has been added to.
+ * @summary Lists
+ */
+export const listsCopy = async (seriesId: number,
+    params?: ListsCopyParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<listsCopyResponse> => {
+
+  return tmdbFetcher<listsCopyResponse>(getListsCopyUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesRecommendationsResponse200 = {
+  data: TvSeriesRecommendations200
+  status: 200
+}
+
+export type tvSeriesRecommendationsResponseSuccess = (tvSeriesRecommendationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesRecommendationsResponse = (tvSeriesRecommendationsResponseSuccess)
+
+export const getTvSeriesRecommendationsUrl = (seriesId: number,
+    params?: TvSeriesRecommendationsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/recommendations?${stringifiedParams}` : `/3/tv/${seriesId}/recommendations`
+}
+
+/**
+ * @summary Recommendations
+ */
+export const tvSeriesRecommendations = async (seriesId: number,
+    params?: TvSeriesRecommendationsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesRecommendationsResponse> => {
+
+  return tmdbFetcher<tvSeriesRecommendationsResponse>(getTvSeriesRecommendationsUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesReviewsResponse200 = {
+  data: TvSeriesReviews200
+  status: 200
+}
+
+export type tvSeriesReviewsResponseSuccess = (tvSeriesReviewsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesReviewsResponse = (tvSeriesReviewsResponseSuccess)
+
+export const getTvSeriesReviewsUrl = (seriesId: number,
+    params?: TvSeriesReviewsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/reviews?${stringifiedParams}` : `/3/tv/${seriesId}/reviews`
+}
+
+/**
+ * Get the reviews that have been added to a TV show.
+ * @summary Reviews
+ */
+export const tvSeriesReviews = async (seriesId: number,
+    params?: TvSeriesReviewsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesReviewsResponse> => {
+
+  return tmdbFetcher<tvSeriesReviewsResponse>(getTvSeriesReviewsUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesScreenedTheatricallyResponse200 = {
+  data: TvSeriesScreenedTheatrically200
+  status: 200
+}
+
+export type tvSeriesScreenedTheatricallyResponseSuccess = (tvSeriesScreenedTheatricallyResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesScreenedTheatricallyResponse = (tvSeriesScreenedTheatricallyResponseSuccess)
+
+export const getTvSeriesScreenedTheatricallyUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/screened_theatrically`
+}
+
+/**
+ * Get the seasons and episodes that have screened theatrically.
+ * @summary Screened Theatrically
+ */
+export const tvSeriesScreenedTheatrically = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesScreenedTheatricallyResponse> => {
+
+  return tmdbFetcher<tvSeriesScreenedTheatricallyResponse>(getTvSeriesScreenedTheatricallyUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesSimilarResponse200 = {
+  data: TvSeriesSimilar200
+  status: 200
+}
+
+export type tvSeriesSimilarResponseSuccess = (tvSeriesSimilarResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesSimilarResponse = (tvSeriesSimilarResponseSuccess)
+
+export const getTvSeriesSimilarUrl = (seriesId: string,
+    params?: TvSeriesSimilarParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/similar?${stringifiedParams}` : `/3/tv/${seriesId}/similar`
+}
+
+/**
+ * Get the similar TV shows.
+ * @summary Similar
+ */
+export const tvSeriesSimilar = async (seriesId: string,
+    params?: TvSeriesSimilarParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesSimilarResponse> => {
+
+  return tmdbFetcher<tvSeriesSimilarResponse>(getTvSeriesSimilarUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesTranslationsResponse200 = {
+  data: TvSeriesTranslations200
+  status: 200
+}
+
+export type tvSeriesTranslationsResponseSuccess = (tvSeriesTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesTranslationsResponse = (tvSeriesTranslationsResponseSuccess)
+
+export const getTvSeriesTranslationsUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/translations`
+}
+
+/**
+ * Get the translations that have been added to a TV show.
+ * @summary Translations
+ */
+export const tvSeriesTranslations = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesTranslationsResponse> => {
+
+  return tmdbFetcher<tvSeriesTranslationsResponse>(getTvSeriesTranslationsUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesVideosResponse200 = {
+  data: TvSeriesVideos200
+  status: 200
+}
+
+export type tvSeriesVideosResponseSuccess = (tvSeriesVideosResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesVideosResponse = (tvSeriesVideosResponseSuccess)
+
+export const getTvSeriesVideosUrl = (seriesId: number,
+    params?: TvSeriesVideosParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/videos?${stringifiedParams}` : `/3/tv/${seriesId}/videos`
+}
+
+/**
+ * Get the videos that belong to a TV show.
+ * @summary Videos
+ */
+export const tvSeriesVideos = async (seriesId: number,
+    params?: TvSeriesVideosParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesVideosResponse> => {
+
+  return tmdbFetcher<tvSeriesVideosResponse>(getTvSeriesVideosUrl(seriesId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesWatchProvidersResponse200 = {
+  data: TvSeriesWatchProviders200
+  status: 200
+}
+
+export type tvSeriesWatchProvidersResponseSuccess = (tvSeriesWatchProvidersResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesWatchProvidersResponse = (tvSeriesWatchProvidersResponseSuccess)
+
+export const getTvSeriesWatchProvidersUrl = (seriesId: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/watch/providers`
+}
+
+/**
+ * Get the list of streaming providers we have for a TV show.
+ * @summary Watch Providers
+ */
+export const tvSeriesWatchProviders = async (seriesId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesWatchProvidersResponse> => {
+
+  return tmdbFetcher<tvSeriesWatchProvidersResponse>(getTvSeriesWatchProvidersUrl(seriesId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeriesAddRatingResponse200 = {
+  data: TvSeriesAddRating200
+  status: 200
+}
+
+export type tvSeriesAddRatingResponseSuccess = (tvSeriesAddRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesAddRatingResponse = (tvSeriesAddRatingResponseSuccess)
+
+export const getTvSeriesAddRatingUrl = (seriesId: number,
+    params?: TvSeriesAddRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/rating?${stringifiedParams}` : `/3/tv/${seriesId}/rating`
+}
+
+/**
+ * Rate a TV show and save it to your rated list.
+ * @summary Add Rating
+ */
+export const tvSeriesAddRating = async (seriesId: number,
+    tvSeriesAddRatingBody?: TvSeriesAddRatingBody,
+    params?: TvSeriesAddRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesAddRatingResponse> => {
+
+  return tmdbFetcher<tvSeriesAddRatingResponse>(getTvSeriesAddRatingUrl(seriesId,params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(tvSeriesAddRatingBody)
+  }
+);}
+
+
+export type tvSeriesDeleteRatingResponse200 = {
+  data: TvSeriesDeleteRating200
+  status: 200
+}
+
+export type tvSeriesDeleteRatingResponseSuccess = (tvSeriesDeleteRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeriesDeleteRatingResponse = (tvSeriesDeleteRatingResponseSuccess)
+
+export const getTvSeriesDeleteRatingUrl = (seriesId: number,
+    params?: TvSeriesDeleteRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/rating?${stringifiedParams}` : `/3/tv/${seriesId}/rating`
+}
+
+/**
+ * @summary Delete Rating
+ */
+export const tvSeriesDeleteRating = async (seriesId: number,
+    params?: TvSeriesDeleteRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeriesDeleteRatingResponse> => {
+
+  return tmdbFetcher<tvSeriesDeleteRatingResponse>(getTvSeriesDeleteRatingUrl(seriesId,params),
+  {
+    ...options,
+    method: 'DELETE'
+
+
+  }
+);}
+
+
+export type tvSeasonDetailsResponse200 = {
+  data: TvSeasonDetails200
+  status: 200
+}
+
+export type tvSeasonDetailsResponseSuccess = (tvSeasonDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonDetailsResponse = (tvSeasonDetailsResponseSuccess)
+
+export const getTvSeasonDetailsUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}`
+}
+
+/**
+ * Query the details of a TV season.
+ * @summary Details
+ */
+export const tvSeasonDetails = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonDetailsResponse> => {
+
+  return tmdbFetcher<tvSeasonDetailsResponse>(getTvSeasonDetailsUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonAccountStatesResponse200 = {
+  data: TvSeasonAccountStates200
+  status: 200
+}
+
+export type tvSeasonAccountStatesResponseSuccess = (tvSeasonAccountStatesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonAccountStatesResponse = (tvSeasonAccountStatesResponseSuccess)
+
+export const getTvSeasonAccountStatesUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonAccountStatesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/account_states?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/account_states`
+}
+
+/**
+ * Get the rating, watchlist and favourite status.
+ * @summary Account States
+ */
+export const tvSeasonAccountStates = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonAccountStatesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonAccountStatesResponse> => {
+
+  return tmdbFetcher<tvSeasonAccountStatesResponse>(getTvSeasonAccountStatesUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonAggregateCreditsResponse200 = {
+  data: TvSeasonAggregateCredits200
+  status: 200
+}
+
+export type tvSeasonAggregateCreditsResponseSuccess = (tvSeasonAggregateCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonAggregateCreditsResponse = (tvSeasonAggregateCreditsResponseSuccess)
+
+export const getTvSeasonAggregateCreditsUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonAggregateCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/aggregate_credits?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/aggregate_credits`
+}
+
+/**
+ * Get the aggregate credits (cast and crew) that have been added to a TV season.
+ * @summary Aggregate Credits
+ */
+export const tvSeasonAggregateCredits = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonAggregateCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonAggregateCreditsResponse> => {
+
+  return tmdbFetcher<tvSeasonAggregateCreditsResponse>(getTvSeasonAggregateCreditsUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonChangesByIdResponse200 = {
+  data: TvSeasonChangesById200
+  status: 200
+}
+
+export type tvSeasonChangesByIdResponseSuccess = (tvSeasonChangesByIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonChangesByIdResponse = (tvSeasonChangesByIdResponseSuccess)
+
+export const getTvSeasonChangesByIdUrl = (seasonId: number,
+    params?: TvSeasonChangesByIdParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/season/${seasonId}/changes?${stringifiedParams}` : `/3/tv/season/${seasonId}/changes`
+}
+
+/**
+ * Get the recent changes for a TV season.
+ * @summary Changes
+ */
+export const tvSeasonChangesById = async (seasonId: number,
+    params?: TvSeasonChangesByIdParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonChangesByIdResponse> => {
+
+  return tmdbFetcher<tvSeasonChangesByIdResponse>(getTvSeasonChangesByIdUrl(seasonId,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonCreditsResponse200 = {
+  data: TvSeasonCredits200
+  status: 200
+}
+
+export type tvSeasonCreditsResponseSuccess = (tvSeasonCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonCreditsResponse = (tvSeasonCreditsResponseSuccess)
+
+export const getTvSeasonCreditsUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/credits?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/credits`
+}
+
+/**
+ * @summary Credits
+ */
+export const tvSeasonCredits = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonCreditsResponse> => {
+
+  return tmdbFetcher<tvSeasonCreditsResponse>(getTvSeasonCreditsUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonExternalIdsResponse200 = {
+  data: TvSeasonExternalIds200
+  status: 200
+}
+
+export type tvSeasonExternalIdsResponseSuccess = (tvSeasonExternalIdsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonExternalIdsResponse = (tvSeasonExternalIdsResponseSuccess)
+
+export const getTvSeasonExternalIdsUrl = (seriesId: number,
+    seasonNumber: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/season/${seasonNumber}/external_ids`
+}
+
+/**
+ * Get a list of external IDs that have been added to a TV season.
+ * @summary External IDs
+ */
+export const tvSeasonExternalIds = async (seriesId: number,
+    seasonNumber: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonExternalIdsResponse> => {
+
+  return tmdbFetcher<tvSeasonExternalIdsResponse>(getTvSeasonExternalIdsUrl(seriesId,seasonNumber),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonImagesResponse200 = {
+  data: TvSeasonImages200
+  status: 200
+}
+
+export type tvSeasonImagesResponseSuccess = (tvSeasonImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonImagesResponse = (tvSeasonImagesResponseSuccess)
+
+export const getTvSeasonImagesUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/images?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/images`
+}
+
+/**
+ * Get the images that belong to a TV season.
+ * @summary Images
+ */
+export const tvSeasonImages = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonImagesResponse> => {
+
+  return tmdbFetcher<tvSeasonImagesResponse>(getTvSeasonImagesUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonTranslationsResponse200 = {
+  data: TvSeasonTranslations200
+  status: 200
+}
+
+export type tvSeasonTranslationsResponseSuccess = (tvSeasonTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonTranslationsResponse = (tvSeasonTranslationsResponseSuccess)
+
+export const getTvSeasonTranslationsUrl = (seriesId: number,
+    seasonNumber: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/season/${seasonNumber}/translations`
+}
+
+/**
+ * Get the translations for a TV season.
+ * @summary Translations
+ */
+export const tvSeasonTranslations = async (seriesId: number,
+    seasonNumber: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonTranslationsResponse> => {
+
+  return tmdbFetcher<tvSeasonTranslationsResponse>(getTvSeasonTranslationsUrl(seriesId,seasonNumber),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonVideosResponse200 = {
+  data: TvSeasonVideos200
+  status: 200
+}
+
+export type tvSeasonVideosResponseSuccess = (tvSeasonVideosResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonVideosResponse = (tvSeasonVideosResponseSuccess)
+
+export const getTvSeasonVideosUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonVideosParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/videos?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/videos`
+}
+
+/**
+ * Get the videos that belong to a TV season.
+ * @summary Videos
+ */
+export const tvSeasonVideos = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonVideosParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonVideosResponse> => {
+
+  return tmdbFetcher<tvSeasonVideosResponse>(getTvSeasonVideosUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvSeasonWatchProvidersResponse200 = {
+  data: TvSeasonWatchProviders200
+  status: 200
+}
+
+export type tvSeasonWatchProvidersResponseSuccess = (tvSeasonWatchProvidersResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvSeasonWatchProvidersResponse = (tvSeasonWatchProvidersResponseSuccess)
+
+export const getTvSeasonWatchProvidersUrl = (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonWatchProvidersParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/watch/providers?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/watch/providers`
+}
+
+/**
+ * Get the list of streaming providers we have for a TV season.
+ * @summary Watch Providers
+ */
+export const tvSeasonWatchProviders = async (seriesId: number,
+    seasonNumber: number,
+    params?: TvSeasonWatchProvidersParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvSeasonWatchProvidersResponse> => {
+
+  return tmdbFetcher<tvSeasonWatchProvidersResponse>(getTvSeasonWatchProvidersUrl(seriesId,seasonNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeDetailsResponse200 = {
+  data: TvEpisodeDetails200
+  status: 200
+}
+
+export type tvEpisodeDetailsResponseSuccess = (tvEpisodeDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeDetailsResponse = (tvEpisodeDetailsResponseSuccess)
+
+export const getTvEpisodeDetailsUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeDetailsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}`
+}
+
+/**
+ * Query the details of a TV episode.
+ * @summary Details
+ */
+export const tvEpisodeDetails = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeDetailsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeDetailsResponse> => {
+
+  return tmdbFetcher<tvEpisodeDetailsResponse>(getTvEpisodeDetailsUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeAccountStatesResponse200 = {
+  data: TvEpisodeAccountStates200
+  status: 200
+}
+
+export type tvEpisodeAccountStatesResponseSuccess = (tvEpisodeAccountStatesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeAccountStatesResponse = (tvEpisodeAccountStatesResponseSuccess)
+
+export const getTvEpisodeAccountStatesUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeAccountStatesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/account_states?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/account_states`
+}
+
+/**
+ * Get the rating, watchlist and favourite status.
+ * @summary Account States
+ */
+export const tvEpisodeAccountStates = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeAccountStatesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeAccountStatesResponse> => {
+
+  return tmdbFetcher<tvEpisodeAccountStatesResponse>(getTvEpisodeAccountStatesUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeChangesByIdResponse200 = {
+  data: TvEpisodeChangesById200
+  status: 200
+}
+
+export type tvEpisodeChangesByIdResponseSuccess = (tvEpisodeChangesByIdResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeChangesByIdResponse = (tvEpisodeChangesByIdResponseSuccess)
+
+export const getTvEpisodeChangesByIdUrl = (episodeId: number,) => {
+
+
+
+
+  return `/3/tv/episode/${episodeId}/changes`
+}
+
+/**
+ * Get the recent changes for a TV episode.
+ * @summary Changes
+ */
+export const tvEpisodeChangesById = async (episodeId: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeChangesByIdResponse> => {
+
+  return tmdbFetcher<tvEpisodeChangesByIdResponse>(getTvEpisodeChangesByIdUrl(episodeId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeCreditsResponse200 = {
+  data: TvEpisodeCredits200
+  status: 200
+}
+
+export type tvEpisodeCreditsResponseSuccess = (tvEpisodeCreditsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeCreditsResponse = (tvEpisodeCreditsResponseSuccess)
+
+export const getTvEpisodeCreditsUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeCreditsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/credits?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/credits`
+}
+
+/**
+ * @summary Credits
+ */
+export const tvEpisodeCredits = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeCreditsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeCreditsResponse> => {
+
+  return tmdbFetcher<tvEpisodeCreditsResponse>(getTvEpisodeCreditsUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeExternalIdsResponse200 = {
+  data: TvEpisodeExternalIds200
+  status: 200
+}
+
+export type tvEpisodeExternalIdsResponseSuccess = (tvEpisodeExternalIdsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeExternalIdsResponse = (tvEpisodeExternalIdsResponseSuccess)
+
+export const getTvEpisodeExternalIdsUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: string,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/external_ids`
+}
+
+/**
+ * Get a list of external IDs that have been added to a TV episode.
+ * @summary External IDs
+ */
+export const tvEpisodeExternalIds = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: string, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeExternalIdsResponse> => {
+
+  return tmdbFetcher<tvEpisodeExternalIdsResponse>(getTvEpisodeExternalIdsUrl(seriesId,seasonNumber,episodeNumber),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeImagesResponse200 = {
+  data: TvEpisodeImages200
+  status: 200
+}
+
+export type tvEpisodeImagesResponseSuccess = (tvEpisodeImagesResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeImagesResponse = (tvEpisodeImagesResponseSuccess)
+
+export const getTvEpisodeImagesUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeImagesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/images?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/images`
+}
+
+/**
+ * Get the images that belong to a TV episode.
+ * @summary Images
+ */
+export const tvEpisodeImages = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeImagesParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeImagesResponse> => {
+
+  return tmdbFetcher<tvEpisodeImagesResponse>(getTvEpisodeImagesUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeTranslationsResponse200 = {
+  data: TvEpisodeTranslations200
+  status: 200
+}
+
+export type tvEpisodeTranslationsResponseSuccess = (tvEpisodeTranslationsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeTranslationsResponse = (tvEpisodeTranslationsResponseSuccess)
+
+export const getTvEpisodeTranslationsUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,) => {
+
+
+
+
+  return `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/translations`
+}
+
+/**
+ * Get the translations that have been added to a TV episode.
+ * @summary Translations
+ */
+export const tvEpisodeTranslations = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeTranslationsResponse> => {
+
+  return tmdbFetcher<tvEpisodeTranslationsResponse>(getTvEpisodeTranslationsUrl(seriesId,seasonNumber,episodeNumber),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeVideosResponse200 = {
+  data: TvEpisodeVideos200
+  status: 200
+}
+
+export type tvEpisodeVideosResponseSuccess = (tvEpisodeVideosResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeVideosResponse = (tvEpisodeVideosResponseSuccess)
+
+export const getTvEpisodeVideosUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeVideosParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/videos?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/videos`
+}
+
+/**
+ * Get the videos that belong to a TV episode.
+ * @summary Videos
+ */
+export const tvEpisodeVideos = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeVideosParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeVideosResponse> => {
+
+  return tmdbFetcher<tvEpisodeVideosResponse>(getTvEpisodeVideosUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type tvEpisodeAddRatingResponse200 = {
+  data: TvEpisodeAddRating200
+  status: 200
+}
+
+export type tvEpisodeAddRatingResponseSuccess = (tvEpisodeAddRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeAddRatingResponse = (tvEpisodeAddRatingResponseSuccess)
+
+export const getTvEpisodeAddRatingUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeAddRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/rating?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/rating`
+}
+
+/**
+ * Rate a TV episode and save it to your rated list.
+ * @summary Add Rating
+ */
+export const tvEpisodeAddRating = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    tvEpisodeAddRatingBody?: TvEpisodeAddRatingBody,
+    params?: TvEpisodeAddRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeAddRatingResponse> => {
+
+  return tmdbFetcher<tvEpisodeAddRatingResponse>(getTvEpisodeAddRatingUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'POST',
+    headers: getHeaders({ 'Content-Type': 'application/json' }, options?.headers),
+    body: JSON.stringify(tvEpisodeAddRatingBody)
+  }
+);}
+
+
+export type tvEpisodeDeleteRatingResponse200 = {
+  data: TvEpisodeDeleteRating200
+  status: 200
+}
+
+export type tvEpisodeDeleteRatingResponseSuccess = (tvEpisodeDeleteRatingResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeDeleteRatingResponse = (tvEpisodeDeleteRatingResponseSuccess)
+
+export const getTvEpisodeDeleteRatingUrl = (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeDeleteRatingParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/rating?${stringifiedParams}` : `/3/tv/${seriesId}/season/${seasonNumber}/episode/${episodeNumber}/rating`
+}
+
+/**
+ * Delete your rating on a TV episode.
+ * @summary Delete Rating
+ */
+export const tvEpisodeDeleteRating = async (seriesId: number,
+    seasonNumber: number,
+    episodeNumber: number,
+    params?: TvEpisodeDeleteRatingParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeDeleteRatingResponse> => {
+
+  return tmdbFetcher<tvEpisodeDeleteRatingResponse>(getTvEpisodeDeleteRatingUrl(seriesId,seasonNumber,episodeNumber,params),
+  {
+    ...options,
+    method: 'DELETE'
+
+
+  }
+);}
+
+
+export type tvEpisodeGroupDetailsResponse200 = {
+  data: TvEpisodeGroupDetails200
+  status: 200
+}
+
+export type tvEpisodeGroupDetailsResponseSuccess = (tvEpisodeGroupDetailsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type tvEpisodeGroupDetailsResponse = (tvEpisodeGroupDetailsResponseSuccess)
+
+export const getTvEpisodeGroupDetailsUrl = (tvEpisodeGroupId: string,) => {
+
+
+
+
+  return `/3/tv/episode_group/${tvEpisodeGroupId}`
+}
+
+/**
+ * Get the details of a TV episode group.
+ * @summary Details
+ */
+export const tvEpisodeGroupDetails = async (tvEpisodeGroupId: string, options?: Parameters<typeof tmdbFetcher>[1]): Promise<tvEpisodeGroupDetailsResponse> => {
+
+  return tmdbFetcher<tvEpisodeGroupDetailsResponse>(getTvEpisodeGroupDetailsUrl(tvEpisodeGroupId),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type watchProvidersAvailableRegionsResponse200 = {
+  data: WatchProvidersAvailableRegions200
+  status: 200
+}
+
+export type watchProvidersAvailableRegionsResponseSuccess = (watchProvidersAvailableRegionsResponse200) & {
+  headers: Headers;
+};
+;
+
+export type watchProvidersAvailableRegionsResponse = (watchProvidersAvailableRegionsResponseSuccess)
+
+export const getWatchProvidersAvailableRegionsUrl = (params?: WatchProvidersAvailableRegionsParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/watch/providers/regions?${stringifiedParams}` : `/3/watch/providers/regions`
+}
+
+/**
+ * Get the list of the countries we have watch provider (OTT/streaming) data for.
+ * @summary Available Regions
+ */
+export const watchProvidersAvailableRegions = async (params?: WatchProvidersAvailableRegionsParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<watchProvidersAvailableRegionsResponse> => {
+
+  return tmdbFetcher<watchProvidersAvailableRegionsResponse>(getWatchProvidersAvailableRegionsUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type watchProvidersMovieListResponse200 = {
+  data: WatchProvidersMovieList200
+  status: 200
+}
+
+export type watchProvidersMovieListResponseSuccess = (watchProvidersMovieListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type watchProvidersMovieListResponse = (watchProvidersMovieListResponseSuccess)
+
+export const getWatchProvidersMovieListUrl = (params?: WatchProvidersMovieListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/watch/providers/movie?${stringifiedParams}` : `/3/watch/providers/movie`
+}
+
+/**
+ * Get the list of streaming providers we have for movies.
+ * @summary Movie Providers
+ */
+export const watchProvidersMovieList = async (params?: WatchProvidersMovieListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<watchProvidersMovieListResponse> => {
+
+  return tmdbFetcher<watchProvidersMovieListResponse>(getWatchProvidersMovieListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+export type watchProviderTvListResponse200 = {
+  data: WatchProviderTvList200
+  status: 200
+}
+
+export type watchProviderTvListResponseSuccess = (watchProviderTvListResponse200) & {
+  headers: Headers;
+};
+;
+
+export type watchProviderTvListResponse = (watchProviderTvListResponseSuccess)
+
+export const getWatchProviderTvListUrl = (params?: WatchProviderTvListParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/3/watch/providers/tv?${stringifiedParams}` : `/3/watch/providers/tv`
+}
+
+/**
+ * Get the list of streaming providers we have for TV shows.
+ * @summary TV Providers
+ */
+export const watchProviderTvList = async (params?: WatchProviderTvListParams, options?: Parameters<typeof tmdbFetcher>[1]): Promise<watchProviderTvListResponse> => {
+
+  return tmdbFetcher<watchProviderTvListResponse>(getWatchProviderTvListUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+

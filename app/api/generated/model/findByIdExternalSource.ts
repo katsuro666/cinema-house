@@ -1,0 +1,15 @@
+// @ts-nocheck
+
+export type FindByIdExternalSource = typeof FindByIdExternalSource[keyof typeof FindByIdExternalSource];
+
+
+export const FindByIdExternalSource = {
+  imdb_id: 'imdb_id',
+  facebook_id: 'facebook_id',
+  instagram_id: 'instagram_id',
+  tvdb_id: 'tvdb_id',
+  tiktok_id: 'tiktok_id',
+  twitter_id: 'twitter_id',
+  wikidata_id: 'wikidata_id',
+  youtube_id: 'youtube_id',
+} as const;

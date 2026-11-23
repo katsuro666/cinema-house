@@ -1,0 +1,10 @@
+// @ts-nocheck
+
+export type PersonChanges200ChangesItemItemsItem = {
+  id?: string;
+  action?: string;
+  time?: string;
+  iso_639_1?: string;
+  iso_3166_1?: string;
+  value?: string;
+};

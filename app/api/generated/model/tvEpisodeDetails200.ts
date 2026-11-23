@@ -1,0 +1,19 @@
+// @ts-nocheck
+import type { TvEpisodeDetails200CrewItem } from './tvEpisodeDetails200CrewItem';
+import type { TvEpisodeDetails200GuestStarsItem } from './tvEpisodeDetails200GuestStarsItem';
+
+export type TvEpisodeDetails200 = {
+  air_date?: string;
+  crew?: TvEpisodeDetails200CrewItem[];
+  episode_number?: number;
+  guest_stars?: TvEpisodeDetails200GuestStarsItem[];
+  name?: string;
+  overview?: string;
+  id?: number;
+  production_code?: string;
+  runtime?: number;
+  season_number?: number;
+  still_path?: string;
+  vote_average?: number;
+  vote_count?: number;
+};

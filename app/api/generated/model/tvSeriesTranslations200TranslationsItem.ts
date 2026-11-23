@@ -1,0 +1,10 @@
+// @ts-nocheck
+import type { TvSeriesTranslations200TranslationsItemData } from './tvSeriesTranslations200TranslationsItemData';
+
+export type TvSeriesTranslations200TranslationsItem = {
+  iso_3166_1?: string;
+  iso_639_1?: string;
+  name?: string;
+  english_name?: string;
+  data?: TvSeriesTranslations200TranslationsItemData;
+};

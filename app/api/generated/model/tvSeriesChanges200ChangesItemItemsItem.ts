@@ -1,0 +1,13 @@
+// @ts-nocheck
+import type { TvSeriesChanges200ChangesItemItemsItemOriginalValue } from './tvSeriesChanges200ChangesItemItemsItemOriginalValue';
+import type { TvSeriesChanges200ChangesItemItemsItemValue } from './tvSeriesChanges200ChangesItemItemsItemValue';
+
+export type TvSeriesChanges200ChangesItemItemsItem = {
+  id?: string;
+  action?: string;
+  time?: string;
+  iso_639_1?: string;
+  iso_3166_1?: string;
+  value?: TvSeriesChanges200ChangesItemItemsItemValue;
+  original_value?: TvSeriesChanges200ChangesItemItemsItemOriginalValue;
+};

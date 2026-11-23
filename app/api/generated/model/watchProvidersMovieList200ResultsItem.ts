@@ -1,0 +1,10 @@
+// @ts-nocheck
+import type { WatchProvidersMovieList200ResultsItemDisplayPriorities } from './watchProvidersMovieList200ResultsItemDisplayPriorities';
+
+export type WatchProvidersMovieList200ResultsItem = {
+  display_priorities?: WatchProvidersMovieList200ResultsItemDisplayPriorities;
+  display_priority?: number;
+  logo_path?: string;
+  provider_name?: string;
+  provider_id?: number;
+};

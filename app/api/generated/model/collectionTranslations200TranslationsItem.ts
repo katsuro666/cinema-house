@@ -1,0 +1,10 @@
+// @ts-nocheck
+import type { CollectionTranslations200TranslationsItemData } from './collectionTranslations200TranslationsItemData';
+
+export type CollectionTranslations200TranslationsItem = {
+  iso_3166_1?: string;
+  iso_639_1?: string;
+  name?: string;
+  english_name?: string;
+  data?: CollectionTranslations200TranslationsItemData;
+};
